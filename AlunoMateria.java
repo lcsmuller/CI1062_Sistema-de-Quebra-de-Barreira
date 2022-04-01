@@ -1,10 +1,10 @@
-import Materia;
+package PARADINHAS;
 
 /** @todo gerar métodos com eclipse */
 
-public class MateriaAluno extends Materia{
+public class AlunoMateria extends Materia{
 
     private int nota;
-    private int prequencia;
+    private int frequencia;
     private String situacao;
 }

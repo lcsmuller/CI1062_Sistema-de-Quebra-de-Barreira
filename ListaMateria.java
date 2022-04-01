@@ -1,5 +1,6 @@
+package PARADINHAS;
 import java.util.Vector;
-import Materia;
+
 
 /** @todo gerar métodos com eclipse 
  *  @todo operacoes de lista (procurar, inserir, remover)
