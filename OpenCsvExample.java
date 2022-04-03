@@ -2,28 +2,52 @@ package PARADINHAS;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Arrays;
 
 public class OpenCsvExample {
-
-	private String row = null; //talves possa ser declarado na propria função
 	
 	//atualmente so pega um arquivoe imprime na tela, mas ja divide cada celula em uma variavel independente
-	public void leCsv() throws Exception {
+	public String[][] leCsv(String arquivo) throws Exception {
 		//try{
-		BufferedReader csvReader = new BufferedReader(new FileReader("C:\\Users\\guipa\\Downloads\\JF_Secao_25_Ago_2020.csv")); //colocar nome do arquivo que sere passado
+		BufferedReader csvReader = new BufferedReader(new FileReader(arquivo)); //colocar nome do arquivo que sere passado
+		String[][] data = new String[2000][1];
+		int i = 0;
+		String row;
 		while ((row = csvReader.readLine()) != null) {
-			String[] data = row.split(";"); // mudar ; é o separador de celular do csv
-			for (int i = 0; i < data.length; i++) {
-				System.out.println(data[i] + " ");
-			}
+			String[] linha = row.split(";"); // mudar ; é o separador de celular do csv
+			data[i] = linha;
+			i++;
 		}
 		csvReader.close();
+		data = Arrays.copyOf(data,i);
 		//}catch(){}                fazer bloco catch com excessoes de IO
+		return data;
 	}
+	
+	public void escreveCsv(String[][] entrada, String arquivo) throws Exception{ //fazer tratamento de excessoes
+		FileWriter csvWriter = new FileWriter(arquivo);
+		for (int i = 0; i < entrada.length; i++) {
+			for(int j = 0; j < entrada[i].length; j++)
+				csvWriter.append(entrada[i][j] + ";");
+			csvWriter.append("\n");
+		}
+		csvWriter.close();
+	}
+	
+	
 	//desoceomente para testar so esse arquivo
 	/*public static void main(String args[]) throws Exception{
 		OpenCsvExample novo = new OpenCsvExample();
-		novo.leCsv();
+		String[][] dados;
+		dados = novo.leCsv("C:\\Users\\guipa\\Downloads\\JF_Secao_25_Ago_2020.csv");
+		for (int i = 0; i < dados.length; i++) {
+			for (int j = 0; j < dados[i].length; j++){
+				System.out.print(dados[i][j] + " ");
+			}
+			System.out.println();
+		}
+		novo.escreveCsv(dados,"C:\\Users\\guipa\\Desktop\\novo.csv");
 	}*/
     
 
