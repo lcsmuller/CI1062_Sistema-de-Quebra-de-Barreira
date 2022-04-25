@@ -1,4 +1,4 @@
-package src;
+package src.main;
 /** @todo gerar métodos com eclipse */
 
 public class Materia{
