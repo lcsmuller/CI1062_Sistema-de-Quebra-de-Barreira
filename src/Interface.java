@@ -1,4 +1,4 @@
-package PARADINHAS;
+package src;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -45,6 +45,4 @@ public class Interface extends JFrame {
         Interface frame = getInstance();
                 
     }
-
-
 }
