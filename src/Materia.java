@@ -1,4 +1,4 @@
-package PARADINHAS;
+package src;
 /** @todo gerar métodos com eclipse */
 
 public class Materia{

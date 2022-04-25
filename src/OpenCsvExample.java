@@ -1,4 +1,4 @@
-package PARADINHAS;
+package src;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,7 +15,7 @@ public class OpenCsvExample {
 		int i = 0;
 		String row;
 		while ((row = csvReader.readLine()) != null) {
-			String[] linha = row.split(";"); // mudar ; é o separador de celular do csv
+			String[] linha = row.split(";"); // mudar ; ï¿½ o separador de celular do csv
 			data[i] = linha;
 			i++;
 		}
@@ -34,21 +34,4 @@ public class OpenCsvExample {
 		}
 		csvWriter.close();
 	}
-	
-	
-	//desoceomente para testar so esse arquivo
-	/*public static void main(String args[]) throws Exception{
-		OpenCsvExample novo = new OpenCsvExample();
-		String[][] dados;
-		dados = novo.leCsv("C:\\Users\\guipa\\Downloads\\JF_Secao_25_Ago_2020.csv");
-		for (int i = 0; i < dados.length; i++) {
-			for (int j = 0; j < dados[i].length; j++){
-				System.out.print(dados[i][j] + " ");
-			}
-			System.out.println();
-		}
-		novo.escreveCsv(dados,"C:\\Users\\guipa\\Desktop\\novo.csv");
-	}*/
-    
-
 }
