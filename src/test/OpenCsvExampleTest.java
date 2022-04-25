@@ -1,8 +1,10 @@
-package src;
+package src.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import src.main.OpenCsvExample;
 
 class OpenCsvExampleTest {
 	OpenCsvExample novo = new OpenCsvExample();
