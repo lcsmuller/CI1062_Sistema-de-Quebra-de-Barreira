@@ -1,7 +1,5 @@
 package main;
 
-/** @todo gerar métodos com eclipse */
-
 public class AlunoMateria extends Materia{
 
     private int nota;
@@ -38,6 +36,4 @@ public class AlunoMateria extends Materia{
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
 	}
-	
-	
 }

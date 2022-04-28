@@ -1,7 +1,6 @@
 package main;
-/** @todo gerar métodos com eclipse */
 
-public class Materia{
+public class Materia {
 
     private String codigoCurso;
     private int versao;
@@ -72,6 +71,4 @@ public class Materia{
 	public void setHoras(int horas) {
 		this.horas = horas;
 	}
-
-
 }

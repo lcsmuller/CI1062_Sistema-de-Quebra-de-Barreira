@@ -2,10 +2,6 @@ package main;
 import java.util.Vector;
 
 
-/** @todo gerar métodos com eclipse 
- *  @todo operacoes de lista (procurar, inserir, remover)
-*/
-
 public class ListaMateria {
 
     private Vector<Materia> lista = new Vector<Materia>();
@@ -43,7 +39,4 @@ public class ListaMateria {
 		}
 		return lista_indice;
 	}
-	
-
-		
 }

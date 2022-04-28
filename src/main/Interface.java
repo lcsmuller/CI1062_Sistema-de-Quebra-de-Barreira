@@ -1,6 +1,6 @@
 package main;
 
-/*import java.awt.BorderLayout;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Console;
@@ -39,10 +39,9 @@ public class Interface extends JFrame {
         this.add(panel);
         panel.add(button, BorderLayout.CENTER);
     }
-    
-
+/* 
     public static void main(String args[]) {
         Interface frame = getInstance();
-                
     }
-}*/
+*/
+}
