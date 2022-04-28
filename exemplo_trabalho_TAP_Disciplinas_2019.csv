@@ -1,0 +1,185 @@
+COD_CURSO;NUM_VERSAO;DESCR_ESTRUTURA;COD_DISCIPLINA;NOME_UNIDADE;NOME_DISCIPLINA;PERIODO_IDEAL;NUM_HORAS;TIPO_DISCIPLINA;CH_TOTAL;DESCR_SITUACAO
+;;;;;;;;;;
+21A;2019;Estágio Supervisionado Obrigatório;CI1100;Curso de Ciência da Computação - Bacharelado;ESTÁGIO OBRIGATÓRIO;;220;Estágio Curricular;220;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CE009;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À ESTATÍSTICA;3;60;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1001;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO I;2;60;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1002;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO II;3;60;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1003;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À CIÊNCIA DA COMPUTAÇÃO;1;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1003;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À CIÊNCIA DA COMPUTAÇÃO;1;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1005;Curso de Ciência da Computação - Bacharelado;QUALIDADE DE SOFTWARE;8;45;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1005;Curso de Ciência da Computação - Bacharelado;QUALIDADE DE SOFTWARE;8;15;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1007;Curso de Ciência da Computação - Bacharelado;SEGURANÇA COMPUTACIONAL;7;44;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1007;Curso de Ciência da Computação - Bacharelado;SEGURANÇA COMPUTACIONAL;7;16;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1055;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURA DE DADOS I;1;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1055;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURA DE DADOS I;1;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1056;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURA DE DADOS II;2;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1056;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURA DE DADOS II;2;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1057;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS III;3;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1057;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS III;3;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1058;Curso de Ciência da Computação - Bacharelado;REDE DE COMPUTADORES I;5;44;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1058;Curso de Ciência da Computação - Bacharelado;REDE DE COMPUTADORES I;5;16;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1059;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À TEORIA DA COMPUTAÇÃO;4;45;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1059;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À TEORIA DA COMPUTAÇÃO;4;15;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1061;Curso de Ciência da Computação - Bacharelado;REDES DE COMPUTADORES II;6;44;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1061;Curso de Ciência da Computação - Bacharelado;REDES DE COMPUTADORES II;6;16;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1062;Curso de Ciência da Computação - Bacharelado;PARADIGMAS DE PROGRAMAÇÃO;4;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1062;Curso de Ciência da Computação - Bacharelado;PARADIGMAS DE PROGRAMAÇÃO;4;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1064;Curso de Ciência da Computação - Bacharelado;SOFTWARE BÁSICO;4;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1064;Curso de Ciência da Computação - Bacharelado;SOFTWARE BÁSICO;4;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1065;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E TEORIA DOS GRAFOS;5;45;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1065;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E TEORIA DOS GRAFOS;5;15;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1068;Curso de Ciência da Computação - Bacharelado;CIRCUITOS DIGITAIS;1;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1068;Curso de Ciência da Computação - Bacharelado;CIRCUITOS DIGITAIS;1;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1162;Curso de Ciência da Computação - Bacharelado;ENGENHARIA DE REQUISITOS;5;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1162;Curso de Ciência da Computação - Bacharelado;ENGENHARIA DE REQUISITOS;5;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1163;Curso de Ciência da Computação - Bacharelado;DESIGN DE SOFTWARE;6;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1163;Curso de Ciência da Computação - Bacharelado;DESIGN DE SOFTWARE;6;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1164;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À COMPUTAÇÃO CIENTÍFICA;4;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1164;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À COMPUTAÇÃO CIENTÍFICA;4;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1165;Curso de Ciência da Computação - Bacharelado;ANÁLISE DE ALGORITMOS;4;50;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1165;Curso de Ciência da Computação - Bacharelado;ANÁLISE DE ALGORITMOS;4;10;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1209;Curso de Ciência da Computação - Bacharelado;INTELIGÊNCIA ARTIFICIAL;6;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1209;Curso de Ciência da Computação - Bacharelado;INTELIGÊNCIA ARTIFICIAL;6;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1210;Curso de Ciência da Computação - Bacharelado;PROJETOS DIGITAIS E MICROPROCESSADORES;2;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1210;Curso de Ciência da Computação - Bacharelado;PROJETOS DIGITAIS E MICROPROCESSADORES;2;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1211;Curso de Ciência da Computação - Bacharelado;CONSTRUÇÃO DE COMPILADORES;8;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1211;Curso de Ciência da Computação - Bacharelado;CONSTRUÇÃO DE COMPILADORES;8;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1212;Curso de Ciência da Computação - Bacharelado;ARQUITETURA DE COMPUTADORES;3;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1212;Curso de Ciência da Computação - Bacharelado;ARQUITETURA DE COMPUTADORES;3;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1215;Curso de Ciência da Computação - Bacharelado;SISTEMAS OPERACIONAIS;5;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1215;Curso de Ciência da Computação - Bacharelado;SISTEMAS OPERACIONAIS;5;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1218;Curso de Ciência da Computação - Bacharelado;BANCO DE DADOS;6;48;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1218;Curso de Ciência da Computação - Bacharelado;BANCO DE DADOS;6;12;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1221;Curso de Ciência da Computação - Bacharelado;ENGENHARIA DE SOFTWARE;7;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1221;Curso de Ciência da Computação - Bacharelado;ENGENHARIA DE SOFTWARE;7;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1237;Curso de Ciência da Computação - Bacharelado;MATEMÁTICA DISCRETA;3;45;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1237;Curso de Ciência da Computação - Bacharelado;MATEMÁTICA DISCRETA;3;15;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1238;Curso de Ciência da Computação - Bacharelado;OTIMIZAÇÃO;5;45;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1238;Curso de Ciência da Computação - Bacharelado;OTIMIZAÇÃO;5;15;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1316;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO PARALELA;6;20;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1316;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO PARALELA;6;40;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1350;Curso de Ciência da Computação - Bacharelado;INTERAÇÃO HUMANO-COMPUTADOR;4;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CI1350;Curso de Ciência da Computação - Bacharelado;INTERAÇÃO HUMANO-COMPUTADOR;4;30;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CMA111;Curso de Ciência da Computação - Bacharelado;CÁLCULO 1A;1;90;Obrigatória;90;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CMA211;Curso de Ciência da Computação - Bacharelado;CÁLCULO 2A;2;90;Obrigatória;90;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CM303;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO À GEOMETRIA ANALÍTICA E ÁLGEBRA LINEAR;2;60;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos obrigatórios;CM304;Curso de Ciência da Computação - Bacharelado;COMPLEMENTOS DE MATEMÁTICA;1;60;Obrigatória;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI087;Curso de Ciência da Computação - Bacharelado;TOPICOS EM BANCO DE DADOS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI087;Curso de Ciência da Computação - Bacharelado;TOPICOS EM BANCO DE DADOS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1008;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO A SISTEMAS EMBARCADOS;;20;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1008;Curso de Ciência da Computação - Bacharelado;INTRODUÇÃO A SISTEMAS EMBARCADOS;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1009;Curso de Ciência da Computação - Bacharelado;COMPUTAÇÃO PARALELA COM GPUS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1009;Curso de Ciência da Computação - Bacharelado;COMPUTAÇÃO PARALELA COM GPUS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1010;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO WEB;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1011;Curso de Ciência da Computação - Bacharelado;RECONHECIMENTO DE PADRÕES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1011;Curso de Ciência da Computação - Bacharelado;RECONHECIMENTO DE PADRÕES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1012;Curso de Ciência da Computação - Bacharelado;ALGORITMOS ALEATORIZADOS;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1013;Curso de Ciência da Computação - Bacharelado;GRANDES IDEIAS DA COMPUTAÇÃO TEÓRICA;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1014;Curso de Ciência da Computação - Bacharelado;REDES SOCIAIS E ECONÔMICAS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1014;Curso de Ciência da Computação - Bacharelado;REDES SOCIAIS E ECONÔMICAS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1015;Curso de Ciência da Computação - Bacharelado;TESTE DE SOFTWARE;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1016;Curso de Ciência da Computação - Bacharelado;TÉCNICAS EM MODELAGEM DE APLICAÇÕES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1016;Curso de Ciência da Computação - Bacharelado;TÉCNICAS EM MODELAGEM DE APLICAÇÕES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1017;Curso de Ciência da Computação - Bacharelado;CRIPTOGRAFIA;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1017;Curso de Ciência da Computação - Bacharelado;CRIPTOGRAFIA;;20;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1020;Curso de Ciência da Computação - Bacharelado;ROBÓTICA MÓVEL;;20;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1020;Curso de Ciência da Computação - Bacharelado;ROBÓTICA MÓVEL;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1021;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO DE DISPOSITIVOS MÓVEIS;;8;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1021;Curso de Ciência da Computação - Bacharelado;PROGRAMAÇÃO DE DISPOSITIVOS MÓVEIS;;52;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1022;Curso de Ciência da Computação - Bacharelado;PROJETO DE SISTEMAS DIGITAIS;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1022;Curso de Ciência da Computação - Bacharelado;PROJETO DE SISTEMAS DIGITAIS;;20;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1023;Curso de Ciência da Computação - Bacharelado;PROJETO DE SISTEMAS EMBARCADOS;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1023;Curso de Ciência da Computação - Bacharelado;PROJETO DE SISTEMAS EMBARCADOS;;20;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1025;Curso de Ciência da Computação - Bacharelado;DISPOSITIVOS REPROGRAMÁVEIS;;12;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1025;Curso de Ciência da Computação - Bacharelado;DISPOSITIVOS REPROGRAMÁVEIS;;48;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1026;Curso de Ciência da Computação - Bacharelado;VISÃO COMPUTACIONAL E PERCEPÇÃO;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1026;Curso de Ciência da Computação - Bacharelado;VISÃO COMPUTACIONAL E PERCEPÇÃO;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1028;Curso de Ciência da Computação - Bacharelado;BIOMETRIA E VIGILÂNCIA POR VISÃO COMPUTACIONAL;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1028;Curso de Ciência da Computação - Bacharelado;BIOMETRIA E VIGILÂNCIA POR VISÃO COMPUTACIONAL;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1084;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM TEORIA DOS GRAFOS;;45;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1084;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM TEORIA DOS GRAFOS;;15;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1086;Curso de Ciência da Computação - Bacharelado;ARQUITETURAS DE ALTO DESEMPENHO;;35;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1086;Curso de Ciência da Computação - Bacharelado;ARQUITETURAS DE ALTO DESEMPENHO;;25;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1087;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM BANCO DE DADOS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1087;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM BANCO DE DADOS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1088;Curso de Ciência da Computação - Bacharelado;SISTEMAS DISTRIBUÍDOS;;54;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1088;Curso de Ciência da Computação - Bacharelado;SISTEMAS DISTRIBUÍDOS;;6;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1090;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM ENGENHARIA DE SOFTWARE;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1091;Curso de Ciência da Computação - Bacharelado;AVALIAÇÃO DE DESEMPENHO;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1091;Curso de Ciência da Computação - Bacharelado;AVALIAÇÃO DE DESEMPENHO;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1170;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM COMPUTAÇÃO BIOINSPIRADA;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1171;Curso de Ciência da Computação - Bacharelado;APRENDIZADO DE MÁQUINA;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1171;Curso de Ciência da Computação - Bacharelado;APRENDIZADO DE MÁQUINA;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1173;Curso de Ciência da Computação - Bacharelado;COMPUTAÇÃO GRÁFICA;;12;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1173;Curso de Ciência da Computação - Bacharelado;COMPUTAÇÃO GRÁFICA;;48;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1175;Curso de Ciência da Computação - Bacharelado;OFICINA DE COMPUTAÇÃO;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1175;Curso de Ciência da Computação - Bacharelado;OFICINA DE COMPUTAÇÃO;;50;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1176;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM VISÃO COMPUTACIONAL;;50;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1176;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM VISÃO COMPUTACIONAL;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1177;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM COMPUTAÇÃO GRÁFICA;;50;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1177;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM COMPUTAÇÃO GRÁFICA;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1204;Curso de Ciência da Computação - Bacharelado;INOVAÇÃO TECNOLÓGICA E GESTÃO DE PROJETOS;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1205;Curso de Ciência da Computação - Bacharelado;ADMINISTRAÇÃO DE PRODUÇÃO PARA INFORMÁTICA;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1205;Curso de Ciência da Computação - Bacharelado;ADMINISTRAÇÃO DE PRODUÇÃO PARA INFORMÁTICA;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1205;Curso de Ciência da Computação - Bacharelado;ADMINISTRAÇÃO DE PRODUÇÃO PARA INFORMÁTICA;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1205;Curso de Ciência da Computação - Bacharelado;ADMINISTRAÇÃO DE PRODUÇÃO PARA INFORMÁTICA;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1219;Curso de Ciência da Computação - Bacharelado;SISTEMAS AVANÇADOS DE BANCO DE DADOS;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1220;Curso de Ciência da Computação - Bacharelado;TEORIA DE SISTEMAS;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1220;Curso de Ciência da Computação - Bacharelado;TEORIA DE SISTEMAS;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1220;Curso de Ciência da Computação - Bacharelado;TEORIA DE SISTEMAS;;10;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1311;Curso de Ciência da Computação - Bacharelado;FUNDAMENTOS LÓGICOS DA INTELIGÊNCIA ARTIFICIAL;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1311;Curso de Ciência da Computação - Bacharelado;FUNDAMENTOS LÓGICOS DA INTELIGÊNCIA ARTIFICIAL;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1315;Curso de Ciência da Computação - Bacharelado;PROJETO DE SISTEMAS OPERACIONAIS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1315;Curso de Ciência da Computação - Bacharelado;PROJETO DE SISTEMAS OPERACIONAIS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1338;Curso de Ciência da Computação - Bacharelado;GEOMETRIA COMPUTACIONAL;;45;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1338;Curso de Ciência da Computação - Bacharelado;GEOMETRIA COMPUTACIONAL;;15;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1339;Curso de Ciência da Computação - Bacharelado;COMPLEXIDADE COMPUTACIONAL;;45;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1339;Curso de Ciência da Computação - Bacharelado;COMPLEXIDADE COMPUTACIONAL;;15;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1351;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM INTERAÇÃO HUMANO-COMPUTADOR;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1351;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM INTERAÇÃO HUMANO-COMPUTADOR;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1352;Curso de Ciência da Computação - Bacharelado;DESIGN DE SISTEMAS SOCIOTÉCNICOS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1352;Curso de Ciência da Computação - Bacharelado;DESIGN DE SISTEMAS SOCIOTÉCNICOS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1353;Curso de Ciência da Computação - Bacharelado;PRÁTICA EM DESENVOLVIMENTO DE SOFTWARE;;;;;
+21A;2019;Núcleo de Conteúdos Optativos;CI1355;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM ALGORITMOS;;45;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1355;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM ALGORITMOS;;15;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1360;Curso de Ciência da Computação - Bacharelado;REDES MÓVEIS;;40;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1360;Curso de Ciência da Computação - Bacharelado;REDES MÓVEIS;;20;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1365;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM REDES DE COMPUTADORES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1365;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM REDES DE COMPUTADORES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1366;Curso de Ciência da Computação - Bacharelado;GERENCIAMENTO DE REDES DE COMPUTADORES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1366;Curso de Ciência da Computação - Bacharelado;GERENCIAMENTO DE REDES DE COMPUTADORES;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1367;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM SIMULAÇÃO DE SISTEMAS COMPUTACIONAIS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1367;Curso de Ciência da Computação - Bacharelado;TÓPICOS EM SIMULAÇÃO DE SISTEMAS COMPUTACIONAIS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1394;Curso de Ciência da Computação - Bacharelado;PROCESSAMENTO DE IMAGENS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1394;Curso de Ciência da Computação - Bacharelado;PROCESSAMENTO DE IMAGENS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI1397;Curso de Ciência da Computação - Bacharelado;SISTEMAS TUTORES INTELIGENTES;;60;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI171;Curso de Ciência da Computação - Bacharelado;APRENDIZADO DE MÁQUINAS;;30;Optativa;60;ATIVA
+21A;2019;Núcleo de Conteúdos Optativos;CI171;Curso de Ciência da Computação - Bacharelado;APRENDIZADO DE MÁQUINAS;;30;Optativa;60;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1070;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM ENGENHARIA DE SOFTWARE;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1072;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM BANCOS DE DADOS;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1074;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM REDES DE COMPUTADORES;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1076;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM ADMINISTRAÇÃO DE INFORMÁTICA;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1078;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM COMPUTAÇÃO GRÁFICA;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1080;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM INTELIGÊNCIA ARTIFICIAL;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1082;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM ORGANIZAÇÃO E ARQUITETURA DE COMPUTADORES;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1098;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM INFORMÁTICA NA EDUCAÇÃO;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1250;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM ALGORITMOS E GRAFOS;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1252;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM TEORIA DA COMPUTAÇÃO;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1254;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM SISTEMAS DIGITAIS;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1256;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO I EM SISTEMAS OPERACIONAIS;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1258;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO I EM INTERAÇÃO HUMANO-COMPUTADOR;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 1;CI1260;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 1 EM PROCESSAMENTO DE IMAGENS;7;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1071;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM ENGENHARIA DE SOFTWARE;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1073;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM BANCOS DE DADOS;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1075;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM REDES DE COMPUTADORES;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1077;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM ADMINISTRAÇÃO DE INFORMÁTICA;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1079;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM COMPUTAÇÃO GRÁFICA;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1081;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM INTELIGÊNCIA ARTIFICIAL;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1083;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM ORGANIZAÇÃO E ARQUITETURA DE COMPUTADORES;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1099;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM INFORMÁTICA NA EDUCAÇÃO;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1251;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM ALGORITMOS E GRAFOS;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1253;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM TEORIA DA COMPUTAÇÃO;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1255;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM SISTEMAS DIGITAIS;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1257;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM SISTEMAS OPERACIONAIS;8;150;Obrigatória;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1259;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM INTERAÇÃO HUMANO-COMPUTADOR;8;150;Optativa;150;ATIVA
+21A;2019;Trabalho de Conclusão de Curso 2;CI1261;Curso de Ciência da Computação - Bacharelado;TRABALHO DE CONCLUSÃO DE CURSO 2 EM PROCESSAMENTO DE IMAGENS;8;150;Optativa;150;ATIVA

@@ -1,0 +1,240 @@
+COD_CURSO;NUM_VERSAO;DESCR_ESTRUTURA;COD_DISCIPLINA;NOME_UNIDADE;NOME_DISCIPLINA;PERIODO_IDEAL;NUM_HORAS;TIPO_DISCIPLINA;SITUACAO_VERSAO;CH_TOTAL
+;;;;;;;;;;
+21A;2011;Atividades Formativas Complementares;AAC034;Curso de Ciência da Computação - Bacharelado;Atividades Formativas Complementares;;480;Obrigatória;A;480
+21A;2011;Obrigatórias;CE003;Curso de Ciência da Computação - Bacharelado;Estatística II;4;60;Obrigatória;A;60
+21A;2011;Obrigatórias;CI055;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS I;1;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI055;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS I;1;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI056;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS II;2;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI056;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS II;2;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI057;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS III;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI057;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E ESTRUTURAS DE DADOS III;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI058;Curso de Ciência da Computação - Bacharelado;REDE DE COMPUTADORES I;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI058;Curso de Ciência da Computação - Bacharelado;REDE DE COMPUTADORES I;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI059;Curso de Ciência da Computação - Bacharelado;INTRODUCAO A TEORIA DA COMPUTACAO;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI059;Curso de Ciência da Computação - Bacharelado;INTRODUCAO A TEORIA DA COMPUTACAO;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI061;Curso de Ciência da Computação - Bacharelado;REDE DE COMPUTADORES II;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI061;Curso de Ciência da Computação - Bacharelado;REDE DE COMPUTADORES II;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI062;Curso de Ciência da Computação - Bacharelado;TECNICAS ALTERNATIVAS DE PROGRAMACAO;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI062;Curso de Ciência da Computação - Bacharelado;TECNICAS ALTERNATIVAS DE PROGRAMACAO;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI064;Curso de Ciência da Computação - Bacharelado;SOFTWARE BASICO I;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI064;Curso de Ciência da Computação - Bacharelado;SOFTWARE BASICO I;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI065;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E TEORIA DOS GRAFOS;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI065;Curso de Ciência da Computação - Bacharelado;ALGORITMOS E TEORIA DOS GRAFOS;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI067;Curso de Ciência da Computação - Bacharelado;OFICINA DE COMPUTACAO;2;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI067;Curso de Ciência da Computação - Bacharelado;OFICINA DE COMPUTACAO;2;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI068;Curso de Ciência da Computação - Bacharelado;CIRCUITOS LOGICOS;1;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI068;Curso de Ciência da Computação - Bacharelado;CIRCUITOS LOGICOS;1;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI162;Curso de Ciência da Computação - Bacharelado;Engenharia de Requisitos;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI162;Curso de Ciência da Computação - Bacharelado;Engenharia de Requisitos;5;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI163;Curso de Ciência da Computação - Bacharelado;Projeto de Software;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI163;Curso de Ciência da Computação - Bacharelado;Projeto de Software;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI164;Curso de Ciência da Computação - Bacharelado;Introdução à Computação Científica;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI164;Curso de Ciência da Computação - Bacharelado;Introdução à Computação Científica;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI165;Curso de Ciência da Computação - Bacharelado;Análise de Algoritmos;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI165;Curso de Ciência da Computação - Bacharelado;Análise de Algoritmos;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI166;Curso de Ciência da Computação - Bacharelado;Metodologia Científica;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI166;Curso de Ciência da Computação - Bacharelado;Metodologia Científica;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI209;Curso de Ciência da Computação - Bacharelado;INTELIGENCIA ARTIFICIAL;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI209;Curso de Ciência da Computação - Bacharelado;INTELIGENCIA ARTIFICIAL;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI210;Curso de Ciência da Computação - Bacharelado;PROJETOS DIGITAIS E MICROPROCESSADORES;2;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI210;Curso de Ciência da Computação - Bacharelado;PROJETOS DIGITAIS E MICROPROCESSADORES;2;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI211;Curso de Ciência da Computação - Bacharelado;CONSTRUCAO DE COMPILADORES;7;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI211;Curso de Ciência da Computação - Bacharelado;CONSTRUCAO DE COMPILADORES;7;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI212;Curso de Ciência da Computação - Bacharelado;ORGANIZACAO E ARQUIT DE COMPUTADORES;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI212;Curso de Ciência da Computação - Bacharelado;ORGANIZACAO E ARQUIT DE COMPUTADORES;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI215;Curso de Ciência da Computação - Bacharelado;SISTEMAS OPERACIONAIS;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI215;Curso de Ciência da Computação - Bacharelado;SISTEMAS OPERACIONAIS;4;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI218;Curso de Ciência da Computação - Bacharelado;SISTEMAS DE BANCOS DE DADOS;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI218;Curso de Ciência da Computação - Bacharelado;SISTEMAS DE BANCOS DE DADOS;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI220;Curso de Ciência da Computação - Bacharelado;TEORIA DE SISTEMAS;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI220;Curso de Ciência da Computação - Bacharelado;TEORIA DE SISTEMAS;6;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI221;Curso de Ciência da Computação - Bacharelado;ENGENHARIA DE SOFTWARE;7;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI221;Curso de Ciência da Computação - Bacharelado;ENGENHARIA DE SOFTWARE;7;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI237;Curso de Ciência da Computação - Bacharelado;MATEMATICA DISCRETA;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CI237;Curso de Ciência da Computação - Bacharelado;MATEMATICA DISCRETA;3;30;Obrigatória;A;60
+21A;2011;Obrigatórias;CM005;Curso de Ciência da Computação - Bacharelado;ÁLGEBRA LINEAR;2;60;Obrigatória;A;60
+21A;2011;Obrigatórias;CM045;Curso de Ciência da Computação - Bacharelado;Geometria Analítica;1;60;Obrigatória;A;60
+21A;2011;Obrigatórias;CM046;Curso de Ciência da Computação - Bacharelado;INTRODUCAO A ALGEBRA;1;60;Obrigatória;A;60
+21A;2011;Obrigatórias;CM201;Curso de Ciência da Computação - Bacharelado;CALCULO DIFERENCIAL E INTEGRAL I;1;60;Obrigatória;A;60
+21A;2011;Obrigatórias;CM202;Curso de Ciência da Computação - Bacharelado;CALCULO DIFERENCIAL E INTEGRAL II;2;60;Obrigatória;A;60
+21A;2011;Obrigatórias;SA214;Curso de Ciência da Computação - Bacharelado;INTRODUCAO A TEORIA GERAL DA ADMINISTRACAO;5;60;Obrigatória;A;60
+21A;2011;Optativas;CE211;Curso de Ciência da Computação - Bacharelado;PROCESSOS ESTOCASTICOS;;60;Optativa;A;60
+21A;2011;Optativas;CI069;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO DE EMPRESAS DE INFORMATICA;;30;Optativa;A;60
+21A;2011;Optativas;CI069;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO DE EMPRESAS DE INFORMATICA;;30;Optativa;A;60
+21A;2011;Optativas;CI084;Curso de Ciência da Computação - Bacharelado;TOPICOS EM TEORIA DOS GRAFOS;;30;Optativa;A;60
+21A;2011;Optativas;CI084;Curso de Ciência da Computação - Bacharelado;TOPICOS EM TEORIA DOS GRAFOS;;30;Optativa;A;60
+21A;2011;Optativas;CI085;Curso de Ciência da Computação - Bacharelado;TOPICOS EM COMPUTACAO GRAFICA;;30;Optativa;A;60
+21A;2011;Optativas;CI085;Curso de Ciência da Computação - Bacharelado;TOPICOS EM COMPUTACAO GRAFICA;;30;Optativa;A;60
+21A;2011;Optativas;CI086;Curso de Ciência da Computação - Bacharelado;TOPICOS EM ARQUITETURA DE COMPUTADORES;;30;Optativa;A;60
+21A;2011;Optativas;CI086;Curso de Ciência da Computação - Bacharelado;TOPICOS EM ARQUITETURA DE COMPUTADORES;;30;Optativa;A;60
+21A;2011;Optativas;CI087;Curso de Ciência da Computação - Bacharelado;TOPICOS EM BANCO DE DADOS;;30;Optativa;A;60
+21A;2011;Optativas;CI087;Curso de Ciência da Computação - Bacharelado;TOPICOS EM BANCO DE DADOS;;30;Optativa;A;60
+21A;2011;Optativas;CI088;Curso de Ciência da Computação - Bacharelado;TOPICOS EM SISTEMAS DISTRIBUIDOS;;30;Optativa;A;60
+21A;2011;Optativas;CI088;Curso de Ciência da Computação - Bacharelado;TOPICOS EM SISTEMAS DISTRIBUIDOS;;30;Optativa;A;60
+21A;2011;Optativas;CI089;Curso de Ciência da Computação - Bacharelado;TOPICOS EM TEORIA DA COMPUTACAO;;30;Optativa;A;60
+21A;2011;Optativas;CI089;Curso de Ciência da Computação - Bacharelado;TOPICOS EM TEORIA DA COMPUTACAO;;30;Optativa;A;60
+21A;2011;Optativas;CI090;Curso de Ciência da Computação - Bacharelado;TOPICOS EM ENGENHARIA DE SOFTWARE;;30;Optativa;A;60
+21A;2011;Optativas;CI090;Curso de Ciência da Computação - Bacharelado;TOPICOS EM ENGENHARIA DE SOFTWARE;;30;Optativa;A;60
+21A;2011;Optativas;CI091;Curso de Ciência da Computação - Bacharelado;TOPICOS DE AVALIACAO DE DESEMPENHO;;30;Optativa;A;60
+21A;2011;Optativas;CI091;Curso de Ciência da Computação - Bacharelado;TOPICOS DE AVALIACAO DE DESEMPENHO;;30;Optativa;A;60
+21A;2011;Optativas;CI092;Curso de Ciência da Computação - Bacharelado;TOPICOS EM TECNOLOGIAS E APLICACOES;;30;Optativa;A;60
+21A;2011;Optativas;CI092;Curso de Ciência da Computação - Bacharelado;TOPICOS EM TECNOLOGIAS E APLICACOES;;30;Optativa;A;60
+21A;2011;Optativas;CI093;Curso de Ciência da Computação - Bacharelado;TOPICOS EM ANALISE NUMERICA;;30;Optativa;A;60
+21A;2011;Optativas;CI093;Curso de Ciência da Computação - Bacharelado;TOPICOS EM ANALISE NUMERICA;;30;Optativa;A;60
+21A;2011;Optativas;CI094;Curso de Ciência da Computação - Bacharelado;TOPICOS EM PROCESSAMENTO DE IMAGENS;;30;Optativa;A;60
+21A;2011;Optativas;CI094;Curso de Ciência da Computação - Bacharelado;TOPICOS EM PROCESSAMENTO DE IMAGENS;;30;Optativa;A;60
+21A;2011;Optativas;CI095;Curso de Ciência da Computação - Bacharelado;TOPICOS EM COMPILADORES;;30;Optativa;A;60
+21A;2011;Optativas;CI095;Curso de Ciência da Computação - Bacharelado;TOPICOS EM COMPILADORES;;30;Optativa;A;60
+21A;2011;Optativas;CI097;Curso de Ciência da Computação - Bacharelado;TOPICOS EM SISTEMAS DIGITAIS;;30;Optativa;A;60
+21A;2011;Optativas;CI097;Curso de Ciência da Computação - Bacharelado;TOPICOS EM SISTEMAS DIGITAIS;;30;Optativa;A;60
+21A;2011;Optativas;CI167;Curso de Ciência da Computação - Bacharelado;Sistemas de Informação em Saúde;;30;Optativa;A;60
+21A;2011;Optativas;CI167;Curso de Ciência da Computação - Bacharelado;Sistemas de Informação em Saúde;;30;Optativa;A;60
+21A;2011;Optativas;CI168;Curso de Ciência da Computação - Bacharelado;Tópicos em Sistemas de Informação em Saúde;;30;Optativa;A;60
+21A;2011;Optativas;CI168;Curso de Ciência da Computação - Bacharelado;Tópicos em Sistemas de Informação em Saúde;;30;Optativa;A;60
+21A;2011;Optativas;CI169;Curso de Ciência da Computação - Bacharelado;Bioinformática;;30;Optativa;A;60
+21A;2011;Optativas;CI169;Curso de Ciência da Computação - Bacharelado;Bioinformática;;30;Optativa;A;60
+21A;2011;Optativas;CI170;Curso de Ciência da Computação - Bacharelado;Tópicos em Bioinformática;;30;Optativa;A;60
+21A;2011;Optativas;CI170;Curso de Ciência da Computação - Bacharelado;Tópicos em Bioinformática;;30;Optativa;A;60
+21A;2011;Optativas;CI171;Curso de Ciência da Computação - Bacharelado;APRENDIZADO DE MÁQUINAS;;30;Optativa;A;60
+21A;2011;Optativas;CI171;Curso de Ciência da Computação - Bacharelado;APRENDIZADO DE MÁQUINAS;;30;Optativa;A;60
+21A;2011;Optativas;CI172;Curso de Ciência da Computação - Bacharelado;Processamento de Imagnes Biomédicas;;30;Optativa;A;60
+21A;2011;Optativas;CI172;Curso de Ciência da Computação - Bacharelado;Processamento de Imagnes Biomédicas;;30;Optativa;A;60
+21A;2011;Optativas;CI173;Curso de Ciência da Computação - Bacharelado;Computação Gráfica;;30;Optativa;A;60
+21A;2011;Optativas;CI173;Curso de Ciência da Computação - Bacharelado;Computação Gráfica;;30;Optativa;A;60
+21A;2011;Optativas;CI174;Curso de Ciência da Computação - Bacharelado;Tópicos em Engenharia da Computação;;30;Optativa;A;60
+21A;2011;Optativas;CI174;Curso de Ciência da Computação - Bacharelado;Tópicos em Engenharia da Computação;;30;Optativa;A;60
+21A;2011;Optativas;CI204;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO DE INFORMATICA;;30;Optativa;A;60
+21A;2011;Optativas;CI204;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO DE INFORMATICA;;30;Optativa;A;60
+21A;2011;Optativas;CI205;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO DA PRODUCAO P/ INFORMATICA;;30;Optativa;A;60
+21A;2011;Optativas;CI205;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO DA PRODUCAO P/ INFORMATICA;;30;Optativa;A;60
+21A;2011;Optativas;CI214;Curso de Ciência da Computação - Bacharelado;ESTRUTURAS DE LINGUAGENS DE PROGRAMACAO;;30;Optativa;A;60
+21A;2011;Optativas;CI214;Curso de Ciência da Computação - Bacharelado;ESTRUTURAS DE LINGUAGENS DE PROGRAMACAO;;30;Optativa;A;60
+21A;2011;Optativas;CI301;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação I;;30;Optativa;A;60
+21A;2011;Optativas;CI301;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação I;;30;Optativa;A;60
+21A;2011;Optativas;CI302;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação II;;30;Optativa;A;60
+21A;2011;Optativas;CI302;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação II;;30;Optativa;A;60
+21A;2011;Optativas;CI303;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação III;;30;Optativa;A;60
+21A;2011;Optativas;CI303;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação III;;30;Optativa;A;60
+21A;2011;Optativas;CI304;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação IV;;30;Optativa;A;60
+21A;2011;Optativas;CI304;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação IV;;30;Optativa;A;60
+21A;2011;Optativas;CI305;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação V;;30;Optativa;A;60
+21A;2011;Optativas;CI305;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação V;;30;Optativa;A;60
+21A;2011;Optativas;CI306;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação VI;;30;Optativa;A;60
+21A;2011;Optativas;CI306;Curso de Ciência da Computação - Bacharelado;Tópicos em Ciência da Computação VI;;30;Optativa;A;60
+21A;2011;Optativas;CI309;Curso de Ciência da Computação - Bacharelado;Tópicos em Inteligência Artificial;;30;Optativa;A;60
+21A;2011;Optativas;CI309;Curso de Ciência da Computação - Bacharelado;Tópicos em Inteligência Artificial;;30;Optativa;A;60
+21A;2011;Optativas;CI310;Curso de Ciência da Computação - Bacharelado;Tópicos em Aprendizado de Máquinas;;30;Optativa;A;60
+21A;2011;Optativas;CI310;Curso de Ciência da Computação - Bacharelado;Tópicos em Aprendizado de Máquinas;;30;Optativa;A;60
+21A;2011;Optativas;CI311;Curso de Ciência da Computação - Bacharelado;Fundamentos Lógicos da Inteligência Artificial;;30;Optativa;A;60
+21A;2011;Optativas;CI311;Curso de Ciência da Computação - Bacharelado;Fundamentos Lógicos da Inteligência Artificial;;30;Optativa;A;60
+21A;2011;Optativas;CI312;Curso de Ciência da Computação - Bacharelado;Arquiteturas Avançadas de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI312;Curso de Ciência da Computação - Bacharelado;Arquiteturas Avançadas de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI313;Curso de Ciência da Computação - Bacharelado;Arquitetura de Computadores Paralelos;;30;Optativa;A;60
+21A;2011;Optativas;CI313;Curso de Ciência da Computação - Bacharelado;Arquitetura de Computadores Paralelos;;30;Optativa;A;60
+21A;2011;Optativas;CI314;Curso de Ciência da Computação - Bacharelado;Introdução à Computação Paralela;;30;Optativa;A;60
+21A;2011;Optativas;CI314;Curso de Ciência da Computação - Bacharelado;Introdução à Computação Paralela;;30;Optativa;A;60
+21A;2011;Optativas;CI315;Curso de Ciência da Computação - Bacharelado;Projeto de Sistemas Operacionais;;30;Optativa;A;60
+21A;2011;Optativas;CI315;Curso de Ciência da Computação - Bacharelado;Projeto de Sistemas Operacionais;;30;Optativa;A;60
+21A;2011;Optativas;CI316;Curso de Ciência da Computação - Bacharelado;Programação Paralela;;30;Optativa;A;60
+21A;2011;Optativas;CI316;Curso de Ciência da Computação - Bacharelado;Programação Paralela;;30;Optativa;A;60
+21A;2011;Optativas;CI317;Curso de Ciência da Computação - Bacharelado;Tópicos em Sistemas Operacionais;;30;Optativa;A;60
+21A;2011;Optativas;CI317;Curso de Ciência da Computação - Bacharelado;Tópicos em Sistemas Operacionais;;30;Optativa;A;60
+21A;2011;Optativas;CI318;Curso de Ciência da Computação - Bacharelado;Tópicos em Computação Paralela;;30;Optativa;A;60
+21A;2011;Optativas;CI318;Curso de Ciência da Computação - Bacharelado;Tópicos em Computação Paralela;;30;Optativa;A;60
+21A;2011;Optativas;CI320;Curso de Ciência da Computação - Bacharelado;Tópicos em Programação de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI320;Curso de Ciência da Computação - Bacharelado;Tópicos em Programação de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI321;Curso de Ciência da Computação - Bacharelado;Tópicos em Sistemas Embutidos;;30;Optativa;A;60
+21A;2011;Optativas;CI321;Curso de Ciência da Computação - Bacharelado;Tópicos em Sistemas Embutidos;;30;Optativa;A;60
+21A;2011;Optativas;CI337;Curso de Ciência da Computação - Bacharelado;Tópicos em Matemática Discreta;;30;Optativa;A;60
+21A;2011;Optativas;CI337;Curso de Ciência da Computação - Bacharelado;Tópicos em Matemática Discreta;;30;Optativa;A;60
+21A;2011;Optativas;CI338;Curso de Ciência da Computação - Bacharelado;Tópicos em Geometria Computacional;;30;Optativa;A;60
+21A;2011;Optativas;CI338;Curso de Ciência da Computação - Bacharelado;Tópicos em Geometria Computacional;;30;Optativa;A;60
+21A;2011;Optativas;CI339;Curso de Ciência da Computação - Bacharelado;Complexidade Computacional;;30;Optativa;A;60
+21A;2011;Optativas;CI339;Curso de Ciência da Computação - Bacharelado;Complexidade Computacional;;30;Optativa;A;60
+21A;2011;Optativas;CI340;Curso de Ciência da Computação - Bacharelado;Tópicos em Métodos Formais;;30;Optativa;A;60
+21A;2011;Optativas;CI340;Curso de Ciência da Computação - Bacharelado;Tópicos em Métodos Formais;;30;Optativa;A;60
+21A;2011;Optativas;CI350;Curso de Ciência da Computação - Bacharelado;Interação Humano-Computador;;30;Optativa;A;60
+21A;2011;Optativas;CI350;Curso de Ciência da Computação - Bacharelado;Interação Humano-Computador;;30;Optativa;A;60
+21A;2011;Optativas;CI351;Curso de Ciência da Computação - Bacharelado;Tópicos em Interação Humano-Computador;;30;Optativa;A;60
+21A;2011;Optativas;CI351;Curso de Ciência da Computação - Bacharelado;Tópicos em Interação Humano-Computador;;30;Optativa;A;60
+21A;2011;Optativas;CI355;Curso de Ciência da Computação - Bacharelado;Tópicos em Algoritimos;;30;Optativa;A;60
+21A;2011;Optativas;CI355;Curso de Ciência da Computação - Bacharelado;Tópicos em Algoritimos;;30;Optativa;A;60
+21A;2011;Optativas;CI358;Curso de Ciência da Computação - Bacharelado;Administração e Gerência de Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI358;Curso de Ciência da Computação - Bacharelado;Administração e Gerência de Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI359;Curso de Ciência da Computação - Bacharelado;Laboratório de Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI359;Curso de Ciência da Computação - Bacharelado;Laboratório de Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI360;Curso de Ciência da Computação - Bacharelado;REDES MÓVEIS;;30;Optativa;A;60
+21A;2011;Optativas;CI360;Curso de Ciência da Computação - Bacharelado;REDES MÓVEIS;;30;Optativa;A;60
+21A;2011;Optativas;CI361;Curso de Ciência da Computação - Bacharelado;Sistemas Distribuídos;;30;Optativa;A;60
+21A;2011;Optativas;CI361;Curso de Ciência da Computação - Bacharelado;Sistemas Distribuídos;;30;Optativa;A;60
+21A;2011;Optativas;CI362;Curso de Ciência da Computação - Bacharelado;Sistemas Operacionais Distribuídos;;30;Optativa;A;60
+21A;2011;Optativas;CI362;Curso de Ciência da Computação - Bacharelado;Sistemas Operacionais Distribuídos;;30;Optativa;A;60
+21A;2011;Optativas;CI363;Curso de Ciência da Computação - Bacharelado;Tópicos de Multimídia em Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI363;Curso de Ciência da Computação - Bacharelado;Tópicos de Multimídia em Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI364;Curso de Ciência da Computação - Bacharelado;Tópicos em Computação em Rede;;30;Optativa;A;60
+21A;2011;Optativas;CI364;Curso de Ciência da Computação - Bacharelado;Tópicos em Computação em Rede;;30;Optativa;A;60
+21A;2011;Optativas;CI365;Curso de Ciência da Computação - Bacharelado;Tópicos em Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI365;Curso de Ciência da Computação - Bacharelado;Tópicos em Redes de Computadores;;30;Optativa;A;60
+21A;2011;Optativas;CI366;Curso de Ciência da Computação - Bacharelado;Tópicos em Redes Móveis;;30;Optativa;A;60
+21A;2011;Optativas;CI366;Curso de Ciência da Computação - Bacharelado;Tópicos em Redes Móveis;;30;Optativa;A;60
+21A;2011;Optativas;CI367;Curso de Ciência da Computação - Bacharelado;Tópicos em Simulação de Sistemas Computacionais;;30;Optativa;A;60
+21A;2011;Optativas;CI367;Curso de Ciência da Computação - Bacharelado;Tópicos em Simulação de Sistemas Computacionais;;30;Optativa;A;60
+21A;2011;Optativas;CI394;Curso de Ciência da Computação - Bacharelado;PROCESSAMENTO DE IMAGENS;;30;Optativa;A;60
+21A;2011;Optativas;CI394;Curso de Ciência da Computação - Bacharelado;PROCESSAMENTO DE IMAGENS;;30;Optativa;A;60
+21A;2011;Optativas;CI395;Curso de Ciência da Computação - Bacharelado;Oficina de Visão Computacional e Processamento de Imagens;;30;Optativa;A;60
+21A;2011;Optativas;CI395;Curso de Ciência da Computação - Bacharelado;Oficina de Visão Computacional e Processamento de Imagens;;30;Optativa;A;60
+21A;2011;Optativas;CI396;Curso de Ciência da Computação - Bacharelado;Tópicos em Visão Computacional;;30;Optativa;A;60
+21A;2011;Optativas;CI396;Curso de Ciência da Computação - Bacharelado;Tópicos em Visão Computacional;;30;Optativa;A;60
+21A;2011;Optativas;CM043;Curso de Ciência da Computação - Bacharelado;CALCULO III;;60;Optativa;A;60
+21A;2011;Optativas;ET082;Curso de Ciência da Computação - Bacharelado;Comunicação em Língua Brasileira de Sinais - LIBRAS;;30;Optativa;A;30
+21A;2011;Optativas;HL077;Curso de Ciência da Computação - Bacharelado;COMUNICACAO E LINGUISTICA;;60;Optativa;A;60
+21A;2011;Optativas;LIB037;Curso de Ciência da Computação - Bacharelado;COMUNICAÇÃO EM LINGUA  BRASILEIRA DE SINAIS-LIBRAS;;30;Optativa;A;30
+21A;2011;Optativas;SA017;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO III;;30;Optativa;A;60
+21A;2011;Optativas;SA017;Curso de Ciência da Computação - Bacharelado;ADMINISTRACAO III;;30;Optativa;A;60
+21A;2011;Optativas;SC003;Curso de Ciência da Computação - Bacharelado;CONTABILIDADE GERAL I;;60;Optativa;A;60
+21A;2011;Optativas;SC202;Curso de Ciência da Computação - Bacharelado;CONTABILIDADE DE CUSTOS PARA INFORMATICA;;60;Optativa;A;60
+21A;2011;Optativas;SC203;Curso de Ciência da Computação - Bacharelado;MATEMATICA FINANCEIRA PARA INFORMATICA;;60;Optativa;A;60
+21A;2011;Trabalho de Graduação I;CI070;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM ENGENHARIA DE SOFTWARE I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI070;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM ENGENHARIA DE SOFTWARE I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI072;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM BANCO DE DADOS I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI072;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM BANCO DE DADOS I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI074;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM REDES DE COMPUTADORES I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI074;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM REDES DE COMPUTADORES I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI076;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM ADM DE INFORMATICA I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI076;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM ADM DE INFORMATICA I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI078;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM COMPUTACAO DE IMAGENS I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI078;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM COMPUTACAO DE IMAGENS I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI080;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM INTELIGENCIA ARTIFICIAL I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI080;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM INTELIGENCIA ARTIFICIAL I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI082;Curso de Ciência da Computação - Bacharelado;TRAB DE GRAD EM ORGA. E ARQU DE COMPUTADORES I;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI082;Curso de Ciência da Computação - Bacharelado;TRAB DE GRAD EM ORGA. E ARQU DE COMPUTADORES I;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI098;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM INFORMATICA DA EDUCACAO I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI098;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM INFORMATICA DA EDUCACAO I;7;60;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI250;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Algoritmos e Grafos I;7;120;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI252;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Teoria da Computação I;7;120;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI254;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Sistemas Digitais I;7;120;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI256;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Sistemas Operacionais I;;120;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI258;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Interação Humano-Computador I;7;120;Optativa;A;120
+21A;2011;Trabalho de Graduação I;CI260;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Processamento de Imagens I;7;120;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI071;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM ENGENHARIA DE SOFTWARE II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI071;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM ENGENHARIA DE SOFTWARE II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI073;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM BANCO DE DADOS II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI073;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRADUACAO EM BANCO DE DADOS II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI075;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM REDES DE COMPUTADORES II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI075;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM REDES DE COMPUTADORES II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI077;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM ADM DE INFORMATICA II;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI077;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM ADM DE INFORMATICA II;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI079;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM COMPUTACAO DE IMAGENS II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI079;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM COMPUTACAO DE IMAGENS II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI081;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM INTELIGENCIA ARTIFICIAL II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI081;Curso de Ciência da Computação - Bacharelado;TRAB DE GRADUACAO EM INTELIGENCIA ARTIFICIAL II;8;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI083;Curso de Ciência da Computação - Bacharelado;TRAB DE GRAD EM ORGA. E ARQU DE COMPUTADORES II;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI083;Curso de Ciência da Computação - Bacharelado;TRAB DE GRAD EM ORGA. E ARQU DE COMPUTADORES II;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI099;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRAD EM INFORMATICA DA EDUCACAO II;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI099;Curso de Ciência da Computação - Bacharelado;TRABALHO DE GRAD EM INFORMATICA DA EDUCACAO II;;60;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI251;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Algoritmos e Grafos II;8;120;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI253;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Teoria da Computação II;8;120;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI255;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Sistemas Digitais II;8;120;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI257;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Sistemas Operacionais II;8;120;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI259;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Interação Humano-Computador II;8;120;Optativa;A;120
+21A;2011;Trabalho de Graduação II;CI261;Curso de Ciência da Computação - Bacharelado;Trabalho de Graduação em Processamento de Imagens II;8;120;Optativa;A;120
