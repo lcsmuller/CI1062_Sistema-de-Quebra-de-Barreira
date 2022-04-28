@@ -30,8 +30,9 @@ public class ListaMateria {
 		this.lista.remove(pos);
 	}
 
-	public Vector<Integer> procutarMateria (String codigoMateria) {
-		Vector<Integer>lista_indice = new Vector<>();
+	public Vector<Integer> procurarMateria (String codigoMateria) {
+		Vector<Integer> lista_indice = new Vector<>();
+
 		for (int i = 0; i < this.lista.size(); i++) {
 			String cod_curso_lista = this.lista.get(i).getCodigoMateria();
 			if (cod_curso_lista.equals(codigoMateria))

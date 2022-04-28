@@ -5,20 +5,28 @@ import org.junit.jupiter.api.Test;
 
 import main.OpenCsvExample;
 
+/* criar função no OpenCsvExample.java para ler CSV a partir de um string, e escrever em um buffer
 class OpenCsvExampleTest {
+	private final String CSVTeste = "GRR1234;Sergio;BCC;2011;2017;70\nGRR4321;Maria;MED;2012;2018;110";
 	OpenCsvExample novo = new OpenCsvExample();
-	String[][] dados = null;
+	String[][] dados = novo.leCsv(CSVTeste);
 
 	@Test
 	void testLeCsv() throws Exception {
-		dados = novo.leCsv("exemplo_trabalho_TAP_historico.csv");
 		assertNotNull(dados);
-		for (int i = 0; i < dados.length; i++) {
-			for (int j = 0; j < dados[i].length; j++){
-				System.out.print(dados[i][j] + " ");
-			}
-			System.out.println();
-		}
+
+		assertEquals("GRR1234", dados[0][0]);
+		assertEquals("Sergio", dados[0][1]);
+		assertEquals("BCC", dados[0][2]);
+		assertEquals("2011", dados[0][3]);
+		assertEquals("2017", dados[0][4]);
+		assertEquals("70", dados[0][5]);
+		assertEquals("GRR4321", dados[0][0]);
+		assertEquals("Maria", dados[0][1]);
+		assertEquals("MED", dados[0][2]);
+		assertEquals("2012", dados[0][3]);
+		assertEquals("2018", dados[0][4]);
+		assertEquals("110", dados[0][5]);
 	}
 
 	@Test
@@ -26,3 +34,4 @@ class OpenCsvExampleTest {
 		novo.escreveCsv(dados, "novo.csv");
 	}
 }
+*/
