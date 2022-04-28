@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import main.OpenCsvExample;
 
-/* criar função no OpenCsvExample.java para ler CSV a partir de um string, e escrever em um buffer
 class OpenCsvExampleTest {
+/* criar função no OpenCsvExample.java para ler CSV a partir de um string, e escrever em um buffer
 	private final String CSVTeste = "GRR1234;Sergio;BCC;2011;2017;70\nGRR4321;Maria;MED;2012;2018;110";
 	OpenCsvExample novo = new OpenCsvExample();
 	String[][] dados = novo.leCsv(CSVTeste);
@@ -33,5 +33,28 @@ class OpenCsvExampleTest {
 	void testEscreveCsv() throws Exception {
 		novo.escreveCsv(dados, "novo.csv");
 	}
-}
 */
+	public static void main(String args[]) throws Exception {
+		OpenCsvExample novo = new OpenCsvExample();
+		String[][] info = null;
+		try {
+			info = novo.leCsv("exemplo_trabalho_TAP_Disciplinas_2019.csv");
+		} catch (Exception e) {
+			System.out.println("deu ruim");
+		}	
+		ListaMateria lista = new ListaMateria();
+		Materia materia;
+		for(int i = 3; i < 60; i++) {
+			materia = lista.stringToMateria2019(info[i]);
+			System.out.println("{" + materia.getCodigoCurso() 
+			+" "+ materia.getCodigoMateria() 
+			+" "+ materia.getHoras() 
+			+" "+ materia.getNome() 
+			+" "+ materia.getPeriodo() 
+			+" "+ materia.getTipo() 
+			+" "+ materia.getVersao() 
+			+ "}");
+		}
+		novo.escreveCsv(info, "novo.csv");
+	}
+}

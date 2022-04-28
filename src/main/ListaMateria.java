@@ -4,7 +4,31 @@ import java.util.Vector;
 
 public class ListaMateria {
 
-    private Vector<Materia> lista = new Vector<Materia>();
+        private Vector<Materia> lista = new Vector<Materia>();
+    
+        public Materia stringToMateria2019(String[] entrada){
+  		Materia nova = new Materia();
+  		nova.setCodigoCurso(entrada[0]);
+  		nova.setVersao(Integer.parseInt(entrada[1]));
+  		nova.setCodigoMateria(entrada[3]);
+  		nova.setNome(entrada[5]);
+  		nova.setPeriodo(Integer.parseInt(entrada[6]));
+  		nova.setTipo(entrada[8]);
+  		nova.setHoras(Integer.parseInt(entrada[9]));
+  		return nova;
+  	}
+    
+        public Materia stringToMateria2011(String[] entrada){
+  		Materia nova = new Materia();
+  		nova.setCodigoCurso(entrada[0]);
+  		nova.setVersao(Integer.parseInt(entrada[1]));
+  		nova.setCodigoMateria(entrada[3]);
+  		nova.setNome(entrada[5]);
+  		nova.setPeriodo(Integer.parseInt(entrada[6]));
+  		nova.setTipo(entrada[8]);
+  		nova.setHoras(Integer.parseInt(entrada[10]));
+  		return nova;
+  	}
 
 	public Vector<Materia> getLista() {
 		return lista;

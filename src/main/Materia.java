@@ -2,26 +2,28 @@ package main;
 
 public class Materia {
 
-    private String codigoCurso;
-    private int versao;
-    private String codigoMateria;
-    private String nome;
-    private int periodo;
-    private String tipo;
-    private int horas;
-    
-    public Materia() {
-    }
-    
-    public Materia(String codigoCurso, int versao, String codigoMateria, String nome, int periodo, String tipo, int horas) {
-    	this.codigoCurso = codigoCurso;
-    	this.versao = versao;
-    	this.codigoMateria = codigoMateria;
-    	this.nome = nome;
-    	this.periodo = periodo;
-    	this.tipo = tipo;
-    	this.horas = horas;
-    }
+        private String codigoCurso;
+        private int versao;
+        private String codigoMateria;
+        private String nome;
+        private int periodo;
+        private String tipo;
+        private int horas;
+        
+        public Materia() {
+        }
+        
+        public Materia(String codigoCurso, int versao, String codigoMateria,
+                       String nome, int periodo, String tipo, int horas)
+        {
+            this.codigoCurso = codigoCurso;
+            this.versao = versao;
+            this.codigoMateria = codigoMateria;
+            this.nome = nome;
+            this.periodo = periodo;
+            this.tipo = tipo;
+            this.horas = horas;
+        }
     
 	public String getCodigoCurso() {
 		return codigoCurso;
