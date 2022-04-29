@@ -2,6 +2,7 @@ package main;
 
 import java.io.BufferedReader;
 
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,11 +15,11 @@ public class OpenCsvExample {
 		String[][] data = null;
 		try{
 			BufferedReader csvReader = new BufferedReader(new FileReader(arquivo)); //colocar nome do arquivo que sere passado
-			data = new String[2000][1];
+			data = new String[2000][1]; //chuncho, gambiarra, artifico tecnico, engenharia de emergencia, decisão de projeto (mas funciona)
 			int i = 0;
 			String row;
 			while ((row = csvReader.readLine()) != null) {
-				String[] linha = row.split(";"); // mudar ; ï¿½ o separador de celular do csv
+				String[] linha = row.split(";"); // mudar ; o separador de celulas do csv
 				data[i] = linha;
 				i++;
 			}

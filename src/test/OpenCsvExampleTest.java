@@ -1,11 +1,14 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*; 
 import org.junit.jupiter.api.Test;
 
 import main.ListaMateria;
 import main.Materia;
 import main.OpenCsvExample;
+import main.Materia;
+import main.ListaMateria;
+import main.MateriaAluno;
 
 class OpenCsvExampleTest {
 /* criar função no OpenCsvExample.java para ler CSV a partir de um string, e escrever em um buffer
@@ -40,23 +43,17 @@ class OpenCsvExampleTest {
 		OpenCsvExample novo = new OpenCsvExample();
 		String[][] info = null;
 		try {
-			info = novo.leCsv("exemplo_trabalho_TAP_Disciplinas_2019.csv");
+			info = novo.leCsv("exemplo_trabalho_TAP_historico.csv");
 		} catch (Exception e) {
 			System.out.println("deu ruim");
 		}	
-		ListaMateria lista = new ListaMateria();
-		Materia materia;
-		for(int i = 3; i < 60; i++) {
-			materia = lista.stringToMateria2019(info[i]);
-			System.out.println("{" + materia.getCodigoCurso() 
-			+" "+ materia.getCodigoMateria() 
-			+" "+ materia.getHoras() 
-			+" "+ materia.getNome() 
-			+" "+ materia.getPeriodo() 
-			+" "+ materia.getTipo() 
-			+" "+ materia.getVersao() 
-			+ "}");
-		}
+		//ListaMateria lista = new ListaMateria();	//cria o objeto 
+		//lista.matrizToLista(info);					//preenche 
+		//lista.imprime();							//imprime
+		//novo.escreveCsv(info, "novo.csv");			//escreveno arquivo
+		MateriaAluno coisa = new MateriaAluno();
+		coisa.matrizToLista(info);
+		coisa.imprimeLista();
 		novo.escreveCsv(info, "novo.csv");
 	}
 }
