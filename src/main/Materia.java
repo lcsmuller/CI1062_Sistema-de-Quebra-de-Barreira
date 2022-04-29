@@ -73,4 +73,15 @@ public class Materia {
 	public void setHoras(int horas) {
 		this.horas = horas;
 	}
+	
+	public String imprimivel() {
+		return ("{" + this.getCodigoCurso() 
+		+","+ this.getCodigoMateria() 
+		+","+ this.getHoras() 
+		+","+ this.getNome() 
+		+","+ this.getPeriodo() 
+		+","+ this.getTipo() 
+		+","+ this.getVersao() 
+		+ "}");
+	}
 }

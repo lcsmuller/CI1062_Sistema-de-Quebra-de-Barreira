@@ -14,7 +14,46 @@ public class MateriaAluno {
 	public Vector<AlunoMateria> getLista() {
 		return lista;
 	}
-
+	 public AlunoMateria stringToMateria(String[] entrada){
+  		AlunoMateria nova = new AlunoMateria();
+  		nova.setCodigoCurso(entrada[2]);
+  		nova.setVersao(Integer.parseInt(entrada[4]));
+  		nova.setCodigoMateria(entrada[10]);
+  		nova.setNome(entrada[11]);
+		nova.setPeriodo(0);
+  		nova.setTipo(entrada[13]);
+  		nova.setHoras(Integer.parseInt(entrada[12]));
+  		nova.setNota(Integer.parseInt(entrada[6]));
+  		try {
+  			nova.setFrequencia(Integer.parseInt(entrada[14]));
+  		}catch(Exception erro){
+  			nova.setFrequencia(0);
+  		}
+  		nova.setSituacao(entrada[15]);
+  		return nova;
+  	}
+	 
+	 public void matrizToLista(String[][] entrada){
+   		for(int i = 2; i < entrada.length; i++) {
+   			AlunoMateria materia = this.stringToMateria(entrada[i]);
+    		this.inserir(materia);
+    	}
+	}
+	
+	public void imprimeLista() {
+		for(int i = 1; i < this.tamanhoLista(); i++) {									
+			System.out.println("Elemento "+ i + " :" + this.listaGetAt(i).imprimivel());	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+		}
+	}
+	
+	public AlunoMateria listaGetAt(int i) {
+		return this.lista.get(i);
+	}
+	
+	public int tamanhoLista() {
+		return this.lista.size();
+	}
+	 
 	public void setLista(Vector<AlunoMateria> lista) {
 		this.lista = lista;
 	} 
@@ -53,23 +92,37 @@ public class MateriaAluno {
 		this.pedido = pedido;
 	}
 	
-	public void inserirProduto (AlunoMateria mat) {
+	public void inserirPedido (AlunoMateria mat) {
 		this.pedido.add(mat);
 	}
 	
-	public void inserirProdutoEm(AlunoMateria mat, int pos) {
+	public void inserirPedidoEm(AlunoMateria mat, int pos) {
 		this.pedido.add(pos, mat);
 	}
 	
-	public void removerProduto(AlunoMateria mat) {
+	public void removerPedido(AlunoMateria mat) {
 		this.pedido.remove(mat);
 	}
 	
-	public void removerProdutoEm (int pos) {
+	public void removerPedidoEm (int pos) {
 		this.pedido.remove(pos);
 	}
 	
-	public int procutarProdutoMateria (String codigoMateria) {
+	public int tamanhoPedido() {
+		return this.pedido.size();
+	}
+	
+	public void imprimePedido(){
+		for(int i = 1; i < this.tamanhoLista(); i++) {									
+			System.out.println("Elemento "+ i + " :" + this.pedidoGetAt(i).imprimivel());	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+		}
+	}
+	
+	public AlunoMateria pedidoGetAt(int i) {
+		return this.pedido.get(i);
+	}
+
+	public int procutarPedidoMateria (String codigoMateria) {
 		for (int i = 0; i < this.lista.size(); i++) {
 			String cod_curso_lista = this.lista.get(i).getCodigoMateria();
 			if (cod_curso_lista.equals(codigoMateria))
