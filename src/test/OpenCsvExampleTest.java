@@ -3,6 +3,8 @@ package test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import main.ListaMateria;
+import main.Materia;
 import main.OpenCsvExample;
 
 class OpenCsvExampleTest {
