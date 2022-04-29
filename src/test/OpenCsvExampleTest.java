@@ -1,14 +1,10 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*; 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
-import main.ListaMateria;
-import main.Materia;
-import main.OpenCsvExample;
-import main.Materia;
-import main.ListaMateria;
-import main.MateriaAluno;
+import main.*;
 
 class OpenCsvExampleTest {
 	@Test
@@ -40,21 +36,27 @@ class OpenCsvExampleTest {
 				"exemplo_trabalho_TAP_Disciplinas_2019.csv"
 		};
 		OpenCsvExample csv = new OpenCsvExample();
+		String[][] info = csv.leCsv(arquivos[0]);
+		MateriaAluno matAluno = new MateriaAluno();
+		matAluno.matrizToLista(info);
+		matAluno.imprimeLista();
 		
-		for (int i = 0; i < arquivos.length; ++i) {
-			String[][] info = csv.leCsv(arquivos[i]);
+		/* TODO: checar se novo.csv é idêntico ao arquivo original */
+		csv.escreveCsv(info, "novo.csv"); // escreve no arquivo
+		
+		for (int i = 1; i < arquivos.length; ++i) {
+			info = csv.leCsv(arquivos[i]);
 
-			//ListaMateria lista = new ListaMateria();	// cria o objeto 
-			//lista.matrizToLista(info);				// preenche 
-			//lista.imprime();							// imprime
-			//novo.escreveCsv(info, "novo.csv");		// escreve no arquivo
-
-			MateriaAluno matAluno = new MateriaAluno();
-			matAluno.matrizToLista(info);
-			matAluno.imprimeLista();
-			
+			ListaMateria lista = new ListaMateria();	// cria o objeto 
+			lista.matrizToLista(info);				// preenche 
+			lista.imprime();							// imprime
 			/* TODO: checar se novo.csv é idêntico ao arquivo original */
-			csv.escreveCsv(info, "novo.csv"); // escreve no arquivo
+			csv.escreveCsv(info, "novo.csv");		// escreve no arquivo
 		}
+	}
+	
+	@Test
+	void testesalvamento() {
+		
 	}
 }
