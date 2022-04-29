@@ -1,12 +1,10 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*; 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
-import main.OpenCsvExample;
-import main.Materia;
-import main.ListaMateria;
-import main.MateriaAluno;
+import main.*;
 
 class OpenCsvExampleTest {
 	@Test
@@ -54,5 +52,10 @@ class OpenCsvExampleTest {
 			/* TODO: checar se novo.csv é idêntico ao arquivo original */
 			csv.escreveCsv(info, "novo.csv"); // escreve no arquivo
 		}
+	}
+	
+	@Test
+	void testesalvamento() {
+		
 	}
 }
