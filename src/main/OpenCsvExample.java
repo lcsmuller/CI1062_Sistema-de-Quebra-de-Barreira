@@ -9,26 +9,32 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class OpenCsvExample {
+    // XXX: chuncho, gambiarra, artifício técnico, engenharia de emergência, decisão de projeto (mas funciona)
+	private String[][] data = new String[2000][1];
 	
-	//atualmente so pega um arquivoe imprime na tela, mas ja divide cada celula em uma variavel independente
+	//atualmente so pega um arquivo e imprime na tela, mas ja divide cada celula em uma variavel independente
+	public String[] leLinhaCsv(String linhaCsv, String separador) {
+		String[] linha = null;
+		if (linhaCsv != null)
+			linha = linhaCsv.split(separador);
+		return linha;
+	}
+
 	public String[][] leCsv(String arquivo){
-		String[][] data = null;
-		try{
+		int i = 0;
+		try {
 			BufferedReader csvReader = new BufferedReader(new FileReader(arquivo)); //colocar nome do arquivo que sere passado
-			data = new String[2000][1]; //chuncho, gambiarra, artifico tecnico, engenharia de emergencia, decis�o de projeto (mas funciona)
-			int i = 0;
 			String row;
+
 			while ((row = csvReader.readLine()) != null) {
-				String[] linha = row.split(";"); // mudar ; o separador de celulas do csv
-				data[i] = linha;
+				data[i] = leLinhaCsv(row, ";");
 				i++;
 			}
 			csvReader.close();
-			data = Arrays.copyOf(data,i);	
-		}catch(IOException erro){
-			System.out.println("erro na leitura do arquivo de entrada:" + arquivo);
-		}                
-		return data;
+		} catch(IOException erro){
+			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
+		}
+		return Arrays.copyOf(data, i);
 	}
 	
 	public void escreveCsv(String[][] entrada, String arquivo){ //fazer tratamento de excessoes
