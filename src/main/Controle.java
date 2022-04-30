@@ -6,13 +6,14 @@ public class Controle {
 
 	private Vector<Materia> possiveis_pedidos = new Vector<>();
 	private ListaMateria lista_materia = new ListaMateria();
-	private MateriaAluno mat_aluno = new MateriaAluno();
+	private MateriaAlunoLista mat_aluno = new MateriaAlunoLista();
+
 	
 	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}*/
-
+	
 	public Vector<Materia> getPossiveis_pedidos() {
 		return possiveis_pedidos;
 	}
@@ -45,11 +46,13 @@ public class Controle {
 		this.lista_materia = lista_materia;
 	}
 	
-	public MateriaAluno getMat_aluno() {
+	public MateriaAlunoLista getMat_aluno() {
 		return mat_aluno;
 	}
 	
-	public void setMat_aluno(MateriaAluno mat_aluno) {
+	public void setMat_aluno(MateriaAlunoLista mat_aluno) {
+
+		
 		this.mat_aluno = mat_aluno;
 	}
 
@@ -76,7 +79,37 @@ public class Controle {
 		}
 	}
 
-	
+	public float ira(){
+		float indice = 0, total = 0, nota = 0, horas = 0;
+
+		for(int i = 0; i < mat_aluno.tamanhoLista(); i++) {
+			if(!mat_aluno.listaGetAt(i).getSituacao().equals("Matricula")){
+				if (mat_aluno.listaGetAt(i).getFrequencia() < 75){
+					
+					horas = mat_aluno.listaGetAt(i).getHoras();
+					total += 100 * horas;
+				}
+				else{
+					horas = mat_aluno.listaGetAt(i).getHoras();
+					nota = mat_aluno.listaGetAt(i).getNota();
+					indice += horas * nota;
+					total += 100 * horas;
+				}
+			}
+		}
+		indice /= total;
+		return indice;
+	}
+
+	public void analizarPedido () {
+		for (int i = 0; i < this.mat_aluno.getLista().size(); i++){
+			if (this.ira() < 0.8) {
+				
+			}
+		}
+	}
+
+
 	
 	
 }

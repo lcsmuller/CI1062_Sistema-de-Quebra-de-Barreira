@@ -18,7 +18,7 @@ public class FileSaveReader extends Csv {
 	public String getFonte() {
 		return this.arquivofonte;
 	}
-
+	
 	/**
 	 * Wrapper de {@link main.Csv#leCsv(String)}. Realiza leitura e salva nome do
 	 * arquivo lido.
@@ -30,11 +30,10 @@ public class FileSaveReader extends Csv {
 		String[][] copiaCsv = null;
 
 		try {
-			// TODO: colocar nome do arquivo a ser passado
 			BufferedReader fileReader = new BufferedReader(new FileReader(arquivo));
 
 			this.arquivofonte = fileReader.readLine();
-			copiaCsv = this.leCsvBufferedReader(fileReader);
+			copiaCsv = this.tokenizaCsvBufferedReader(fileReader);
 			fileReader.close();
 		} catch (IOException e) {
 			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
