@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import main.*;
 
-class OpenCsvExampleTest {
+class CsvTest {
 	@Test
 	void testLeLinhaCsv() throws Exception {
 		final String CSVTeste = "GRR1234;Sergio;BCC;2011;2017;70";
-		String[] linha = new OpenCsvExample().leLinhaCsv(CSVTeste, ";");
+		String[] linha = new Csv().leLinhaCsv(CSVTeste, ";");
 
 		assertNotNull(linha);
 		assertEquals("GRR1234", linha[0]);
@@ -35,7 +35,7 @@ class OpenCsvExampleTest {
 				"exemplo_trabalho_TAP_Disciplinas_2011.csv",
 				"exemplo_trabalho_TAP_Disciplinas_2019.csv"
 		};
-		OpenCsvExample csv = new OpenCsvExample();
+		Csv csv = new Csv();
 		String[][] info = csv.leCsv(arquivos[0]);
 		MateriaAluno matAluno = new MateriaAluno();
 		matAluno.matrizToLista(info);
@@ -59,7 +59,7 @@ class OpenCsvExampleTest {
 	public void testsalvamento(){// testsalvamento() throws Exception {
 		final String arquivos =  "exemplo_trabalho_TAP_historico.csv";
 		
-		OpenCsvExample csv = new OpenCsvExample();
+		Csv csv = new Csv();
 		String[][] info = csv.leCsv(arquivos);
 
 		MateriaAluno lista = new MateriaAluno();	// cria o objeto 
@@ -79,7 +79,7 @@ class OpenCsvExampleTest {
 	public void gera_ira(){// testsalvamento() throws Exception {
 		final String arquivos =  "exemplo_trabalho_TAP_historico.csv";
 		
-		OpenCsvExample csv = new OpenCsvExample();
+		Csv csv = new Csv();
 		String[][] info = csv.leCsv(arquivos);
 
 		MateriaAluno lista = new MateriaAluno();	// cria o objeto 

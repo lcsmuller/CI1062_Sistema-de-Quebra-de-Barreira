@@ -6,59 +6,64 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 
-public class FileSaveReader {
-    // XXX: chuncho, gambiarra, artifício técnico, engenharia de emergência, decisão de projeto (mas funciona)
-	private String[][] data = new String[2000][1];
+public class FileSaveReader extends Csv {
+	/** armazena nome do arquivo fonte */
 	private String arquivofonte = null;
 	
+	/**
+	 * Devolve o nome do arquivo fonte
+	 * 
+	 * @return o nome do arquivo fonte
+	 */
 	public String getFonte() {
 		return this.arquivofonte;
 	}
 	
-	public String[][] getData(){
-		return this.data;
-	}
-	
-	//atualmente so pega um arquivo e imprime na tela, mas ja divide cada celula em uma variavel independente
-	public String[] leLinhaFile(String linhaCsv, String separador) {
-		String[] linha = null;
-		if (linhaCsv != null)
-			linha = linhaCsv.split(separador);
-		return linha;
-	}
-	
-	public String[][] leArquivo(String arquivo){
-		int i = 0;
-		try {
-			BufferedReader fileReader = new BufferedReader(new FileReader(arquivo)); //colocar nome do arquivo que ser passado
-			String row;
-			arquivofonte = fileReader.readLine();
-			while ((row = fileReader.readLine()) != null) {
-				data[i] = leLinhaFile(row, ";");
-				i++;
-			}
-			fileReader.close();
-		} catch(IOException erro){
-			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
-		}
-		return Arrays.copyOf(data, i);
-	}
-	
-	public void escreveArquivo(String fonte, String[][] entrada, String arquivo){ //fazer tratamento de excessoes
-		try {
-			FileWriter fileWriter = new FileWriter(arquivo);
-			fileWriter.append(fonte + "\n");
-			for (int i = 0; i < entrada.length; i++) {
-				for(int j = 0; j < entrada[i].length; j++)
-					fileWriter.append(entrada[i][j] + ";");
-				fileWriter.append("\n");
-			}
-			fileWriter.close();
-		}catch(IOException erro) {
-			System.out.println("erro na escrita do arquivo do arquivo:" + arquivo);
-		}
-	}
+	/**
+	 * Wrapper de {@link main.Csv#leCsv(String)}. Realiza leitura e salva nome
+	 * 		do arquivo lido.
+	 * 
+	 * @param arquivo arquivo CSV a ser lido
+	 * @return dados do arquivos CSV separados em tokens
+	 */
+	public String[][] leArquivo(String arquivo) {
+        String[][] copiaCsv = null;
 
+		try {
+            // TODO: colocar nome do arquivo a ser passado
+			BufferedReader fileReader = new BufferedReader(new FileReader(arquivo));
+
+			this.arquivofonte = fileReader.readLine();
+            copiaCsv = this.leCsvBufferedReader(fileReader);
+			fileReader.close();
+		} catch(IOException e){
+			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
+			e.printStackTrace();
+		}
+
+		return copiaCsv;
+	}
+	
+	/**
+	 * Wrapper de {@link main.Csv#escreveCsv(String[][], String)}. Realiza
+	 * 		serialização e escrita no arquivo destino.
+	 * 
+	 * @param fonte arquivo original do CSV
+	 * @param o conjunto de dados a serem serializados 
+	 * @param arquivo o arquivo a receber o output CSV
+	 */
+	public void escreveArquivo(String fonte, String[][] entrada, String arquivo) {
+		try {
+            FileWriter fileWriter = new FileWriter(arquivo);
+            fileWriter.append(fonte + "\n");
+
+            this.escreveCsvFileWriter(entrada, fileWriter);
+
+			fileWriter.close();
+		} catch(IOException e) {
+			System.out.println("erro na escrita do arquivo do arquivo:" + arquivo);
+			e.printStackTrace();
+		}
+	}
 }
