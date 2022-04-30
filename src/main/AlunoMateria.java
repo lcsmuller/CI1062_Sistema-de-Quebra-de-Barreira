@@ -41,7 +41,8 @@ public class AlunoMateria extends Materia {
 		this.situacao = situacao;
 	}
 
-	public String imprimivel() {
+	@Override
+	public String toString() {
 		return (this.getCodigoCurso() + "," + this.getCodigoMateria() + "," + this.getHoras() + "," + this.getNome()
 				+ "," + this.getPeriodo() + "," + this.getTipo() + "," + this.getVersao() + "," + this.getNota() + ","
 				+ this.getFrequencia() + "," + this.getSituacao());
