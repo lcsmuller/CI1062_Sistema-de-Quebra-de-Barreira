@@ -1,12 +1,14 @@
 package main;
 
+import java.util.Arrays;
 import java.util.Vector;
+import java.lang.Integer;
 
 /** @todo gerar métodos com eclipse 
  *  @todo operacoes de lista (procurar, inserir, remover)
 */
 
-public class MateriaAluno {
+public class MateriaAluno{
 
     private Vector<AlunoMateria> lista = new Vector<AlunoMateria>();
     private Vector<AlunoMateria> pedido = new Vector<AlunoMateria>();
@@ -53,6 +55,24 @@ public class MateriaAluno {
 	public int tamanhoLista() {
 		return this.lista.size();
 	}
+	
+	public float ira(){
+		float indice = 0;
+		float total = 0;
+		float nota = 0;
+		float horas = 0;
+		for(int i = 0; i < this.tamanhoLista(); i++) {
+			if(!this.listaGetAt(i).getSituacao().equals("Matricula")){
+				horas = this.listaGetAt(i).getHoras();
+				nota = this.listaGetAt(i).getNota();
+				indice += horas * nota;
+				total += 100 * horas;
+			}
+		}
+		indice /= total;
+		return indice;
+		
+	}
 	 
 	public void setLista(Vector<AlunoMateria> lista) {
 		this.lista = lista;
@@ -74,7 +94,7 @@ public class MateriaAluno {
 		this.lista.remove(pos);
 	}
 
-	public Vector<Integer> procutarMateria (String codigoMateria) {
+	public Vector<Integer> procurarMateria (String codigoMateria) {
 		Vector<Integer>lista_indice = new Vector<>();
 		for (int i = 0; i < this.lista.size(); i++) {
 			String cod_curso_lista = this.lista.get(i).getCodigoMateria();
@@ -83,7 +103,18 @@ public class MateriaAluno {
 		}
 		return lista_indice;
 	}
+	
+	
+	public boolean procurarMateriaBool (String codigoMateria) {
+		for (int i = 0; i < this.lista.size(); i++) {
+			String cod_curso_lista = this.lista.get(i).getCodigoMateria();
+			if (cod_curso_lista.equals(codigoMateria))
+				return true;
+		}
+		return false;
+	}
 
+	
 	public Vector<AlunoMateria> getPedido() {
 		return pedido;
 	}
@@ -121,6 +152,15 @@ public class MateriaAluno {
 	public AlunoMateria pedidoGetAt(int i) {
 		return this.pedido.get(i);
 	}
+	
+	public String[][] pedidoToMatriz(){
+		String[][] data = new String[2000][1];
+		int i;
+		for(i = 0; i < this.tamanhoPedido(); ++i) {									
+			data[i] = this.pedidoGetAt(i).imprimivel().split(",");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+		}
+		return Arrays.copyOf(data, i);
+	}
 
 	public int procutarPedidoMateria (String codigoMateria) {
 		for (int i = 0; i < this.lista.size(); i++) {
@@ -130,5 +170,4 @@ public class MateriaAluno {
 		}
 		return -1;
 	}
-	
 }
