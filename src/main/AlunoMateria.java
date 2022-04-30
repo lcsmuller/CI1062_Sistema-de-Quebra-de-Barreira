@@ -43,7 +43,7 @@ public class AlunoMateria extends Materia{
     }
     
     public String imprimivel() {
-		return ("{" + this.getCodigoCurso() 
+		return (this.getCodigoCurso() 
 		+","+ this.getCodigoMateria() 
 		+","+ this.getHoras() 
 		+","+ this.getNome() 
@@ -52,8 +52,6 @@ public class AlunoMateria extends Materia{
 		+","+ this.getVersao() 
 		+","+ this.getNota() 
 		+","+ this.getFrequencia() 
-		+","+ this.getSituacao() 
-		
-		+ "}");
+		+","+ this.getSituacao());
 	}
 }

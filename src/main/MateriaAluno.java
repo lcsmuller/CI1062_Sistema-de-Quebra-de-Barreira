@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Arrays;
 import java.util.Vector;
 
 /** @todo gerar métodos com eclipse 
@@ -42,7 +43,7 @@ public class MateriaAluno {
 	
 	public void imprimeLista() {
 		for(int i = 1; i < this.tamanhoLista(); i++) {									
-			System.out.println("Elemento "+ i + " :" + this.listaGetAt(i).imprimivel());	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+			System.out.println("Elemento "+ i + " : {" + this.listaGetAt(i).imprimivel()+ "}");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
 		}
 	}
 	
@@ -113,13 +114,22 @@ public class MateriaAluno {
 	}
 	
 	public void imprimePedido(){
-		for(int i = 1; i < this.tamanhoLista(); i++) {									
-			System.out.println("Elemento "+ i + " :" + this.pedidoGetAt(i).imprimivel());	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+		for(int i = 1; i < this.tamanhoPedido(); i++) {									
+			System.out.println("Elemento "+ i + " : {" + this.pedidoGetAt(i).imprimivel() + "}");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
 		}
 	}
 	
 	public AlunoMateria pedidoGetAt(int i) {
 		return this.pedido.get(i);
+	}
+	
+	public String[][] pedidoToMatriz(){
+		String[][] data = new String[2000][1];
+		int i;
+		for(i = 0; i < this.tamanhoPedido(); ++i) {									
+			data[i] = this.pedidoGetAt(i).imprimivel().split(",");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+		}
+		return Arrays.copyOf(data, i);
 	}
 
 	public int procutarPedidoMateria (String codigoMateria) {

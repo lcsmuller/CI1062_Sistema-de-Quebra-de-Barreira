@@ -8,46 +8,57 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class OpenCsvExample {
+public class FileSaveReader {
     // XXX: chuncho, gambiarra, artifício técnico, engenharia de emergência, decisão de projeto (mas funciona)
 	private String[][] data = new String[2000][1];
+	private String arquivofonte = null;
+	
+	public String getFonte() {
+		return this.arquivofonte;
+	}
+	
+	public String[][] getData(){
+		return this.data;
+	}
 	
 	//atualmente so pega um arquivo e imprime na tela, mas ja divide cada celula em uma variavel independente
-	public String[] leLinhaCsv(String linhaCsv, String separador) {
+	public String[] leLinhaFile(String linhaCsv, String separador) {
 		String[] linha = null;
 		if (linhaCsv != null)
 			linha = linhaCsv.split(separador);
 		return linha;
 	}
-
-	public String[][] leCsv(String arquivo){
+	
+	public String[][] leArquivo(String arquivo){
 		int i = 0;
 		try {
-			BufferedReader csvReader = new BufferedReader(new FileReader(arquivo)); //colocar nome do arquivo que sere passado
+			BufferedReader fileReader = new BufferedReader(new FileReader(arquivo)); //colocar nome do arquivo que ser passado
 			String row;
-
-			while ((row = csvReader.readLine()) != null) {
-				data[i] = leLinhaCsv(row, ";");
+			arquivofonte = fileReader.readLine();
+			while ((row = fileReader.readLine()) != null) {
+				data[i] = leLinhaFile(row, ";");
 				i++;
 			}
-			csvReader.close();
+			fileReader.close();
 		} catch(IOException erro){
 			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
 		}
 		return Arrays.copyOf(data, i);
 	}
 	
-	public void escreveCsv(String[][] entrada, String arquivo){ //fazer tratamento de excessoes
+	public void escreveArquivo(String fonte, String[][] entrada, String arquivo){ //fazer tratamento de excessoes
 		try {
-			FileWriter csvWriter = new FileWriter(arquivo);
+			FileWriter fileWriter = new FileWriter(arquivo);
+			fileWriter.append(fonte + "\n");
 			for (int i = 0; i < entrada.length; i++) {
 				for(int j = 0; j < entrada[i].length; j++)
-					csvWriter.append(entrada[i][j] + ";");
-				csvWriter.append("\n");
+					fileWriter.append(entrada[i][j] + ";");
+				fileWriter.append("\n");
 			}
-			csvWriter.close();
+			fileWriter.close();
 		}catch(IOException erro) {
 			System.out.println("erro na escrita do arquivo do arquivo:" + arquivo);
 		}
 	}
+
 }
