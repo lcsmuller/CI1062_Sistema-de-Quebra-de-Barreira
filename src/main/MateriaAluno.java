@@ -2,6 +2,7 @@ package main;
 
 import java.util.Arrays;
 import java.util.Vector;
+import java.lang.Integer;
 
 /** @todo gerar métodos com eclipse 
  *  @todo operacoes de lista (procurar, inserir, remover)
@@ -42,7 +43,7 @@ public class MateriaAluno {
 	}
 	
 	public void imprimeLista() {
-		for(int i = 1; i < this.tamanhoLista(); i++) {									
+		for(int i = 0; i < this.tamanhoLista(); i++) {									
 			System.out.println("Elemento "+ i + " : {" + this.listaGetAt(i).imprimivel()+ "}");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
 		}
 	}
@@ -55,6 +56,23 @@ public class MateriaAluno {
 		return this.lista.size();
 	}
 	 
+	public float ira(){
+		float indice = 0;
+		float total = 0;
+		float nota = 0;
+		float horas = 0;
+		for(int i = 0; i < this.tamanhoLista(); i++) {
+			if(!this.listaGetAt(i).getSituacao().equals("Matricula")){
+				horas = this.listaGetAt(i).getHoras();
+				nota = this.listaGetAt(i).getNota();
+				indice += horas * nota;
+				total += 100 * horas;
+			}
+		}
+		indice /= total;
+		return indice;
+		
+	}
 	public void setLista(Vector<AlunoMateria> lista) {
 		this.lista = lista;
 	} 
@@ -114,7 +132,7 @@ public class MateriaAluno {
 	}
 	
 	public void imprimePedido(){
-		for(int i = 1; i < this.tamanhoPedido(); i++) {									
+		for(int i = 0; i < this.tamanhoPedido(); i++) {									
 			System.out.println("Elemento "+ i + " : {" + this.pedidoGetAt(i).imprimivel() + "}");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
 		}
 	}

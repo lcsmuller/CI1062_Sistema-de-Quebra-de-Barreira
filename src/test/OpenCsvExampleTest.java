@@ -74,4 +74,20 @@ class OpenCsvExampleTest {
 		saida.escreveArquivo(arquivos, info, "saida.save");			// escreve no arquivo
 	
 	}
+	
+	@Test
+	public void gera_ira(){// testsalvamento() throws Exception {
+		final String arquivos =  "exemplo_trabalho_TAP_historico.csv";
+		
+		OpenCsvExample csv = new OpenCsvExample();
+		String[][] info = csv.leCsv(arquivos);
+
+		MateriaAluno lista = new MateriaAluno();	// cria o objeto 
+		lista.matrizToLista(info);					// preenche 
+		float ira = lista.ira();
+		System.out.println("O ira eh :" + ira);
+	
+	}
+	
+	
 }
