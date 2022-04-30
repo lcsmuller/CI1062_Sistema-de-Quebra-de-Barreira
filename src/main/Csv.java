@@ -12,11 +12,11 @@ import java.util.Arrays;
 public class Csv {
 	/** Buffer a ser utilizado no parsing do CSV */
 	protected String[][] data = new String[2000][1];
-	
+
 	/**
 	 * Divide os elementos da linha a partir de seu separador.
 	 * 
-	 * @param linhaCsv linha contendo elementos CSV
+	 * @param linhaCsv  linha contendo elementos CSV
 	 * @param separador caractere separador do CSV
 	 * @return elementos da linha separados
 	 */
@@ -29,7 +29,8 @@ public class Csv {
 
 	/**
 	 * Divide cada célula do CSV em variáveis independentes (tokenização).
-	 * @todo atualmente só pega um arquivo e imprime na tela, 
+	 * 
+	 * @todo atualmente só pega um arquivo e imprime na tela,
 	 * 
 	 * @param csvReader arquivo CSV a ter seus dados extraídos
 	 * @return dados extraídos
@@ -37,18 +38,19 @@ public class Csv {
 	 */
 	public String[][] leCsvBufferedReader(BufferedReader csvReader) throws IOException {
 		int i = 0;
-        String row;
+		String row;
 
-        while ((row = csvReader.readLine()) != null) {
-            data[i] = leLinhaCsv(row, ";");
-            i++;
-        }
+		while ((row = csvReader.readLine()) != null) {
+			data[i] = leLinhaCsv(row, ";");
+			i++;
+		}
 		return Arrays.copyOf(data, i);
 	}
 
 	/**
 	 * Divide cada célula do CSV em variáveis independentes (tokenização).
-	 * @todo atualmente só pega um arquivo e imprime na tela, 
+	 * 
+	 * @todo atualmente só pega um arquivo e imprime na tela,
 	 * @note Wrapper de leCsv()
 	 * 
 	 * @param arquivo arquivo CSV a ter seus dados extraídos
@@ -74,24 +76,27 @@ public class Csv {
 		}
 		return copiaData;
 	}
-	
+
 	/**
-	 * Realiza serialização de de dados String para a sua representação em formato CSV.
+	 * Realiza serialização de de dados String para a sua representação em formato
+	 * CSV.
 	 * 
-	 * @param entrada o conjunto de dados a serem serializados
+	 * @param entrada   o conjunto de dados a serem serializados
 	 * @param csvWriter o arquivo a receber o output CSV
 	 * @throws IOException
 	 */
 	public void escreveCsvFileWriter(String[][] entrada, FileWriter csvWriter) throws IOException {
-        for (int i = 0; i < entrada.length; i++) {
-            for(int j = 0; j < entrada[i].length; j++)
-                csvWriter.append(entrada[i][j] + ";");
-            csvWriter.append("\n");
-        }
+		for (int i = 0; i < entrada.length; i++) {
+			for (int j = 0; j < entrada[i].length; j++)
+				csvWriter.append(entrada[i][j] + ";");
+			csvWriter.append("\n");
+		}
 	}
 
 	/**
-	 * Realiza serialização de de dados String para a sua representação em formato CSV.
+	 * Realiza serialização de de dados String para a sua representação em formato
+	 * CSV.
+	 * 
 	 * @note Wrapper de escreveCsvFileWriter()
 	 * 
 	 * @param entrada o conjunto de dados a serem serializados
