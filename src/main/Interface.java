@@ -5,13 +5,16 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Console;
+import java.io.File;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Interface extends JFrame {
     private static Interface uniqueInstance = null;
@@ -59,9 +62,22 @@ public class Interface extends JFrame {
         JScrollPane scrollPane = new JScrollPane(classTable);
         tablePanel.add(scrollPane);
         
+        JButton btnOpenFile = new JButton("Abrir arquivo");
+        btnOpenFile.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+				JFileChooser chooser = new JFileChooser();
+			    //FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TXT", "txt");
+			    //chooser.setFileFilter(filter);
+			    int returnVal = chooser.showOpenDialog(null);
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					File file = chooser.getSelectedFile();
+					//abertura de arquivo aqui
+				}
+			}
+		});
         upperPanel.add(new JLabel("among us"));
         upperPanel.add(new JLabel("sus"));
-        upperPanel.add(new JButton("pipis"));
+        upperPanel.add(btnOpenFile);
         
         lowerPanel.add(new JLabel("sonegação de imposto"));
     }
