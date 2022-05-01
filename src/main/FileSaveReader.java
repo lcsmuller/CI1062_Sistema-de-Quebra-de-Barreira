@@ -33,7 +33,7 @@ public class FileSaveReader extends Csv {
 			BufferedReader fileReader = new BufferedReader(new FileReader(arquivo));
 
 			this.arquivofonte = fileReader.readLine();
-			copiaCsv = this.tokenizaCsvBufferedReader(fileReader);
+			copiaCsv = this.tokenizaBufferedReader(fileReader);
 			fileReader.close();
 		} catch (IOException e) {
 			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
@@ -44,7 +44,7 @@ public class FileSaveReader extends Csv {
 	}
 
 	/**
-	 * Wrapper de {@link main.Csv#escreveCsv(String[][], String)}. Realiza
+	 * Wrapper de {@link main.Csv#escreve(String[][], String)}. Realiza
 	 * serialização e escrita no arquivo destino.
 	 * 
 	 * @param fonte   arquivo original do CSV
@@ -56,7 +56,7 @@ public class FileSaveReader extends Csv {
 			FileWriter fileWriter = new FileWriter(arquivo);
 			fileWriter.append(fonte + "\n");
 
-			this.escreveCsvFileWriter(entrada, fileWriter);
+			this.escreveFileWriter(entrada, fileWriter);
 
 			fileWriter.close();
 		} catch (IOException e) {
