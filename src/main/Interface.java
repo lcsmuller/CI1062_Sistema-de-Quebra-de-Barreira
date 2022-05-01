@@ -66,12 +66,12 @@ public class Interface extends JFrame {
         btnOpenFile.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
-			    //FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos TXT", "txt");
-			    //chooser.setFileFilter(filter);
+			    FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos CSV", "csv");
+			    chooser.setFileFilter(filter);
 			    int returnVal = chooser.showOpenDialog(null);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					File file = chooser.getSelectedFile();
-					//abertura de arquivo aqui
+					//leitura do arquivo aqui
 				}
 			}
 		});
