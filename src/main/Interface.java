@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,7 +64,7 @@ public class Interface extends JFrame {
         upperPanel.add(new JLabel("sus"));
         upperPanel.add(new JButton("pipis"));
         
-        lowerPanel.add(new JLabel("sonegação de imposto"));
+        lowerPanel.add(new JLabel("sonegacao de imposto"));
     }
  
     public static void main(String args[]) {
