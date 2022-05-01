@@ -1,13 +1,20 @@
 package main;
 
+/** Matéria disponibilizada no curso */
 public class Materia {
-
+	/** código único do curso em que a matéria é ofertada */
 	private String codigoCurso;
+	/** @todo */
 	private int versao;
+	/** código único da matéria */
 	private String codigoMateria;
+	/** nome da matéria */
 	private String nome;
+	/** periodo em que a matéria é ofertada */
 	private int periodo;
+	/** @todo */
 	private String tipo;
+	/** @todo */
 	private int horas;
 
 	public Materia() {
@@ -80,7 +87,7 @@ public class Materia {
 		this.horas = horas;
 	}
 
-	public String imprimivel() {
+	public String toString() {
 		return ("{" + this.getCodigoCurso() + "," + this.getCodigoMateria() + "," + this.getHoras() + ","
 				+ this.getNome() + "," + this.getPeriodo() + "," + this.getTipo() + "," + this.getVersao() + "}");
 	}

@@ -2,15 +2,17 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Vector;
+
 import org.junit.jupiter.api.Test;
 
 import main.*;
 
 class CsvTest {
-	//@Test
+	@Test
 	void testLeLinhaCsv() throws Exception {
 		final String CSVTeste = "GRR1234;Sergio;BCC;2011;2017;70";
-		String[] linha = new Csv().tokenizaLinhaCsv(CSVTeste, ";");
+		String[] linha = new Csv().tokenizaLinha(CSVTeste, ";");
 
 		assertNotNull(linha);
 		assertEquals("GRR1234", linha[0]);
@@ -26,40 +28,40 @@ class CsvTest {
 	// fail("não implementado");
 	// }
 
-	//@Test
+	@Test
 	void testLeArquivoCsv() throws Exception {
 		final String[] arquivos = { "exemplo_trabalho_TAP_historico.csv",
 				/*
 				 * XXX: os arquivos a seguir possuem campos em ordem diferente, então
 				 * matrizLista não é capaz de converter os valores
 				 */
-				"exemplo_trabalho_TAP_Disciplinas_2011.csv", "exemplo_trabalho_TAP_Disciplinas_2019.csv" };
+				"exemplo_trabalho_TAP_Disciplinas_2019.csv" };
 		Csv csv = new Csv();
-		String[][] info = csv.tokenizaCsv(arquivos[0]);
-		MateriaAlunoLista matAluno = new MateriaAlunoLista();
+		String[][] info = csv.tokeniza(arquivos[0]);
+		ListaMateriaAluno matAluno = new ListaMateriaAluno();
 		matAluno.tokensToLista(info);
-		matAluno.imprimeLista();
+		//matAluno.imprimeLista();
 
 		/* TODO: checar se novo.csv é idêntico ao arquivo original */
-		csv.escreveCsv(info, "novo.csv"); // escreve no arquivo
+		csv.escreve(info, "novo.csv"); // escreve no arquivo
 
 		for (int i = 1; i < arquivos.length; ++i) {
-			info = csv.tokenizaCsv(arquivos[i]);
+			info = csv.tokeniza(arquivos[i]);
 
 			ListaMateria lista = new ListaMateria(); // cria o objeto
 			lista.tokensToLista(info); // preenche
-			lista.imprimeLista(); // imprime
+			//lista.imprimeLista(); // imprime
 			/* TODO: checar se novo.csv é idêntico ao arquivo original */
-			csv.escreveCsv(info, "novo.csv"); // escreve no arquivo
+			csv.escreve(info, "novo.csv"); // escreve no arquivo
 		}
 	}
 
-	//@Test
+	@Test
 	public void testsalvamento() {// testsalvamento() throws Exception {
 		final String arquivos = "exemplo_trabalho_TAP_Disciplinas_2019.csv";
 
 		Csv csv = new Csv();
-		String[][] tokens = csv.tokenizaCsv(arquivos);
+		String[][] tokens = csv.tokeniza(arquivos);
 
 		ListaMateria lista = new ListaMateria(); // cria o objeto
 		lista.tokensToLista(tokens); // preenche
@@ -70,29 +72,73 @@ class CsvTest {
 			pedidos.inserir(materia);
 		}
 		FileSaveReader saida = new FileSaveReader();
-		tokens = pedidos.toTokens(); // imprime
+		tokens = pedidos.listaToTokens(); // imprime
 		/* TODO: checar se novo.csv é idêntico ao arquivo original */
 		saida.escreveArquivo(arquivos, tokens, "saida.save"); // escreve no arquivo
 
 	}
 
-	//@Test
+	@Test
 	public void gera_ira() {// testsalvamento() throws Exception {
 		final String arquivos = "exemplo_trabalho_TAP_historico.csv";
 
-		String[][] tokens = new Csv().tokenizaCsv(arquivos);
+		String[][] tokens = new Csv().tokeniza(arquivos);
 
 		Controle controle = new Controle();
 		controle.getMat_aluno().tokensToLista(tokens); // preenche
 
-		System.out.println("O ira eh :" + controle.ira());
+		//System.out.println("O ira eh :" + controle.ira());
 	}
 	
-	public static void main(String[] args) {
+	@Test
+	public void testtabela() {
+		final String arquivos = "exemplo_trabalho_TAP_Disciplinas_2019.csv";
+		final String aluno = "exemplo_trabalho_TAP_historico.csv";
+
+		Csv csv = new Csv();
+		String[][] tokens = csv.tokeniza(arquivos);
+
+		Controle c = new Controle();
+		c.getLista_materia().tokensToLista(tokens);
+	
+		tokens = csv.tokeniza(aluno);
+		c.getMat_aluno().tokensToLista(tokens);
+		
+		c.possiveisPedidos();
+		//c.getPossiveis_escolhas();
+		Vector<Vector<Materia>> tabela = c.tabelaMateria();
+		for(int i = 0; i < tabela.size(); i++) {
+			for(int j = 0; j < tabela.elementAt(i).size(); j++) {
+				System.out.println(tabela.elementAt(i).elementAt(j).toString());
+			}
+		}
+	}
+	
+	@Test
+	public void testcomparador() {
+		final String arquivos = "exemplo_trabalho_TAP_Disciplinas_2019.csv";
+		final String aluno = "exemplo_trabalho_TAP_historico.csv";
+		
+		Csv csv = new Csv();
+		String[][] tokens = csv.tokeniza(arquivos);
+
+		Controle c = new Controle();
+		c.getLista_materia().tokensToLista(tokens);
+	
+		tokens = csv.tokeniza(aluno);
+		c.getMat_aluno().tokensToLista(tokens);
+		c.possiveisPedidos();
+		System.out.println("\n\n\n\n\n ALGO COMECA AQUI");
+		System.out.println("tamanho: "+ c.getPossiveis_escolhas().tamanhoLista());
+		c.getPossiveis_escolhas().imprimeLista();
+		System.out.println("\n\n\n\n\n ALGO TERMINA AQUI");
+	}
+	
+	/*public static void main(String[] args) {
 		final String arquivos = "exemplo_trabalho_TAP_Disciplinas_2019.csv";
 
 		Csv csv = new Csv();
-		String[][] tokens = csv.tokenizaCsv(arquivos);
+		String[][] tokens = csv.tokeniza(arquivos);
 
 		ListaMateria lista = new ListaMateria();	 // cria o objeto
 		lista.tokensToLista(tokens); 				 // preenche
@@ -103,8 +149,8 @@ class CsvTest {
 			pedidos.inserir(materia);
 		}
 		FileSaveReader saida = new FileSaveReader();
-		tokens = pedidos.toTokens(); // imprime
-		/* TODO: checar se novo.csv é idêntico ao arquivo original */
+		tokens = pedidos.listaToTokens(); // imprime
+		/* TODO: checar se novo.csv é idêntico ao arquivo original 
 		saida.escreveArquivo(arquivos, tokens, "saida.save"); // escreve no arquivo
-	}
+	}*/
 }

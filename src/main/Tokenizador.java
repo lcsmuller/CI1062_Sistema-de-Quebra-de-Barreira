@@ -1,13 +1,15 @@
 package main;
 
+import java.util.Arrays;
 import java.util.Vector;
 
+/** Manipula e converte tokens obtidos em { @link main.Csv#tokenizaCsv } para listas */
 abstract class Tokenizador <T> {
 	/** lista genérica */
     protected Vector<T> lista = new Vector<T>();
 
 	/** 
-	 * Converte conteúdo de linha para classe genérica
+	 * Converte conteúdo de linha para classe genérica.
 	 *
 	 * @param tokensLinha linha contendo os tokens a serem convertidos em classe
 	 * @return retorna objeto convertido
@@ -24,15 +26,31 @@ abstract class Tokenizador <T> {
 	}
 
 	/**
-	 * Transforma tokens de linha CSV obtidos por {@link main.Csv#tokenizaCsv(String)}.
+	 * Transforma tokens de linha CSV obtidos por {@link main.Csv#tokeniza(String)}.
 	 *
-	 * @param tokens os tokens a serem serializados
+	 * @param tokens os tokens a serem decodificados
 	 */
 	public void tokensToLista(String[][] tokens) {
    		for(int i = 2; i < tokens.length; i++) {
    			T materia = this.fromLinhaTokens(tokens[i]);
     		this.inserir(materia);
     	}
+	}
+
+	/**
+	 * Transforma lista em tokens de string.
+	 *
+	 * @return tokens serializados
+	 */			
+	public String[][] listaToTokens() {
+		String[][] data = new String[2000][1];
+		int i;
+
+		for(i = 0; i < this.tamanhoLista(); ++i) {									
+			data[i] = this.listaGetAt(i).toString().split(",");
+		}
+		
+		return Arrays.copyOf(data, i);
 	}
 
 	/**
@@ -57,12 +75,13 @@ abstract class Tokenizador <T> {
 	/** Imprime conteúdo da lista. */
     public void imprimeLista() {
 		for(int i = 0; i < this.tamanhoLista(); i++) {									
-			System.out.println("Elemento "+ i + " : {" + this.listaGetAt(i).toString()+ "}");	//get at retorno o elemento na posicao i , imprimivel torna o objeto Materia imprimivel com o println 
+			System.out.println("Elemento " + i + " : {"
+								+ this.listaGetAt(i).toString() + "}");
 		}
 	} 
 
 	/**
-	 * Insere novo elemento na lista
+	 * Insere novo elemento na lista.
 	 *
 	 * @param mat elemento a ser inserido
 	 */
@@ -97,4 +116,10 @@ abstract class Tokenizador <T> {
 	public void removerEm(int pos) {
 		this.lista.remove(pos);
 	}
+
+	/** Remove o último elemento da lista. */
+	public void removeUltimo(){
+		this.lista.remove(this.tamanhoLista() - 1);
+	}
+	
 }
