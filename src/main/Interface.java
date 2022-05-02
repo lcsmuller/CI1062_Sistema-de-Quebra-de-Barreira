@@ -22,8 +22,10 @@ public class Interface extends JFrame {
     private JPanel tablePanel;
     private JPanel upperPanel;
     private JPanel lowerPanel;
+    private JLabel lblIRA;
     private JTable classTable;
-    private JButton btnOpenFile;
+    private JButton btnOpenCSVFile;
+    private JButton btnOpenSaveFile;
     
     private Interface() {
 
@@ -67,19 +69,32 @@ public class Interface extends JFrame {
         JScrollPane scrollPane = new JScrollPane(classTable);
         tablePanel.add(scrollPane);
         
-        btnOpenFile = new JButton("Abrir arquivo");
-        upperPanel.add(new JLabel());
+        lblIRA = new JLabel("IRA:");
+        
+        
+        btnOpenCSVFile = new JButton("Abrir arquivo CSV");
+        btnOpenSaveFile = new JButton("Abrir arquivo Save");
+        upperPanel.add(lblIRA);
         upperPanel.add(new JLabel("sus"));
-        upperPanel.add(btnOpenFile);
+        upperPanel.add(btnOpenCSVFile);
+        upperPanel.add(btnOpenSaveFile);
         
         lowerPanel.add(new JLabel("sonegação de imposto"));
     }
     
     //Conecta metodos aos botoes da interface
     private void addButtonListeners() {
-    	btnOpenFile.addActionListener(new ActionListener() {
+    	btnOpenCSVFile.addActionListener(new ActionListener() {
+    		@Override
         	public void actionPerformed(ActionEvent e) {
 				OpenAndReadCSVFile();
+			}
+		});
+    	
+    	btnOpenSaveFile.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				OpenAndReadSaveFile();
 			}
 		});
     }
@@ -98,13 +113,24 @@ public class Interface extends JFrame {
 			//classTable = new JTable((TableModel) new Controle().tabelaMateria());
 		}
     }
+    
+    private void OpenAndReadSaveFile() {
+    	JFileChooser chooser = new JFileChooser();
+	    FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos Save", "save");
+	    chooser.setFileFilter(filter);
+	    int returnVal = chooser.showOpenDialog(null);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = chooser.getSelectedFile();
+			FileSaveReader fsr = new FileSaveReader();
+			/*leitura do arquivo aqui*/
+		}
+    }
 
     private void initialize() {
     	
         setInterfaceParameters();
         addSwingComponents();
         addButtonListeners();
-        
         
         this.revalidate();
         this.repaint();
