@@ -107,7 +107,7 @@ public class Interface extends JFrame {
 	    int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = chooser.getSelectedFile();
-			FileSaveReader fsr = new FileSaveReader();
+			//FileSaveReader fsr = new FileSaveReader();
 			/*leitura do arquivo aqui*/
 			//fsr.leArquivo(file.getName());
 			//classTable = new JTable((TableModel) new Controle().tabelaMateria());
@@ -121,7 +121,7 @@ public class Interface extends JFrame {
 	    int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = chooser.getSelectedFile();
-			FileSaveReader fsr = new FileSaveReader();
+			//FileSaveReader fsr = new FileSaveReader();
 			/*leitura do arquivo aqui*/
 		}
     }
