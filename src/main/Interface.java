@@ -114,5 +114,4 @@ public class Interface extends JFrame {
         Interface frame = getInstance();
         
     }
-
 }

@@ -109,7 +109,7 @@ class CsvTest {
 		Vector<Vector<Materia>> tabela = c.tabelaMateria();
 		for(int i = 0; i < tabela.size(); i++) {
 			for(int j = 0; j < tabela.elementAt(i).size(); j++) {
-				System.out.println(tabela.elementAt(i).elementAt(j).toString());
+				//System.out.println(tabela.elementAt(i).elementAt(j).toString());
 			}
 		}
 	}
@@ -128,12 +128,32 @@ class CsvTest {
 		tokens = csv.tokeniza(aluno);
 		c.getMat_aluno().tokensToLista(tokens);
 		c.possiveisPedidos();
-		System.out.println("\n\n\n\n\n ALGO COMECA AQUI");
-		System.out.println("tamanho: "+ c.getPossiveis_escolhas().tamanhoLista());
-		c.getPossiveis_escolhas().imprimeLista();
-		System.out.println("\n\n\n\n\n ALGO TERMINA AQUI");
+		//System.out.println("\n\n\n\n\n ALGO COMECA AQUI");
+		//System.out.println("tamanho: "+ c.getPossiveis_escolhas().tamanhoLista());
+		//c.getPossiveis_escolhas().imprimeLista();
+		//System.out.println("\n\n\n\n\n ALGO TERMINA AQUI");
 	}
 	
+	
+	@Test
+	public void testfaltantes() {
+		final String arquivos = "exemplo_trabalho_TAP_Disciplinas_2019.csv";
+		final String aluno = "exemplo_trabalho_TAP_historico.csv";
+		
+		Csv csv = new Csv();
+		String[][] tokens = csv.tokeniza(arquivos);
+
+		Controle c = new Controle();
+		c.getLista_materia().tokensToLista(tokens);
+	
+		tokens = csv.tokeniza(aluno);
+		c.getMat_aluno().tokensToLista(tokens);
+		c.preencheFaltantes();
+		System.out.println("\n\n\n\n\n ALGO COMECA AQUI");
+		System.out.println("tamanho: "+ c.getFaltantes().tamanhoLista());
+		c.getFaltantes().imprimeLista();
+		System.out.println("\n\n\n\n\n ALGO TERMINA AQUI");
+	}
 	/*public static void main(String[] args) {
 		final String arquivos = "exemplo_trabalho_TAP_Disciplinas_2019.csv";
 
