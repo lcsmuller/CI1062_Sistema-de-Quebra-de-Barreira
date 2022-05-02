@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.TableModel;
 
 public class Interface extends JFrame {
     private static Interface uniqueInstance = null;
@@ -48,7 +49,6 @@ public class Interface extends JFrame {
         tablePanel = new JPanel();
         upperPanel = new JPanel();
         lowerPanel = new JPanel();
-        classTable = new JTable();
         
         tablePanel.setLayout(new BorderLayout());
         this.add(tablePanel, BorderLayout.CENTER);
@@ -71,15 +71,21 @@ public class Interface extends JFrame {
 			    int returnVal = chooser.showOpenDialog(null);
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					File file = chooser.getSelectedFile();
-					//leitura do arquivo aqui
+					FileSaveReader fsr = new FileSaveReader();
+					/*leitura do arquivo aqui*/
+					//fsr.leArquivo(file.getName());
+					//classTable = new JTable((TableModel) new Controle().tabelaMateria());
 				}
 			}
 		});
-        upperPanel.add(new JLabel("among us"));
+        upperPanel.add(new JLabel());
         upperPanel.add(new JLabel("sus"));
         upperPanel.add(btnOpenFile);
         
         lowerPanel.add(new JLabel("sonegação de imposto"));
+        
+        this.revalidate();
+        this.repaint();
     }
  
     public static void main(String args[]) {
