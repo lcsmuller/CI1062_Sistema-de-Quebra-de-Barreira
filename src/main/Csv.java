@@ -9,7 +9,7 @@ import java.util.Arrays;
 /** Realiza a tokenização de, e decodificação em CSV. */
 public class Csv {
 	/** Buffer a ser utilizado no parsing do CSV */
-	protected String[][] tokens = new String[2000][1];
+	protected static String[][] tokens = new String[2000][16];
 
 	/**
 	 * Divide os elementos da linha a partir de seu separador.
@@ -18,7 +18,7 @@ public class Csv {
 	 * @param separador caractere separador do CSV
 	 * @return elementos da linha separados
 	 */
-	public String[] tokenizaLinha(String linhaCsv, String separador) {
+	public static String[] tokenizaLinha(String linhaCsv, String separador) {
 		String[] linha = null;
 		if (linhaCsv != null)
 			linha = linhaCsv.split(separador);
@@ -33,7 +33,7 @@ public class Csv {
 	 * @return dados extraídos
 	 * @throws IOException
 	 */
-	public String[][] tokenizaBufferedReader(BufferedReader csvReader) throws IOException {
+	public static String[][] tokenizaBufferedReader(BufferedReader csvReader) throws IOException {
 		int i = 0;
 		String row;
 
@@ -52,7 +52,7 @@ public class Csv {
 	 * @return dados do arquivo CSV separados em tokens
 	 * @throws IOException
 	 */
-	public String[][] tokeniza(String arquivo) {
+	public static String[][] tokeniza(String arquivo) {
 		String[][] copiaData = null;
 
 		try {
@@ -81,7 +81,7 @@ public class Csv {
 	 * @param csvWriter o arquivo a receber o output CSV
 	 * @throws IOException
 	 */
-	public void escreveFileWriter(String[][] entrada, FileWriter csvWriter) throws IOException {
+	public static void escreveFileWriter(String[][] entrada, FileWriter csvWriter) throws IOException {
 		for (int i = 0; i < entrada.length; i++) {
 			for (int j = 0; j < entrada[i].length; j++)
 				csvWriter.append(entrada[i][j] + ";");
@@ -98,10 +98,10 @@ public class Csv {
 	 * @param entrada o conjunto de dados a serem serializados
 	 * @param arquivo o arquivo a receber o output CSV
 	 */
-	public void escreve(String[][] entrada, String arquivo) {
+	public static void escreve(String[][] entrada, String arquivo) {
 		try {
 			FileWriter csvWriter = new FileWriter(arquivo);
-			this.escreveFileWriter(entrada, csvWriter);
+			escreveFileWriter(entrada, csvWriter);
 			csvWriter.close();
 		} catch (IOException e) {
 			System.out.println("NÃ£o foi possÃ­vel escrever em '" + arquivo + "'");

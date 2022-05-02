@@ -49,7 +49,6 @@ abstract class Tokenizador <T> {
 		for(i = 0; i < this.tamanhoLista(); ++i) {									
 			data[i] = this.listaGetAt(i).toString().split(",");
 		}
-		
 		return Arrays.copyOf(data, i);
 	}
 
