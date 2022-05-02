@@ -29,7 +29,7 @@ public class Controle {
 	//	FUNCOES COM O POSSIVEIS PEDIDOS 
 	//
 	// ------------------------------------
-	public ListaPedidos getpedidos() {
+	public ListaPedidos getPedidos() {
 		return pedidos;
 	}
 
@@ -272,41 +272,41 @@ public class Controle {
 	 *
 	 * @return um Vector<Vector<Materia>>. Basicamente uma tabela com todas as matérias.
 	 */
-	public Vector<Vector<Materia>> tabelaMateria() {
-		Vector<Vector<Materia>> tabela_materia = new Vector<Vector<Materia>>(8);
-		Vector<Materia> semestre1 = new Vector<Materia>();
-		Vector<Materia> semestre2 = new Vector<Materia>();
-		Vector<Materia> semestre3 = new Vector<Materia>();
-		Vector<Materia> semestre4 = new Vector<Materia>();
-		Vector<Materia> semestre5 = new Vector<Materia>();
-		Vector<Materia> semestre6 = new Vector<Materia>();
-		Vector<Materia> semestre7 = new Vector<Materia>();
-		Vector<Materia> semestre8 = new Vector<Materia>();
+	/*public Vector<Vector<String>> tabelaMateria() {
+		/*Vector<Vector<String>> tabela_materia = new Vector<Vector<String>>(8);
+		Vector<String> semestre1 = new Vector<String>();
+		Vector<String> semestre2 = new Vector<String>();
+		Vector<String> semestre3 = new Vector<String>();
+		Vector<String> semestre4 = new Vector<String>();
+		Vector<String> semestre5 = new Vector<String>();
+		Vector<String> semestre6 = new Vector<String>();
+		Vector<String> semestre7 = new Vector<String>();
+		Vector<String> semestre8 = new Vector<String>();
 		for (int i = 0; i < this.possiveis_escolhas.tamanhoLista(); i++) {
 			switch (this.possiveis_escolhas.listaGetAt(i).getPeriodo()) {
 			case 1:
-				semestre1.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre1.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 2:
-				semestre2.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre2.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 3:
-				semestre3.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre3.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 4:
-				semestre4.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre4.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 5:
-				semestre5.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre5.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 6:
-				semestre6.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre6.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 7:
-				semestre7.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre7.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			case 8:
-				semestre8.add(this.possiveis_escolhas.listaGetAt(i));
+				semestre8.add(this.possiveis_escolhas.listaGetAt(i).getNome());
 				break;
 			default:
 				break;
@@ -321,9 +321,53 @@ public class Controle {
 		tabela_materia.add(semestre7);	
 		tabela_materia.add(semestre8);
 		return tabela_materia;
+	}*/
+	
+	public String[][] tabelaMateria() {
+		String tabela_materia[][] = new String[5][8];
+		int coluna1 = 0, coluna2 = 0, coluna3 = 0, coluna4 = 0;
+		int coluna5 = 0, coluna6 = 0, coluna7 = 0, coluna8 = 0;
+
+		for (int i = 0; i < this.possiveis_escolhas.tamanhoLista(); i++) {
+			switch (this.possiveis_escolhas.listaGetAt(i).getPeriodo()) {
+			case 1:
+				tabela_materia[coluna1][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna1++;
+				break;
+			case 2:
+				tabela_materia[coluna2][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna2++;
+				break;
+			case 3:
+				tabela_materia[coluna3][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna3++;
+				break;
+			case 4:
+				tabela_materia[coluna4][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna4++;
+				break;
+			case 5:
+				tabela_materia[coluna5][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna5++;
+				break;
+			case 6:
+				tabela_materia[coluna6][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna6++;
+				break;
+			case 7:
+				tabela_materia[coluna7][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna7++;
+				break;
+			case 8:
+				tabela_materia[coluna8][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				coluna8++;
+				break;
+			default:
+				break;
+			}	
+		}
+		return tabela_materia;
 	}
-
-
 
 	/**
 	 * Preenche lista de possíveis escolhas de matérias com base em matérias

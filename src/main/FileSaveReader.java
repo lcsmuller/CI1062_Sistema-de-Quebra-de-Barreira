@@ -6,17 +6,17 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileSaveReader extends Csv {
+public class FileSaveReader {
 	/** armazena nome do arquivo fonte */
-	private String arquivofonte = null;
+	static private String nomeArquivoFonte = null;
 
 	/**
 	 * Devolve o nome do arquivo fonte
 	 * 
 	 * @return o nome do arquivo fonte
 	 */
-	public String getFonte() {
-		return this.arquivofonte;
+	static public String getFonte() {
+		return nomeArquivoFonte;
 	}
 	
 	/**
@@ -26,14 +26,14 @@ public class FileSaveReader extends Csv {
 	 * @param arquivo arquivo CSV a ser lido
 	 * @return dados do arquivos CSV separados em tokens
 	 */
-	public String[][] leArquivo(String arquivo) {
+	static public String[][] leArquivo(String arquivo) {
 		String[][] copiaCsv = null;
 
 		try {
 			BufferedReader fileReader = new BufferedReader(new FileReader(arquivo));
 
-			this.arquivofonte = fileReader.readLine();
-			copiaCsv = this.tokenizaBufferedReader(fileReader);
+			nomeArquivoFonte = fileReader.readLine();
+			copiaCsv = Csv.tokenizaBufferedReader(fileReader);
 			fileReader.close();
 		} catch (IOException e) {
 			System.out.println("Erro na leitura do arquivo de entrada:" + arquivo);
@@ -44,23 +44,25 @@ public class FileSaveReader extends Csv {
 	}
 
 	/**
-	 * Wrapper de {@link main.Csv#escreve(String[][], String)}. Realiza
-	 * serializaÃ§Ã£o e escrita no arquivo destino.
-	 * 
-	 * @param fonte   arquivo original do CSV
-	 * @param o       conjunto de dados a serem serializados
-	 * @param arquivo o arquivo a receber o output CSV
-	 */
-	public void escreveArquivo(String fonte, String[][] entrada, String arquivo) {
-		try {
-			FileWriter fileWriter = new FileWriter(arquivo);
-			fileWriter.append(fonte + "\n");
 
-			this.escreveFileWriter(entrada, fileWriter);
+	 * Wrapper de {@link main.Csv#escreveFileWriter(String[][], String)}.
+	 * 		Realiza serialização e escrita no arquivo destino.
+	 * 
+	 * @param tokens conjunto de dados a serem serializados
+	 */
+	static public void escreveArquivo(String[][] tokens) {
+		int i = nomeArquivoFonte.lastIndexOf(".");
+		String arquivoDestino = nomeArquivoFonte.substring(0, i) + ".save";
+
+		try {
+			FileWriter fileWriter = new FileWriter(arquivoDestino);
+			fileWriter.append(nomeArquivoFonte + "\n");
+
+			Csv.escreveFileWriter(tokens, fileWriter);
 
 			fileWriter.close();
 		} catch (IOException e) {
-			System.out.println("erro na escrita do arquivo do arquivo:" + arquivo);
+			System.out.println("Erro na escrita do arquivo do arquivo:" + arquivoDestino);
 			e.printStackTrace();
 		}
 	}
