@@ -324,43 +324,42 @@ public class Controle {
 	}*/
 	
 	public String[][] tabelaMateria() {
-		String tabela_materia[][] = new String[5][8];
-		int coluna1 = 0, coluna2 = 0, coluna3 = 0, coluna4 = 0;
-		int coluna5 = 0, coluna6 = 0, coluna7 = 0, coluna8 = 0;
+		String tabela_materia[][] = new String[5][9];
+		int colunas[] = {0, 0, 0, 0, 0, 0, 0, 0}; 
 
 		for (int i = 0; i < this.possiveis_escolhas.tamanhoLista(); i++) {
 			switch (this.possiveis_escolhas.listaGetAt(i).getPeriodo()) {
 			case 1:
-				tabela_materia[coluna1][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna1++;
+				tabela_materia[colunas[0]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[0]++;
 				break;
 			case 2:
-				tabela_materia[coluna2][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna2++;
+				tabela_materia[colunas[1]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[1]++;
 				break;
 			case 3:
-				tabela_materia[coluna3][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna3++;
+				tabela_materia[colunas[2]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[2]++;
 				break;
 			case 4:
-				tabela_materia[coluna4][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna4++;
+				tabela_materia[colunas[3]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[3]++;
 				break;
 			case 5:
-				tabela_materia[coluna5][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna5++;
+				tabela_materia[colunas[4]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[4]++;
 				break;
 			case 6:
-				tabela_materia[coluna6][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna6++;
+				tabela_materia[colunas[5]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[5]++;
 				break;
 			case 7:
-				tabela_materia[coluna7][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna7++;
+				tabela_materia[colunas[6]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[6]++;
 				break;
 			case 8:
-				tabela_materia[coluna8][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				coluna8++;
+				tabela_materia[colunas[7]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+				colunas[7]++;
 				break;
 			default:
 				break;
