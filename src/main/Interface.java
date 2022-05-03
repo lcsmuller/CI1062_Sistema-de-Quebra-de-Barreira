@@ -1,7 +1,9 @@
 package main;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -42,8 +44,10 @@ public class Interface extends JFrame {
     private JButton btnSave;
     private JButton btnSend;
     
-    private float ira;
-    private String arquivoAluno;
+    private float ira;					// ira 
+    private String arquivoAluno;		// nome do arquivo do aluno, salvo para poder ser usado na escrita
+    private String nomeAluno;   		// quando o programa estiver pronto trocar o amogus por isso
+    private JTable pedidas;
     
     //private Vector<String> cabeca = new Vector<>();
     private String [] cabeca = new String[8];
@@ -88,7 +92,7 @@ public class Interface extends JFrame {
         extraPanel = new JPanel();
         //splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
         
-        tablePanel.setLayout(new BorderLayout());
+        tablePanel.setLayout(new GridLayout(6,1));
         this.add(tablePanel, BorderLayout.CENTER);
         
         upperPanel.setLayout(new FlowLayout());
@@ -120,8 +124,11 @@ public class Interface extends JFrame {
         upperPanel.add(btnOpenCSVFile);
         upperPanel.add(btnOpenSaveFile);
         
-        tablePanel.add(btnAdd, BorderLayout.NORTH);
         lowerPanel.add(new JLabel("sonegação de imposto"));
+        tablePanel.add(btnAdd, BorderLayout.NORTH);
+        JLabel cansasso = new JLabel("<html>mudei coisa pra krl, o motivo pra estar assim é na linha 94 da interface, o gridlayout permite usar mais espaco e imprimir mais coisas sem bugar tudo ou explodir , tbm mudei os arquivos e suas leituras entao pega do git, <br>se tudo estiver certo ai quando vc abrir o csv vai aparecer 2 tabelas, 1 com as materias a fazer a outra com as materias feitas<br> e descobri como fazer jlables de varias linhas, sao extamente 4:59 eu vou dormir, ate<html>");
+        // tirando isso eu mudei coisa pra krl na tentativa experimental de fazer a interface funcionar
+        tablePanel.add(cansasso);
         lowerPanel.add(btnSave);
         lowerPanel.add(btnSend);
     }
@@ -176,6 +183,9 @@ public class Interface extends JFrame {
 					int materia = controle.getLista_materia().procurarMateria(str);
 					controle.getPedidos().inserir(controle.getLista_materia().listaGetAt(materia));
 					controle.getPedidos().imprimeLista();
+					tablePanel.remove(requestTable);
+					requestTable = new JTable(controle.tabelaMateriapedidas(), cabeca);  
+					tablePanel.add(requestTable,BorderLayout.NORTH);
 			} catch (Exception erro) {}	
 		}
 	}
@@ -196,14 +206,18 @@ public class Interface extends JFrame {
 			//FileSaveReader fsr = new FileSaveReader();
 			arquivoAluno  = file.getName();
 			String tokens[][] = Csv.tokeniza(file.getName());
+			nomeAluno = tokens[2][1];
 			controle.getMat_aluno().tokensToLista(tokens);
 			this.ira = controle.ira();
 			lblIRA.setText("IRA: " + this.ira);
 			controle.possiveisPedidos();
 			String [][] tabela = controle.tabelaMateria();
+			String[][] tabelaf = controle.tabelaMateriaFeitas();
 			classTable = new JTable(tabela,cabeca);
-			classTable.setBounds(0, 0, 400, 400);
-			tablePanel.add(classTable, BorderLayout.CENTER);
+			JTable fTable = new JTable(tabelaf,cabeca);
+			//classTable.setBounds(0, 30, 0, 0);
+			tablePanel.add(classTable, BorderLayout.NORTH);
+			tablePanel.add(fTable, BorderLayout.NORTH);
 			classTable.setDefaultEditor(Object.class, null); // REMOVER DPS PRA BRINCAR
 			tablePanel.add(requestTable, BorderLayout.SOUTH);
 			//splitPane.setTopComponent(classTable);
@@ -223,8 +237,10 @@ public class Interface extends JFrame {
 			File file = chooser.getSelectedFile();
 			//FileSaveReader fsr = new FileSaveReader();
 			/*leitura do arquivo aqui*/
-			arquivoAluno  = file.getName();
 			String tokens[][] = FileSaveReader.leArquivo(file.getName());
+			controle.getPedidos().tokensToLista(tokens);
+			arquivoAluno = FileSaveReader.getFonte();
+			tokens = Csv.tokeniza(arquivoAluno);
 			controle.getMat_aluno().tokensToLista(tokens);
 			this.ira = controle.ira();
 			lblIRA.setText("IRA: " + this.ira);

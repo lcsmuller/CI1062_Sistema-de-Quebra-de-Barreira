@@ -19,7 +19,7 @@ public class ListaMateriaAluno extends Tokenizador<AlunoMateria> {
   		nova.setVersao(Integer.parseInt(tokensLinha[4]));
   		nova.setCodigoMateria(tokensLinha[10]);
   		nova.setNome(tokensLinha[11]);
-		nova.setPeriodo(0);
+		nova.setPeriodo(Integer.parseInt(tokensLinha[16]));
   		nova.setTipo(tokensLinha[13]);
   		nova.setHoras(Integer.parseInt(tokensLinha[12]));
   		nova.setNota(Integer.parseInt(tokensLinha[6]));

@@ -1,19 +1,19 @@
-MATR_ALUNO;NOME_PESSOA;COD_CURSO;NOME_CURSO;NUM_VERSAO;ANO;MEDIA_FINAL;SITUACAO_ITEM;PERIODO;SITUACAO;COD_ATIV_CURRIC;NOME_ATIV_CURRIC;CH_TOTAL;DESCR_ESTRUTURA;FREQUENCIA;SIGLA
-;;;;;;;;;;;;;;;
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;70;1;1;Aprovado;CI1055;ALGORITMOS E ESTRUTURAS DE DADOS I;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;100;1;1;Aprovado;CMA111;CALCULO DIFERENCIAL E INTEGRAL I;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;75;1;1;Aprovado;CI1068;CIRCUITOS LOGICOS;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;50;1;1;Aprovado;CI1003;Introdução à Ciência da Computação;60;Obrigatórias;93;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;80;1;1;Aprovado;CM304;Complementos de Matemática;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;50;1;2;Aprovado;CM303;Introdução a Geometria Analítica e Álgrebra Linear;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;85;1;2;Aprovado;CI1056;ALGORITMOS E ESTRUTURAS DE DADOS II;60;Obrigatórias;96;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;72;1;2;Aprovado;CMA211;CALCULO DIFERENCIAL E INTEGRAL II;60;Obrigatórias;75;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;91;1;2;Aprovado;CI1001;Programação 1;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;71;1;2;Aprovado;CI1210;Projetos digitais e Microprocessadores;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;39;2;3;Reprovado por nota;CI1002;Programação 2;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;82;1;3;Aprovado;CI1057;ALGORITMOS E ESTRUTURAS DE DADOS III;60;Obrigatórias;93;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;30;3;3;Reprovado por Frequência;CI1237;MATEMATICA DISCRETA;60;Obrigatórias;40;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;28;2;3;Reprovado por nota;CI1212;ORGANIZACAO E ARQUIT DE COMPUTADORES;60;Obrigatórias;90;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;49;1;3;Aprovado;CE009;Introdução à estatística;60;Obrigatórias;100;Aprovado
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2019;9999;10;4;Matrícula;CI237;MATEMATICA DISCRETA;60;Obrigatórias;;Matricula
-GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2019;9999;10;4;Matrícula;CI212;ORGANIZACAO E ARQUIT DE COMPUTADORES;60;Obrigatórias;;Matricula
+MATR_ALUNO;NOME_PESSOA;COD_CURSO;NOME_CURSO;NUM_VERSAO;ANO;MEDIA_FINAL;SITUACAO_ITEM;PERIODO;SITUACAO;COD_ATIV_CURRIC;NOME_ATIV_CURRIC;CH_TOTAL;DESCR_ESTRUTURA;FREQUENCIA;SIGLA;PERIODO
+;;;;;;;;;;;;;;;;
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;70;1;1;Aprovado;CI1055;ALGORITMOS E ESTRUTURAS DE DADOS I;60;Obrigatórias;100;Aprovado;1
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;100;1;1;Aprovado;CMA111;CALCULO DIFERENCIAL E INTEGRAL I;60;Obrigatórias;100;Aprovado;1
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;75;1;1;Aprovado;CI1068;CIRCUITOS LOGICOS;60;Obrigatórias;100;Aprovado;1
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;50;1;1;Aprovado;CI1003;Introdução à Ciência da Computação;60;Obrigatórias;93;Aprovado;1
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;80;1;1;Aprovado;CM304;Complementos de Matemática;60;Obrigatórias;100;Aprovado;1
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;50;1;2;Aprovado;CM303;Introdução a Geometria Analítica e Álgrebra Linear;60;Obrigatórias;100;Aprovado;2
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;85;1;2;Aprovado;CI1056;ALGORITMOS E ESTRUTURAS DE DADOS II;60;Obrigatórias;96;Aprovado;2
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;72;1;2;Aprovado;CMA211;CALCULO DIFERENCIAL E INTEGRAL II;60;Obrigatórias;75;Aprovado;2
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;91;1;2;Aprovado;CI1001;Programação 1;60;Obrigatórias;100;Aprovado;2
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;71;1;2;Aprovado;CI1210;Projetos digitais e Microprocessadores;60;Obrigatórias;100;Aprovado;2
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2017;39;2;3;Reprovado por nota;CI1002;Programação 2;60;Obrigatórias;100;Aprovado;3
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;82;1;3;Aprovado;CI1057;ALGORITMOS E ESTRUTURAS DE DADOS III;60;Obrigatórias;93;Aprovado;3
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;30;3;3;Reprovado por Frequência;CI1237;MATEMATICA DISCRETA;60;Obrigatórias;40;Aprovado;3
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;28;2;3;Reprovado por nota;CI1212;ORGANIZACAO E ARQUIT DE COMPUTADORES;60;Obrigatórias;90;Aprovado;3
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2018;49;1;3;Aprovado;CE009;Introdução à estatística;60;Obrigatórias;100;Aprovado;3
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2019;9999;10;4;Matrícula;CI237;MATEMATICA DISCRETA;60;Obrigatórias;;Matricula;3
+GRR41561234;LUKE SKYWALKER;21A;Curso de Ciência da Computação - Bacharelado;2019;2019;9999;10;4;Matrícula;CI212;ORGANIZACAO E ARQUIT DE COMPUTADORES;60;Obrigatórias;;Matricula;3
