@@ -19,6 +19,10 @@ public class FileSaveReader {
 		return nomeArquivoFonte;
 	}
 	
+	static public void setFonte(String fonte){
+		nomeArquivoFonte = fonte;
+	}
+	
 	/**
 	 * Wrapper de {@link main.Csv#leCsv(String)}. Realiza leitura e salva nome do
 	 * arquivo lido.

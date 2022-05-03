@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.Console;
 import java.io.File;
 import java.util.Arrays;
@@ -26,21 +29,24 @@ public class Interface extends JFrame {
 	private Controle controle = new Controle();
     private static Interface uniqueInstance = null;
     private JPanel tablePanel;
+    private JPanel extraPanel;
     private JPanel upperPanel;
     private JPanel lowerPanel;
     private JLabel lblIRA;
-    private JPanel middlePanel;
+    private JLabel lblSus;
     private JTable classTable;
-    private JScrollPane tableScrollPane; 
+    private JTable requestTable;
     private JButton btnOpenCSVFile;
     private JButton btnOpenSaveFile;
+    private JButton btnAdd;
     private JButton btnSave;
     private JButton btnSend;
     
     private float ira;
+    private String arquivoAluno;
     
     //private Vector<String> cabeca = new Vector<>();
-    private String [] cabeca = new String[9];
+    private String [] cabeca = new String[8];
     /*private Vector<String> cabeca = new Vector<String>(Arrays.asList("1º periodo",
     				"2º periodo","3º periodo","4º periodo","5º periodo","6º periodo",
     				"7º periodo","8º periodo"));*/
@@ -49,16 +55,6 @@ public class Interface extends JFrame {
 
     }
 
-    /*public void montaCabeca () {
-        this.cabeca.addElement("1º periodo");
-        this.cabeca.addElement("2º periodo");
-        this.cabeca.addElement("3º periodo");
-        this.cabeca.addElement("4º periodo");
-        this.cabeca.addElement("5º periodo");
-        this.cabeca.addElement("6º periodo");
-        this.cabeca.addElement("7º periodo");
-        this.cabeca.addElement("8º periodo");
-    }*/
     public void montaCabeca () {
     	for(int i = 1; i < 9; i++)
         this.cabeca[i-1] = i + "º periodo";
@@ -89,6 +85,8 @@ public class Interface extends JFrame {
     	tablePanel = new JPanel();
         upperPanel = new JPanel();
         lowerPanel = new JPanel();
+        extraPanel = new JPanel();
+        //splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
         
         tablePanel.setLayout(new BorderLayout());
         this.add(tablePanel, BorderLayout.CENTER);
@@ -99,26 +97,30 @@ public class Interface extends JFrame {
         lowerPanel.setLayout(new FlowLayout());
         this.add(lowerPanel, BorderLayout.SOUTH);
         
-        tableScrollPane = new JScrollPane(classTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        JScrollPane requestScrollPane = new JScrollPane();//aqui fica a listinha de coisas requisitadas
         
         //middlePanel = new JPanel(new BoxLayout());
         //tablePanel.setTopComponent(tableScrollPane);
         //tablePanel.setBottomComponent(requestScrollPane);
-        tablePanel.add(tableScrollPane);
+        //tablePanel.add(classTable);//tableScrollPane);
         //splitPane.setDividerLocation(500);
-        
+        //tablePanel.add(splitPane);
+        classTable = new JTable();
+        requestTable = new JTable();
+		//tablePanel.add(new JLabel("Possíveis escolhas"), BorderLayout.NORTH);
         lblIRA = new JLabel("IRA: --");
         
         btnSave = new JButton("Salvar");
         btnSend = new JButton("Enviar");
         btnOpenCSVFile = new JButton("Abrir arquivo CSV");
         btnOpenSaveFile = new JButton("Abrir arquivo Save");
+        btnAdd = new JButton("Adicionar matéria selecionada");
         upperPanel.add(lblIRA);
-        upperPanel.add(new JLabel("Amogus"));
+        lblSus = new JLabel("Amogus");
+        upperPanel.add(lblSus);
         upperPanel.add(btnOpenCSVFile);
         upperPanel.add(btnOpenSaveFile);
         
+        tablePanel.add(btnAdd, BorderLayout.NORTH);
         lowerPanel.add(new JLabel("sonegação de imposto"));
         lowerPanel.add(btnSave);
         lowerPanel.add(btnSend);
@@ -153,17 +155,46 @@ public class Interface extends JFrame {
 				send();
 			}
 		});
+		
+		btnAdd.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				addSubject();
+			}
+		});
+		
     }
+    
+    private void addSubject() {
+		int r = classTable.getSelectedRow();
+		int c = classTable.getSelectedColumn();
+		if (r > 0) {
+			String str = (String) classTable.getValueAt(r, c);
+			try {
+				if (!str.equals(""))
+					lblSus.setText(str);
+					int materia = controle.getLista_materia().procurarMateria(str);
+					controle.getPedidos().inserir(controle.getLista_materia().listaGetAt(materia));
+					controle.getPedidos().imprimeLista();
+			} catch (Exception erro) {}	
+		}
+	}
+	
+    private void refresh(){
+		this.revalidate();
+		this.repaint();
+	}
     
     //Abre e le o arquivo CSV selecionado pelo usuario
     private void OpenAndReadCSVFile() {
-    	JFileChooser chooser = new JFileChooser();
+    	JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
 	    FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos CSV", "csv");
 	    chooser.setFileFilter(filter);
 	    int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = chooser.getSelectedFile();
 			//FileSaveReader fsr = new FileSaveReader();
+			arquivoAluno  = file.getName();
 			String tokens[][] = Csv.tokeniza(file.getName());
 			controle.getMat_aluno().tokensToLista(tokens);
 			this.ira = controle.ira();
@@ -172,7 +203,10 @@ public class Interface extends JFrame {
 			String [][] tabela = controle.tabelaMateria();
 			classTable = new JTable(tabela,cabeca);
 			classTable.setBounds(0, 0, 400, 400);
-			tableScrollPane.add(classTable);
+			tablePanel.add(classTable, BorderLayout.CENTER);
+			classTable.setDefaultEditor(Object.class, null); // REMOVER DPS PRA BRINCAR
+			tablePanel.add(requestTable, BorderLayout.SOUTH);
+			//splitPane.setTopComponent(classTable);
         
 			/*leitura do arquivo aqui*/
 			//fsr.leArquivo(file.getName());
@@ -189,11 +223,24 @@ public class Interface extends JFrame {
 			File file = chooser.getSelectedFile();
 			//FileSaveReader fsr = new FileSaveReader();
 			/*leitura do arquivo aqui*/
+			arquivoAluno  = file.getName();
+			String tokens[][] = FileSaveReader.leArquivo(file.getName());
+			controle.getMat_aluno().tokensToLista(tokens);
+			this.ira = controle.ira();
+			lblIRA.setText("IRA: " + this.ira);
+			controle.possiveisPedidos();
+			String [][] tabela = controle.tabelaMateria();
+			classTable = new JTable(tabela,cabeca);
+			classTable.setBounds(0, 0, 400, 400);
+			tablePanel.add(classTable, BorderLayout.CENTER);
+			classTable.setDefaultEditor(Object.class, null); // REMOVER DPS PRA BRINCAR
+			tablePanel.add(requestTable, BorderLayout.SOUTH);
 		}
     }
 
     private void save() {
         String[][] tokens = controle.getPedidos().listaToTokens();
+        FileSaveReader.setFonte(arquivoAluno);
         FileSaveReader.escreveArquivo(tokens);
     }
     
