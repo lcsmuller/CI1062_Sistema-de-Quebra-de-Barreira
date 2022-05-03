@@ -34,17 +34,17 @@ public class ListaMateria extends Tokenizador<Materia> {
 	 * @param codigoMateria código único da matéria
 	 * @return retorna lista de índices contendo a matéria
 	 */
-	public Vector<Integer> procurarMateria(String codigoMateria) {
-		Vector<Integer> listaIndice = new Vector<>();
+	 
+	public int procurarMateria(String nomeMateria) {
 
 		for (int i = 0; i < this.lista.size(); i++) {
-			String codCursoLista = this.lista.get(i).getCodigoMateria();
-			if (codCursoLista.equals(codigoMateria))
-				listaIndice.add(i);
+			String nome = this.listaGetAt(i).getNome();
+			if (nome.equals(nomeMateria))
+				return i;
 		}
-		return listaIndice;
+		return -1;
 	}
-	
+
 	/**
 	 * Decodifica tokens em lista.
 	 *
@@ -61,4 +61,5 @@ public class ListaMateria extends Tokenizador<Materia> {
    			materiaAnterior = materia;
     	}
 	}
+
 }

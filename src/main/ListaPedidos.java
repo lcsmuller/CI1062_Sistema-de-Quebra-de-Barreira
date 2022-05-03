@@ -31,4 +31,17 @@ public class ListaPedidos extends Tokenizador<Materia> {
   		return nova;
 	}
 
+	@Override
+	public void inserir (Materia mat){
+		boolean achou = false;
+		for (int i = 0; i < this.tamanhoLista(); i++){
+			if (mat.getNome().equals(this.listaGetAt(i).getNome())) {
+				achou = true;
+			}
+		
+		}
+		if (! achou)
+			this.lista.add(mat);
+	}
+
 }
