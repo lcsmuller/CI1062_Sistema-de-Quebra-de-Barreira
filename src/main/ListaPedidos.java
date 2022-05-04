@@ -10,25 +10,22 @@ public class ListaPedidos extends Tokenizador<Materia> {
 	 * @param tokensLinha os tokens a serem serializados
 	 * @return resultado da transformação em AlunoMateria
 	 */
-	public AlunoMateria fromLinhaTokens(String[] tokensLinha){
-		AlunoMateria nova = new AlunoMateria();
-
-  		nova.setCodigoCurso(tokensLinha[0]);
-  		nova.setVersao(Integer.parseInt(tokensLinha[1]));
-  		nova.setCodigoMateria(tokensLinha[2]);
-  		nova.setNome(tokensLinha[3]);
-		nova.setPeriodo(0);
-  		nova.setTipo(tokensLinha[4]);
-  		nova.setHoras(Integer.parseInt(tokensLinha[5]));
-  		nova.setNota(Integer.parseInt(tokensLinha[6]));
-  		try {
-  			nova.setFrequencia(Integer.parseInt(tokensLinha[7]));
-  		} catch(Exception e) {
-  			nova.setFrequencia(0);
-  		}
-  		nova.setSituacao(tokensLinha[15]);
-
-  		return nova;
+	public Materia fromLinhaTokens(String[] tokensLinha){
+		Materia nova = new Materia();
+		
+		nova.setCodigoCurso(tokensLinha[0]);
+		nova.setVersao(Integer.parseInt(tokensLinha[6]));
+		nova.setCodigoMateria(tokensLinha[1]);
+		nova.setNome(tokensLinha[3]);
+		try {
+			nova.setPeriodo(Integer.parseInt(tokensLinha[4]));
+		} catch (Exception erro) {
+			nova.setPeriodo(0);
+		}
+		nova.setTipo(tokensLinha[5]);
+		nova.setHoras(Integer.parseInt(tokensLinha[2]));
+		return nova;
+		
 	}
 
 	@Override
@@ -43,5 +40,23 @@ public class ListaPedidos extends Tokenizador<Materia> {
 		if (! achou)
 			this.lista.add(mat);
 	}
+	
+	@Override
+	public void tokensToLista(String[][] tokens) {
+   		for(int i = 0; i < tokens.length; i++) {
+   			Materia materia = this.fromLinhaTokens(tokens[i]);
+    		this.inserir(materia);
+    	}
+	}
+	
+	public int procurarMateria(String nomeMateria) {
 
+		for (int i = 0; i < this.lista.size(); i++) {
+			String nome = this.listaGetAt(i).getNome();
+			if (nome.equals(nomeMateria) )//&& this.listaGetAt(i).getCodSituacao() != 10)
+				return i;
+		}
+		return -1;
+	}
+	
 }
