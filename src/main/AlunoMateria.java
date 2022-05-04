@@ -59,6 +59,7 @@ public class AlunoMateria extends Materia {
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
 	}
+	
 
 	@Override
 	public String toString() {

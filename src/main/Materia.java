@@ -88,7 +88,7 @@ public class Materia {
 	}
 
 	public String toString() {
-		return ("{" + this.getCodigoCurso() + "," + this.getCodigoMateria() + "," + this.getHoras() + ","
-				+ this.getNome() + "," + this.getPeriodo() + "," + this.getTipo() + "," + this.getVersao() + "}");
+		return (this.getCodigoCurso() + "," + this.getCodigoMateria() + "," + this.getHoras() + ","
+				+ this.getNome() + "," + this.getPeriodo() + "," + this.getTipo() + "," + this.getVersao());
 	}
 }

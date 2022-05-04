@@ -10,7 +10,7 @@ public class Controle {
 	private ListaPedidos pedidos = new ListaPedidos();					//PEDIDOS SELECIONADOS
 	private ListaMateria lista_materia = new ListaMateria();			//LISTA COM TODAS AS MATERIAS
 	private ListaMateriaAluno mat_aluno = new ListaMateriaAluno();		//LISTA COM AS MATERIAS FEITAS PELO ALUNO
-	
+	private int offsetbonus;
 	// -----------------------------------
 	//
 	//	FUNCOES COM VETOR FALTANTES 
@@ -191,16 +191,15 @@ public class Controle {
 	 * 
 	 * @return quantidade de matérias reprovadas no semestre anterior
 	 */
-	public int materiaReprovadas() {
-		int contador = 0;
+	public float materiaReprovadas() {
+		float contador = 0;
 		
 		for (int i = 0; i < this.mat_aluno.tamanhoLista(); i++){
-			if (this.mat_aluno.listaGetAt(i).getSituacao().equals("Reprovado por nota"))
-				if (this.mat_aluno.listaGetAt(i).getSemestre() == 3)
+			if (this.mat_aluno.listaGetAt(i).getPeriodo() == 3) {
+				if (this.mat_aluno.listaGetAt(i).getCodSituacao() > 1 && this.mat_aluno.listaGetAt(i).getCodSituacao() != 10) {
 					contador++;
-			else if (this.mat_aluno.listaGetAt(i).getSituacao().equals("Reprovado por Frequência"))
-				if (this.mat_aluno.listaGetAt(i).getSemestre() == 3)
-					contador++;
+				}
+			}	
 		}
 		return contador;
 	} 
@@ -233,36 +232,38 @@ public class Controle {
 	 * - Caso B: reprovado entre 1/3 a 2/3 e efetua mais de 4 pedidos
 	 * - Caso C: reprovado em menos que 1/3 e efetua mais de 3 pedidos
 	 */
-	public void analizarPedido () {
-
-		int reprovadas = this.materiaReprovadas();
+	
+	public float getDesempenho() {
+		float  reprovadas = this.materiaReprovadas();
+		System.out.println("reprovadas:" + reprovadas);
 		float desempenho = reprovadas / 5;
+		return desempenho;
+	}
 
+	public void analizarPedido () {
 		
-		// faltantes eh uma lista com as materias faltantes do aluno ,quando ela estiver vazia
-		// significa que o aluno ja escolheu todas as materias prebarreia e assim, pode pedir a quebra
-		//faltantes é gerado com o metodo this.preencheFaltantes
-		if (faltantes.tamanhoLista() == 0) {
-			if (this.ira() < 0.8) {	
-				for (int i = 0; i < this.pedidos.tamanhoLista(); i++){
-	
-					// Caso C
-					if ( desempenho < 0.33 ) {
-						if (this.pedidos.tamanhoLista() > 3) {
-							this.removePedidos();
-						}
+		float desempenho = getDesempenho();
+
+		if (pedidos.listaGetAt(pedidos.tamanhoLista()-1).getPeriodo() > 3 && faltantes.tamanhoLista() > 0) {
+			this.pedidos.removeUltimo();
+		}	
+		else if (faltantes.tamanhoLista() == 0) {
+			if (this.ira() < 0.8) {
+				// Caso C
+				if ( desempenho < 0.33 ) {
+					if (this.pedidos.tamanhoLista() > (3 + offsetbonus)) {
+						this.pedidos.removeUltimo();
 					}
-	
-					// Caso B
-					if ( desempenho >= 0.33 && desempenho < 0.66){
-						if (this.pedidos.tamanhoLista() > 4) {
-							this.removePedidos();
-						}
-					}
-					else // Caso A
-						if (this.pedidos.tamanhoLista() > 5)
-							this.removePedidos();
 				}
+				// Caso B
+				if ( desempenho >= 0.33 && desempenho < 0.66){
+					if (this.pedidos.tamanhoLista() > (4 + offsetbonus)) {
+						this.pedidos.removeUltimo();
+					}
+				}
+				else // Caso A
+					if (this.pedidos.tamanhoLista() > (5 + offsetbonus))
+						this.pedidos.removeUltimo();
 			}
 		}
 	}
@@ -272,56 +273,6 @@ public class Controle {
 	 *
 	 * @return um Vector<Vector<Materia>>. Basicamente uma tabela com todas as matérias.
 	 */
-	/*public Vector<Vector<String>> tabelaMateria() {
-		/*Vector<Vector<String>> tabela_materia = new Vector<Vector<String>>(8);
-		Vector<String> semestre1 = new Vector<String>();
-		Vector<String> semestre2 = new Vector<String>();
-		Vector<String> semestre3 = new Vector<String>();
-		Vector<String> semestre4 = new Vector<String>();
-		Vector<String> semestre5 = new Vector<String>();
-		Vector<String> semestre6 = new Vector<String>();
-		Vector<String> semestre7 = new Vector<String>();
-		Vector<String> semestre8 = new Vector<String>();
-		for (int i = 0; i < this.possiveis_escolhas.tamanhoLista(); i++) {
-			switch (this.possiveis_escolhas.listaGetAt(i).getPeriodo()) {
-			case 1:
-				semestre1.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 2:
-				semestre2.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 3:
-				semestre3.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 4:
-				semestre4.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 5:
-				semestre5.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 6:
-				semestre6.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 7:
-				semestre7.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			case 8:
-				semestre8.add(this.possiveis_escolhas.listaGetAt(i).getNome());
-				break;
-			default:
-				break;
-			}	
-		}
-		tabela_materia.add(semestre1);	
-		tabela_materia.add(semestre2);	
-		tabela_materia.add(semestre3);	
-		tabela_materia.add(semestre4);	
-		tabela_materia.add(semestre5);	
-		tabela_materia.add(semestre6);	
-		tabela_materia.add(semestre7);	
-		tabela_materia.add(semestre8);
-		return tabela_materia;
-	}*/
 	
 	public String[][] tabelaMateria() {
 		String tabela_materia[][] = new String[7][9];
@@ -334,49 +285,37 @@ public class Controle {
 			tabela_materia[colunas[j]][j - 1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
 			colunas[j]++;
 		}	
-		//}
-		/*
-		for (int i = 0; i < this.possiveis_escolhas.tamanhoLista(); i++) {
-			switch (this.possiveis_escolhas.listaGetAt(i).getPeriodo()) {
-			case 1:
-				tabela_materia[colunas[0]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[0]++;
-				break;
-			case 2:
-				tabela_materia[colunas[1]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[1]++;
-				break;
-			case 3:
-				tabela_materia[colunas[2]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[2]++;
-				break;
-			case 4:
-				tabela_materia[colunas[3]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[3]++;
-				break;
-			case 5:
-				tabela_materia[colunas[4]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[4]++;
-				break;
-			case 6:
-				tabela_materia[colunas[5]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[5]++;
-				break;
-			case 7:
-				tabela_materia[colunas[6]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[6]++;
-				break;
-			case 8:
-				tabela_materia[colunas[7]][this.possiveis_escolhas.listaGetAt(i).getPeriodo()-1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
-				colunas[7]++;
-				break;
-			default:
-				break;
-			}	
-		}
-		 */
 		return tabela_materia;
 	}
+	
+	public String[][] tabelaMateriaFeitas() {
+		String tabela_materia[][] = new String[7][9];
+		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1}; 
+		for(int i = 0; i < 8; i++)
+			tabela_materia[0][i] = (i+1) + "º PERIODO";
+		for (int i = 0; i < this.mat_aluno.tamanhoLista(); i++) {
+			int j = this.mat_aluno.listaGetAt(i).getPeriodo();
+			if(this.mat_aluno.listaGetAt(i).getCodSituacao() != 10) {
+				tabela_materia[colunas[j]][j-1] = this.mat_aluno.listaGetAt(i).getNome() ;
+				colunas[j]++;
+			}	
+		}	
+		return tabela_materia;
+	}
+	
+	public String[][] tabelaMateriapedidas() {
+		String tabela_materia[][] = new String[7][9];
+		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1}; 
+		for(int i = 0; i < 8; i++)
+			tabela_materia[0][i] = (i+1) + "º PERIODO";
+		for (int i = 0; i < this.pedidos.tamanhoLista(); i++) {
+			int j = this.pedidos.listaGetAt(i).getPeriodo();
+			tabela_materia[colunas[j]][j-1] = this.pedidos.listaGetAt(i).getNome() ;
+			colunas[j]++;
+		}	
+		return tabela_materia;
+	}
+	
 
 	/**
 	 * Preenche lista de possíveis escolhas de matérias com base em matérias
@@ -425,6 +364,7 @@ public class Controle {
 				}
 			}
 		}
+		offsetbonus = faltantes.tamanhoLista();
 	}
 	
 }
