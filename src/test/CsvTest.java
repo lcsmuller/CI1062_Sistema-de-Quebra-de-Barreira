@@ -85,7 +85,7 @@ class CsvTest {
 		String[][] tokens = new Csv().tokeniza(arquivos);
 
 		Controle controle = new Controle();
-		controle.getMat_aluno().tokensToLista(tokens); // preenche
+		controle.getListaMateriaAluno().tokensToLista(tokens); // preenche
 
 		//System.out.println("O ira eh :" + controle.ira());
 	}
@@ -99,10 +99,10 @@ class CsvTest {
 		String[][] tokens = csv.tokeniza(arquivos);
 
 		Controle c = new Controle();
-		c.getLista_materia().tokensToLista(tokens);
+		c.getListaMateria().tokensToLista(tokens);
 	
 		tokens = csv.tokeniza(aluno);
-		c.getMat_aluno().tokensToLista(tokens);
+		c.getListaMateriaAluno().tokensToLista(tokens);
 		
 		c.possiveisPedidos();
 		//c.getPossiveis_escolhas();
@@ -123,10 +123,10 @@ class CsvTest {
 		String[][] tokens = csv.tokeniza(arquivos);
 
 		Controle c = new Controle();
-		c.getLista_materia().tokensToLista(tokens);
+		c.getListaMateria().tokensToLista(tokens);
 	
 		tokens = csv.tokeniza(aluno);
-		c.getMat_aluno().tokensToLista(tokens);
+		c.getListaMateriaAluno().tokensToLista(tokens);
 		c.possiveisPedidos();
 		//System.out.println("\n\n\n\n\n ALGO COMECA AQUI");
 		//System.out.println("tamanho: "+ c.getPossiveis_escolhas().tamanhoLista());
@@ -144,14 +144,14 @@ class CsvTest {
 		String[][] tokens = csv.tokeniza(arquivos);
 
 		Controle c = new Controle();
-		c.getLista_materia().tokensToLista(tokens);
+		c.getListaMateria().tokensToLista(tokens);
 	
 		tokens = csv.tokeniza(aluno);
-		c.getMat_aluno().tokensToLista(tokens);
+		c.getListaMateriaAluno().tokensToLista(tokens);
 		c.preencheFaltantes();
 		System.out.println("\n\n\n\n\n ALGO COMECA AQUI");
-		System.out.println("tamanho: "+ c.getFaltantes().tamanhoLista());
-		c.getFaltantes().imprimeLista();
+		System.out.println("tamanho: "+ c.getListaFaltantes().tamanhoLista());
+		c.getListaFaltantes().imprimeLista();
 		System.out.println("\n\n\n\n\n ALGO TERMINA AQUI");
 	}
 	/*public static void main(String[] args) {

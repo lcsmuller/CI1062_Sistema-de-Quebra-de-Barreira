@@ -1,30 +1,22 @@
 package main;
 
 import java.awt.BorderLayout;
-//import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.event.MouseEvent;
-//import java.awt.event.MouseListener;
-//import java.awt.event.MouseMotionListener;
-//import java.io.Console;
 import java.io.File;
-//import java.util.Arrays;
-//import java.util.Vector;
-
-//import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-//import javax.swing.JScrollPane;
-//import javax.swing.JSplitPane;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
-//import javax.swing.table.TableModel;
 
 
 public class Interface extends JFrame {
@@ -32,7 +24,7 @@ public class Interface extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Controle controle = new Controle();
+	private Controle controle;
     private static Interface uniqueInstance = null;
     private JPanel tablePanel;
     //private JPanel extraPanel;
@@ -41,6 +33,8 @@ public class Interface extends JFrame {
     private JLabel lblIRA;
     private JLabel lblSus;
     private JLabel lblDes; 
+    private JLabel lblFaltantes;
+    private JLabel lblmaxsel;
     private JTable classTable;
     private JTable requestTable;
     private JTable fTable;
@@ -59,22 +53,14 @@ public class Interface extends JFrame {
     private float ira;					// ira 
     private String arquivoAluno;		// nome do arquivo do aluno, salvo para poder ser usado na escrita
     private String nomeAluno;   		// quando o programa estiver pronto trocar o amogus por isso
+    private String grrAluno;
+    private String nomeCurso;
     
-    //private Vector<String> cabeca = new Vector<>();
     private String [] cabeca = new String[8];
-    /*private Vector<String> cabeca = new Vector<String>(Arrays.asList("1º periodo",
-    				"2º periodo","3º periodo","4º periodo","5º periodo","6º periodo",
-    				"7º periodo","8º periodo"));*/
     
     private Interface() {
-
+    	
     }
-
-    public void montaCabeca () {
-    	for(int i = 1; i < 9; i++)
-        this.cabeca[i-1] = i + "º periodo";
-    }
-
     
     public static synchronized Interface getInstance() {
         if (uniqueInstance == null) {
@@ -84,13 +70,18 @@ public class Interface extends JFrame {
         return uniqueInstance;
     }
     
+    public void montaCabeca () {
+    	for(int i = 1; i < 9; i++)
+        this.cabeca[i-1] = i + "º periodo";
+    }
+    
     //Configura parametros para a funcionalidade da interface
     private void setInterfaceParameters() {
     	this.setTitle("Pedido Quebra de Barreiras");
         this.setLayout(new BorderLayout());
         this.setIconImage(null);
-        this.setSize(900, 700);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setSize(1300, 700);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -120,48 +111,80 @@ public class Interface extends JFrame {
         this.add(tablePanel, BorderLayout.CENTER);
         addSubPanels();
         
-        upperPanel.setLayout(new FlowLayout());
+        upperPanel.setLayout(new GridLayout(2,3));
         this.add(upperPanel, BorderLayout.NORTH);
+        upperPanel.setBackground(Color.getHSBColor((float) 0.50, (float) 0.35, (float) 0.5));
         
-        lowerPanel.setLayout(new FlowLayout());
+        lowerPanel.setLayout(new GridLayout(1,2));
         this.add(lowerPanel, BorderLayout.SOUTH);
+        upperPanel.setBackground(Color.getHSBColor((float) 0.50, (float) 0.35, (float) 0.5));
         
-        
-        //middlePanel = new JPanel(new BoxLayout());
-        //tablePanel.setTopComponent(tableScrollPane);
-        //tablePanel.setBottomComponent(requestScrollPane);
-        //tablePanel.add(classTable);//tableScrollPane);
-        //splitPane.setDividerLocation(500);
-        //tablePanel.add(splitPane);
+       
         classTable = new JTable();
         requestTable = new JTable();
-		//tablePanel.add(new JLabel("Possíveis escolhas"), BorderLayout.NORTH);
-        lblIRA = new JLabel("IRA: --");
+       
+       
         
-        btnSave = new JButton("Salvar");
-        btnSend = new JButton("Enviar");
-        btnHist = new JButton("Ver seu historico na materia");
-        btnDel = new JButton("Remover matéria selecionada");
+        //gera o cabecalho
         btnOpenCSVFile = new JButton("Abrir arquivo CSV");
+        btnOpenCSVFile.setFont(new Font("Dialog", Font.PLAIN, 16));
         btnOpenSaveFile = new JButton("Abrir arquivo Save");
-        btnAdd = new JButton("Adicionar matéria selecionada");
-        upperPanel.add(lblIRA);
+        btnOpenSaveFile.setFont(new Font("Dialog", Font.PLAIN, 16));
+        lblIRA = new JLabel("IRA: --");
+        lblIRA.setFont(new Font("Dialog",Font.PLAIN, 20));
         lblSus = new JLabel("Amogus");
+        lblSus.setFont(new Font("Dialog",Font.PLAIN, 20));
         lblDes = new JLabel("Desempenho no ultimo semestre: --");
+        lblDes.setFont(new Font("Dialog",Font.PLAIN, 20));
+        
+        // monta do cabecalho 
+        upperPanel.add(lblIRA);
         upperPanel.add(lblSus);
         upperPanel.add(btnOpenCSVFile);
-        upperPanel.add(btnOpenSaveFile);
         upperPanel.add(lblDes);
+        JLabel coiso = new JLabel(""); 
+        upperPanel.add(coiso);
+        upperPanel.add(btnOpenSaveFile);
         
-        lowerPanel.add(new JLabel("sonegação de imposto"));
+        //gera radape
+        btnSave = new JButton("Salvar Pedido");
+        btnSave.setFont(new Font("Dialog",Font.PLAIN, 16));
+        btnSend = new JButton("Enviar Pedido");
+        btnSend.setFont(new Font("Dialog",Font.PLAIN, 16));
+        
+        //monta rodape 
+        lowerPanel.add(btnSave);
+        lowerPanel.add(btnSend);
+        
+        //gera meioca
+        btnHist = new JButton("Ver seu historico na materia");
+        btnHist.setFont(new Font("Dialog", Font.PLAIN, 16));
+        btnDel = new JButton("Remover matéria selecionada");
+        btnDel.setFont(new Font("Dialog", Font.PLAIN, 16));
+        btnAdd = new JButton("Adicionar matéria selecionada");
+        btnAdd.setFont(new Font("Dialog", Font.PLAIN, 16));
+        lblFaltantes = new JLabel("materias pré barreira faltantes  --",SwingConstants.CENTER);
+        lblFaltantes.setFont(new Font("Dialog", Font.PLAIN, 20));
+        lblmaxsel = new JLabel("máximo de matérias pós barreira selecionaveis: -- ",SwingConstants.CENTER);
+        lblmaxsel.setFont(new Font("Dialog", Font.PLAIN, 20));
+        JLabel lblTamFalt = new JLabel("Para pegar materias após o 3º periodo, é necessario pegar todas as materias pré-barreira", SwingConstants.CENTER);
+        lblTamFalt.setFont(new Font("Dialog",Font.PLAIN, 20));
+        
+        //monta meioca
         tablePanel1.add(btnAdd, BorderLayout.SOUTH);
         tablePanel2.add(btnHist, BorderLayout.SOUTH);
         tablePanel3.add(btnDel, BorderLayout.SOUTH);
-        JLabel cansasso = new JLabel("<html>mudei coisa pra krl, o motivo pra estar assim é na linha 94 da interface, o gridlayout permite usar mais espaco e imprimir mais coisas sem bugar tudo ou explodir , tbm mudei os arquivos e suas leituras entao pega do git, <br>se tudo estiver certo ai quando vc abrir o csv vai aparecer 2 tabelas, 1 com as materias a fazer a outra com as materias feitas<br> e descobri como fazer jlables de varias linhas, sao extamente 4:59 eu vou dormir, ate<html>");
-        // tirando isso eu mudei coisa pra krl na tentativa experimental de fazer a interface funcionar
-        tablePanel4.add(cansasso, BorderLayout.SOUTH);
-        lowerPanel.add(btnSave);
-        lowerPanel.add(btnSend);
+        
+        tablePanel4.add(lblTamFalt, BorderLayout.NORTH);
+        JPanel minisub = new JPanel();
+        minisub.setLayout(new GridLayout(1,2));
+        minisub.setBackground(Color.getHSBColor((float) 0.50, (float) 0.35, (float) 0.5));
+        minisub.add(lblFaltantes,BorderLayout.CENTER);
+        minisub.add(lblmaxsel,BorderLayout.CENTER);
+		tablePanel4.add(minisub, BorderLayout.CENTER);
+		tablePanel4.setBackground(Color.getHSBColor((float) 0.50, (float) 0.35, (float) 0.5));
+        //tablePanel4.add(cansasso2, BorderLayout.SOUTH);
+        
     }
     
     //Conecta metodos aos botoes da interface
@@ -222,16 +245,21 @@ public class Interface extends JFrame {
 			String str = (String) requestTable.getValueAt(r, c);
 			try {
 				if (!str.equals("")) {
-					//lblSus.setText(str);
-					int materia = controle.getPedidos().procurarMateria(str);
-					int falt = controle.getFaltantes().procurarMateria(str);
-					if (falt == -1)
-						controle.getFaltantes().inserir(controle.getPedidos().listaGetAt(materia));
-					controle.getPedidos().removerEm(materia);
-					
+					int materia = controle.getListaPedidos().procurarMateriaNome(str);
+					int falt = controle.getListaFaltantes().procurarMateriaNome(str);
+					if (falt == -1 && controle.getListaPedidos().listaGetAt(materia).getPeriodo() < 4)
+						controle.getListaFaltantes().inserir(controle.getListaPedidos().listaGetAt(materia));
+					controle.getListaPedidos().removerEm(materia);
+					controle.analizarPedido();
+					lblFaltantes.setText("materias pré barreira faltantes " +controle.getListaFaltantes().tamanhoLista());
 					tablePanel3.remove(requestTable);
-					requestTable = new JTable(controle.tabelaMateriapedidas(), cabeca);  
+					requestTable = new JTable(controle.tabelaMateriaPedidas(), cabeca);  
 					tablePanel3.add(requestTable,BorderLayout.NORTH);
+					requestTable.setDefaultEditor(Object.class, null);
+					requestTable.setRowSelectionAllowed(false);
+					requestTable.setGridColor(Color.BLACK);
+					requestTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
+					requestTable.setForeground(Color.BLACK);
 				}
 			} catch (Exception erro) {}	
 		}
@@ -243,23 +271,44 @@ public class Interface extends JFrame {
 		int c = classTable.getSelectedColumn();
 		if (r > 0) {
 			String str = (String) classTable.getValueAt(r, c);
-			//try {
+			try {
 				if (!str.equals("")) {
-					//lblSus.setText(str);
-					int materia = controle.getLista_materia().procurarMateria(str);
-					controle.getPedidos().inserir(controle.getLista_materia().listaGetAt(materia));
-					int falt = controle.getFaltantes().procurarMateria(str);
+					int materia = controle.getListaMateria().procurarMateriaNome(str);
+					controle.getListaPedidos().inserir(controle.getListaMateria().listaGetAt(materia));
+					int falt = controle.getListaFaltantes().procurarMateriaNome(str);
 					if (falt != -1)
-						controle.getFaltantes().removerEm(falt);
-					System.out.println("tamanho: " + controle.getFaltantes().tamanhoLista());
-					controle.analizarPedido();
+						controle.getListaFaltantes().removerEm(falt);
+					System.out.println("tamanho: " + controle.getListaFaltantes().tamanhoLista());
+					int analise = controle.analizarPedido();
+					analisePopup(analise);
+					lblFaltantes.setText("materias pré barreira faltantes " +controle.getListaFaltantes().tamanhoLista());
 					tablePanel3.remove(requestTable);
-					requestTable = new JTable(controle.tabelaMateriapedidas(), cabeca);  
+					requestTable = new JTable(controle.tabelaMateriaPedidas(), cabeca);
 					tablePanel3.add(requestTable,BorderLayout.NORTH);
+					requestTable.setDefaultEditor(Object.class, null);
+					requestTable.setRowSelectionAllowed(false);
+					requestTable.setGridColor(Color.BLACK);
+					requestTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
+					requestTable.setForeground(Color.BLACK);
 				}
-			//} catch (Exception erro) {}	
+			} catch (Exception erro) {}	
 		}
 		refresh();
+	}
+    
+    private void analisePopup(int motivo) {
+		switch (motivo) {
+			case 1:
+			case 2:
+			case 3:
+				JOptionPane.showMessageDialog(this, "Limite de matérias requisitadas ultrapassado", "Erro", JOptionPane.WARNING_MESSAGE);
+			break;
+			case 4:
+				JOptionPane.showMessageDialog(this, "É necessario pegar todas as matérias pré barreira para pedir matérias pós barreira", "Erro", JOptionPane.WARNING_MESSAGE);
+			break;
+			case 0:
+			default:
+		}
 	}
     
     private void geraNovoPainel() {
@@ -270,8 +319,8 @@ public class Interface extends JFrame {
 			try {
 				if (!str.equals("")) {
 					//lblSus.setText(str);
-					int materia = controle.getMat_aluno().procurarMateriaNome(str);
-					AlunoMateria mat = controle.getMat_aluno().listaGetAt(materia);
+					int materia = controle.getListaMateriaAluno().procurarMateriaNome(str);
+					AlunoMateria mat = controle.getListaMateriaAluno().listaGetAt(materia);
 					JFrame novaPanel = new JFrame();
 			    	novaPanel.setTitle("Informacao de materia feita");
 			    	novaPanel.setLayout(new BorderLayout());
@@ -318,7 +367,7 @@ public class Interface extends JFrame {
 			}
 		} 
     }
-    
+   
     private void refresh(){
 		this.revalidate();
 		this.repaint();
@@ -330,19 +379,51 @@ public class Interface extends JFrame {
 		String[][] tabelaf = controle.tabelaMateriaFeitas();
 		fTable = new JTable(tabelaf,cabeca);	
 		classTable = new JTable(tabela,cabeca);
-		requestTable = new JTable(controle.tabelaMateriapedidas(), cabeca); 
+		requestTable = new JTable(controle.tabelaMateriaPedidas(), cabeca); 
 		//BLOCO DE INSERIR NA TELA
-		tablePanel1.add(classTable, BorderLayout.CENTER);
-		tablePanel2.add(fTable, BorderLayout.CENTER);
+		tablePanel1.add(classTable, BorderLayout.NORTH);
+		tablePanel2.add(fTable, BorderLayout.NORTH);
 		tablePanel3.add(requestTable, BorderLayout.NORTH);
 		//BLOCO DE REMOVER CONTROLE DO USUARIO 
-		classTable.setDefaultEditor(Object.class, null); // REMOVER DPS PRA BRINCAR
-		fTable.setDefaultEditor(Object.class, null); // REMOVER DPS PRA BRINCAR
-		requestTable.setDefaultEditor(Object.class, null); // REMOVER DPS PRA BRINCAR
-    }
-    
+		classTable.setDefaultEditor(Object.class, null); 
+		fTable.setDefaultEditor(Object.class, null); 
+		requestTable.setDefaultEditor(Object.class, null);
+		classTable.setRowSelectionAllowed(false);
+		fTable.setRowSelectionAllowed(false);
+		requestTable.setRowSelectionAllowed(false);
+		classTable.setGridColor(Color.BLACK);
+		classTable.setForeground(Color.BLACK
+				
+				
+				 .darker().darker().darker()
+				 .darker().darker().darker()
+				 .darker().darker().darker()
+		.darker().darker()         /////////
+		.darker().darker()		   /////////
+		.darker().darker()		   /////////
+		.darker().darker().darker().darker()
+		.darker().darker().darker().darker()
+		.darker().darker().darker().darker()
+				 .darker()		   .darker()
+				 .darker()		   .darker()
+				 .darker()		   .darker());
+				 
+		classTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
+		requestTable.setGridColor(Color.BLACK);
+		requestTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
+		requestTable.setForeground(Color.BLACK);
+		fTable.setGridColor(Color.BLACK);
+		fTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
+		fTable.setForeground(Color.BLACK);
+		repaint();
+		revalidate();
+	}
+		
     //Abre e le o arquivo CSV selecionado pelo usuario
     private void OpenAndReadCSVFile() {
+    	controle = new Controle();
+    	String [][] tokens = Csv.tokeniza("exemplo_trabalho_TAP_Disciplinas_2019.csv");
+        controle.getListaMateria().tokensToLista(tokens);
     	JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
 	    FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos CSV", "csv");
 	    chooser.setFileFilter(filter);
@@ -351,61 +432,89 @@ public class Interface extends JFrame {
 			File file = chooser.getSelectedFile();
 			//FileSaveReader fsr = new FileSaveReader();
 			arquivoAluno  = file.getName();
-			String tokens[][] = Csv.tokeniza(file.getName());
+			tokens = Csv.tokeniza(file.getName());
 			nomeAluno = tokens[2][1];
+			grrAluno = tokens[2][0];
+			nomeCurso = tokens[2][3];
 			lblSus.setText(nomeAluno);
-			controle.getMat_aluno().tokensToLista(tokens);
+			controle.getListaMateriaAluno().tokensToLista(tokens);
 			this.ira = controle.ira();
 			lblIRA.setText("IRA: " + this.ira);
 			lblDes.setText("Desempenho no ultimo semestre:" + controle.getDesempenho());
 			controle.possiveisPedidos();
 			controle.preencheFaltantes();
+			lblFaltantes.setText("materias pré barreira faltantes " +controle.getListaFaltantes().tamanhoLista());
 			geraJtable();
+			if (controle.ira() > 0.8)
+				lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 999");
+			else {
+				if (controle.getDesempenho() < 0.33)
+					lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 3");
+				else if (controle.getDesempenho() < 0.66)
+					lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 4");
+				else 
+					lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 5");
+			}
 		}
     }
     
     private void OpenAndReadSaveFile() {
+    	controle = new Controle();
+    	String [][] tokens = Csv.tokeniza("exemplo_trabalho_TAP_Disciplinas_2019.csv");
+        controle.getListaMateria().tokensToLista(tokens);
     	JFileChooser chooser = new JFileChooser();
 	    FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos Save", "save");
 	    chooser.setFileFilter(filter);
 	    int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = chooser.getSelectedFile();
-			//FileSaveReader fsr = new FileSaveReader();
-			/*leitura do arquivo aqui*/
-			String tokens[][] = FileSaveReader.leArquivo(file.getName());
-			controle.getPedidos().tokensToLista(tokens);
+			tokens = FileSaveReader.leArquivo(file.getName());
+			controle.getListaPedidos().tokensToLista(tokens);
 			arquivoAluno = FileSaveReader.getFonte();
 			tokens = Csv.tokeniza(arquivoAluno);
 			nomeAluno = tokens[2][1];
+			grrAluno = tokens[2][0];
+			nomeCurso = tokens[2][3];
 			lblSus.setText(nomeAluno);
-			controle.getMat_aluno().tokensToLista(tokens);
+			controle.getListaMateriaAluno().tokensToLista(tokens);
 			this.ira = controle.ira();
 			lblIRA.setText("IRA: " + this.ira);
 			lblDes.setText("Desempenho no ultimo semestre:" + controle.getDesempenho());
 			controle.preencheFaltantes();
+			lblFaltantes.setText("materias pré barreira faltantes " + controle.getListaFaltantes().tamanhoLista());
 			geraJtable();
+			if (controle.ira() > 0.8)
+				lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 999");
+			else {
+				if (controle.getDesempenho() < 0.33)
+					lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 3");
+				else if (controle.getDesempenho() < 0.66)
+					lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 4");
+				else 
+					lblmaxsel.setText("máximo de matérias pós barreira selecionaveis: 5");
+			}
 		}
     }
 
     private void save() {
-        String[][] tokens = controle.getPedidos().listaToTokens();
+        String[][] tokens = controle.getListaPedidos().listaToTokens();
         FileSaveReader.setFonte(arquivoAluno);
         FileSaveReader.escreveArquivo(tokens);
+        JOptionPane.showMessageDialog(this, "Pedido salvo com sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }
     
     private void send() {
-		
+    	FileSend.setFonte(arquivoAluno);
+    	String comentario = JOptionPane.showInputDialog("comentario (opcional)");
+		FileSend.montaPedido(nomeAluno,grrAluno,nomeCurso,comentario,controle);
+		JOptionPane.showMessageDialog(this, "Pedido enviado com sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 	}
 
     private void initialize() {
-    	
         setInterfaceParameters();
         addSwingComponents();
         addButtonListeners();
         this.montaCabeca();
-        String [][] tokens = Csv.tokeniza("exemplo_trabalho_TAP_Disciplinas_2019.csv");
-        controle.getLista_materia().tokensToLista(tokens);
         
         this.revalidate();
         this.repaint();
@@ -413,8 +522,11 @@ public class Interface extends JFrame {
  
     @SuppressWarnings("unused")
 	public static void main(String args[]) {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+    	}
+    	catch(Exception e) {System.out.println("deu ruim");}
         Interface frame = getInstance();
-        
     }
 
 }

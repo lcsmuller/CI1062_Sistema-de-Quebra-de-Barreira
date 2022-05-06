@@ -2,7 +2,7 @@ package main;
 
 import java.util.Vector;
 
-/** Matérias que já foram ou estão sendo cursadas pelo aluno */
+/** Matérias vinculadas ao aluno. */
 public class ListaMateriaAluno extends Tokenizador<AlunoMateria> {
 
 	/**
@@ -13,25 +13,25 @@ public class ListaMateriaAluno extends Tokenizador<AlunoMateria> {
 	 * @return resultado da transformação em AlunoMateria
 	 */
 	public AlunoMateria fromLinhaTokens(String[] tokensLinha) {
-  		AlunoMateria nova = new AlunoMateria();
+  		AlunoMateria novoAlunoMateria = new AlunoMateria();
 
-  		nova.setCodigoCurso(tokensLinha[2]);
-  		nova.setVersao(Integer.parseInt(tokensLinha[4]));
-  		nova.setCodigoMateria(tokensLinha[10]);
-  		nova.setNome(tokensLinha[11]);
-		nova.setPeriodo(Integer.parseInt(tokensLinha[16]));
-  		nova.setTipo(tokensLinha[13]);
-  		nova.setHoras(Integer.parseInt(tokensLinha[12]));
-  		nova.setNota(Integer.parseInt(tokensLinha[6]));
+  		novoAlunoMateria.setCodigoCurso(tokensLinha[2]);
+  		novoAlunoMateria.setVersao(Integer.parseInt(tokensLinha[4]));
+  		novoAlunoMateria.setCodigoMateria(tokensLinha[10]);
+  		novoAlunoMateria.setNome(tokensLinha[11]);
+		novoAlunoMateria.setPeriodo(Integer.parseInt(tokensLinha[16]));
+  		novoAlunoMateria.setTipo(tokensLinha[13]);
+  		novoAlunoMateria.setHoras(Integer.parseInt(tokensLinha[12]));
+  		novoAlunoMateria.setNota(Integer.parseInt(tokensLinha[6]));
   		try {
-  			nova.setFrequencia(Integer.parseInt(tokensLinha[14]));
-  		} catch(Exception e) {
-  			nova.setFrequencia(0);
+  			novoAlunoMateria.setFrequencia(Integer.parseInt(tokensLinha[14]));
+  		} catch (Exception e) {
+  			novoAlunoMateria.setFrequencia(0);
   		}
-  		nova.setSituacao(tokensLinha[15]);
-  		nova.setCodSituacao(Integer.parseInt(tokensLinha[7]));
+  		novoAlunoMateria.setSituacao(tokensLinha[15]);
+  		novoAlunoMateria.setCodSituacao(Integer.parseInt(tokensLinha[7]));
 
-  		return nova;
+  		return novoAlunoMateria;
   	}
 
 	/**
@@ -51,8 +51,14 @@ public class ListaMateriaAluno extends Tokenizador<AlunoMateria> {
 		}
 		return listaIndice;
 	}
-	public int procurarMateriaNome(String nomeMateria) {
 
+	/** 
+	 * Procura matéria a partir de seu nome fornecido.
+	 *
+	 * @param nomeMateria nome da matéria
+	 * @return retorna índice em que a matéria se encontra na lista, -1 em caso de falha
+	 */
+	public int procurarMateriaNome(String nomeMateria) {
 		for (int i = 0; i < this.lista.size(); i++) {
 			String nome = this.listaGetAt(i).getNome();
 			if (nome.equals(nomeMateria) && this.listaGetAt(i).getCodSituacao() != 10)

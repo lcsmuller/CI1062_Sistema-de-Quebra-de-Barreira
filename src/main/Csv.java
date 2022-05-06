@@ -27,7 +27,6 @@ public class Csv {
 
 	/**
 	 * Separa células CSV em tokens individuais.
-	 * @todo atualmente sÃ³ pega um arquivo e imprime na tela,
 	 * 
 	 * @param csvReader arquivo CSV a ter seus dados extraídos
 	 * @return dados extraídos
@@ -74,7 +73,7 @@ public class Csv {
 	}
 
 	/**
-	 * Realiza serialização de de dados String para a sua representaÃ§Ã£o em formato
+	 * Realiza serialização de de dados String para a sua representação em formato
 	 * CSV.
 	 * 
 	 * @param entrada   o conjunto de dados a serem serializados
@@ -104,7 +103,7 @@ public class Csv {
 			escreveFileWriter(entrada, csvWriter);
 			csvWriter.close();
 		} catch (IOException e) {
-			System.out.println("NÃ£o foi possÃ­vel escrever em '" + arquivo + "'");
+			System.out.println("Não foi possÃ­vel escrever em '" + arquivo + "'");
 			e.printStackTrace();
 		}
 	}

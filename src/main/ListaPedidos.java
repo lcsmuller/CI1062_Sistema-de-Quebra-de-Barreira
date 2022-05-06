@@ -1,6 +1,6 @@
 package main;
 
-/** Lista de matérias que podem ser pedidas pelo aluno (não cursadas). */
+/** Lista de matérias que podem ser pedidas pelo aluno. */
 public class ListaPedidos extends Tokenizador<Materia> {
 
 	/**
@@ -11,36 +11,49 @@ public class ListaPedidos extends Tokenizador<Materia> {
 	 * @return resultado da transformação em AlunoMateria
 	 */
 	public Materia fromLinhaTokens(String[] tokensLinha){
-		Materia nova = new Materia();
+		Materia novaMateria = new Materia();
 		
-		nova.setCodigoCurso(tokensLinha[0]);
-		nova.setVersao(Integer.parseInt(tokensLinha[6]));
-		nova.setCodigoMateria(tokensLinha[1]);
-		nova.setNome(tokensLinha[3]);
+		novaMateria.setCodigoCurso(tokensLinha[0]);
+		novaMateria.setVersao(Integer.parseInt(tokensLinha[6]));
+		novaMateria.setCodigoMateria(tokensLinha[1]);
+		novaMateria.setNome(tokensLinha[3]);
 		try {
-			nova.setPeriodo(Integer.parseInt(tokensLinha[4]));
+			novaMateria.setPeriodo(Integer.parseInt(tokensLinha[4]));
 		} catch (Exception erro) {
-			nova.setPeriodo(0);
+			novaMateria.setPeriodo(0);
 		}
-		nova.setTipo(tokensLinha[5]);
-		nova.setHoras(Integer.parseInt(tokensLinha[2]));
-		return nova;
+		novaMateria.setTipo(tokensLinha[5]);
+		novaMateria.setHoras(Integer.parseInt(tokensLinha[2]));
+
+		return novaMateria;
 		
 	}
 
+	/**
+	 * Insere novo elemento na lista.
+	 *
+	 * @param materia elemento a ser inserido
+	 */
 	@Override
-	public void inserir (Materia mat){
-		boolean achou = false;
+	public void inserir(Materia materia) {
+		boolean existeMateria = false;
+		
 		for (int i = 0; i < this.tamanhoLista(); i++){
-			if (mat.getNome().equals(this.listaGetAt(i).getNome())) {
-				achou = true;
+			if (materia.getNome().equals(this.listaGetAt(i).getNome())) {
+				existeMateria = true;
 			}
 		
 		}
-		if (! achou)
-			this.lista.add(mat);
+
+		if (!existeMateria)
+			this.lista.add(materia);
 	}
-	
+
+	/**
+	 * Transforma tokens de linha CSV obtidos por {@link main.Csv#tokeniza(String)}.
+	 *
+	 * @param tokens os tokens a serem decodificados
+	 */
 	@Override
 	public void tokensToLista(String[][] tokens) {
    		for(int i = 0; i < tokens.length; i++) {
@@ -49,11 +62,16 @@ public class ListaPedidos extends Tokenizador<Materia> {
     	}
 	}
 	
-	public int procurarMateria(String nomeMateria) {
-
+	/** 
+	 * Procura matéria a partir de seu nome fornecido.
+	 *
+	 * @param nomeMateria nome da matéria
+	 * @return retorna índice em que a matéria se encontra na lista, -1 em caso de falha
+	 */
+	public int procurarMateriaNome(String nomeMateria) {
 		for (int i = 0; i < this.lista.size(); i++) {
 			String nome = this.listaGetAt(i).getNome();
-			if (nome.equals(nomeMateria) )//&& this.listaGetAt(i).getCodSituacao() != 10)
+			if (nome.equals(nomeMateria))
 				return i;
 		}
 		return -1;
