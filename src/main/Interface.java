@@ -295,6 +295,30 @@ public class Interface extends JFrame {
 		}
 		refresh();
 	}
+    private void reavaliaPedidos() {
+    	ListaPedidos novalista = controle.getListaPedidos();
+    	controle.setListaPedidos(new ListaPedidos());
+    	for (int i = 0; i < novalista.tamanhoLista(); i++){
+			String str = novalista.listaGetAt(i).getNome();
+			int materia = controle.getListaMateria().procurarMateriaNome(str);
+			controle.getListaFaltantes().inserir(controle.getListaMateria().listaGetAt(materia));
+			int falt = controle.getListaFaltantes().procurarMateriaNome(str);
+			if (falt != -1)
+				controle.getListaFaltantes().removerEm(falt);
+			System.out.println("tamanho: " + controle.getListaFaltantes().tamanhoLista());
+			controle.analizarPedido();
+		}
+    	lblFaltantes.setText("materias pré barreira faltantes " +controle.getListaFaltantes().tamanhoLista());
+		tablePanel3.remove(requestTable);
+		requestTable = new JTable(controle.tabelaMateriaPedidas(), cabeca);
+		tablePanel3.add(requestTable,BorderLayout.NORTH);
+		requestTable.setDefaultEditor(Object.class, null);
+		requestTable.setRowSelectionAllowed(false);
+		requestTable.setGridColor(Color.BLACK);
+		requestTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
+		requestTable.setForeground(Color.BLACK);
+		refresh();
+	}
     
     private void analisePopup(int motivo) {
 		switch (motivo) {
@@ -415,8 +439,8 @@ public class Interface extends JFrame {
 		fTable.setGridColor(Color.BLACK);
 		fTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
 		fTable.setForeground(Color.BLACK);
-		repaint();
-		revalidate();
+		this.repaint();
+		this.revalidate();
 	}
 		
     //Abre e le o arquivo CSV selecionado pelo usuario
@@ -443,6 +467,7 @@ public class Interface extends JFrame {
 			lblDes.setText("Desempenho no ultimo semestre:" + controle.getDesempenho());
 			controle.possiveisPedidos();
 			controle.preencheFaltantes();
+			reavaliaPedidos();
 			lblFaltantes.setText("materias pré barreira faltantes " +controle.getListaFaltantes().tamanhoLista());
 			geraJtable();
 			if (controle.ira() > 0.8)
