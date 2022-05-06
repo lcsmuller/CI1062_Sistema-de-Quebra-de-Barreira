@@ -11,7 +11,7 @@ public class FileSaveReader {
 	static private String nomeArquivoFonte = null;
 
 	/**
-	 * Devolve o nome do arquivo fonte
+	 * Devolve o nome do arquivo fonte.
 	 * 
 	 * @return o nome do arquivo fonte
 	 */
@@ -19,8 +19,13 @@ public class FileSaveReader {
 		return nomeArquivoFonte;
 	}
 	
-	static public void setFonte(String fonte){
-		nomeArquivoFonte = fonte;
+	/**
+	 * Seta o nome do arquivo fonte.
+	 *
+	 * @param arquivoFonte nome do arquivo fonte
+	 */
+	static public void setFonte(String arquivoFonte){
+		nomeArquivoFonte = arquivoFonte;
 	}
 	
 	/**
@@ -48,7 +53,6 @@ public class FileSaveReader {
 	}
 
 	/**
-
 	 * Wrapper de {@link main.Csv#escreveFileWriter(String[][], String)}.
 	 * 		Realiza serialização e escrita no arquivo destino.
 	 * 

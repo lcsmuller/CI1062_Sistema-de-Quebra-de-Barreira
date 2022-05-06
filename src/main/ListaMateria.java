@@ -1,7 +1,6 @@
 package main;
-import java.util.Vector;
 
-/** Lista de matérias sendo cursadas pelo aluno */
+/** Lista de matérias */
 public class ListaMateria extends Tokenizador<Materia> {
 
 	/** 
@@ -12,31 +11,30 @@ public class ListaMateria extends Tokenizador<Materia> {
 	 * @return retorna { @link main.Materia }
 	 */
 	public Materia fromLinhaTokens(String[] tokensLinha) {
-		Materia nova = new Materia();
+		Materia novaMateria = new Materia();
 
-		nova.setCodigoCurso(tokensLinha[0]);
-		nova.setVersao(Integer.parseInt(tokensLinha[1]));
-		nova.setCodigoMateria(tokensLinha[3]);
-		nova.setNome(tokensLinha[5]);
+		novaMateria.setCodigoCurso(tokensLinha[0]);
+		novaMateria.setVersao(Integer.parseInt(tokensLinha[1]));
+		novaMateria.setCodigoMateria(tokensLinha[3]);
+		novaMateria.setNome(tokensLinha[5]);
 		try {
-			nova.setPeriodo(Integer.parseInt(tokensLinha[6]));
+			novaMateria.setPeriodo(Integer.parseInt(tokensLinha[6]));
 		} catch (Exception erro) {
-			nova.setPeriodo(0);
+			novaMateria.setPeriodo(0);
 		}
-		nova.setTipo(tokensLinha[8]);
-		nova.setHoras(Integer.parseInt(tokensLinha[9]));
-		return nova;
+		novaMateria.setTipo(tokensLinha[8]);
+		novaMateria.setHoras(Integer.parseInt(tokensLinha[9]));
+		
+		return novaMateria;
 	}
 
 	/** 
-	 * Procura Materia a partir de seu código fornecido.
+	 * Procura matéria a partir de seu nome fornecido.
 	 *
-	 * @param codigoMateria código único da matéria
-	 * @return retorna lista de índices contendo a matéria
+	 * @param nomeMateria nome da matéria
+	 * @return retorna índice em que a matéria se encontra na lista, -1 em caso de falha
 	 */
-	 
-	public int procurarMateria(String nomeMateria) {
-
+	public int procurarMateriaNome(String nomeMateria) {
 		for (int i = 0; i < this.lista.size(); i++) {
 			String nome = this.listaGetAt(i).getNome();
 			if (nome.equals(nomeMateria))

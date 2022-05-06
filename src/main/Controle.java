@@ -3,159 +3,97 @@ package main;
 import java.util.Vector;
 
 public class Controle {
+	/** lista de matérias reprovadas */
+	private Vector<Integer> posReprovadas = new Vector<>();
+	/** lista de matérias pré-barreiras faltantes */
+	private ListaMateria listaFaltantes = new ListaMateria();
+	/** lista de matérias que podem ser pedidas */
+	private ListaPedidos listaPossiveisPedidos = new ListaPedidos();
+	/** pedidos selecionados pelo aluno */
+	private ListaPedidos listaPedidos = new ListaPedidos();
+	/** lista com todas as matérias */
+	private ListaMateria listaMateria = new ListaMateria();
+	/** lista com as matérias do aluno */
+	private ListaMateriaAluno listaMateriaAluno = new ListaMateriaAluno();
+	/** índice inicial das matérias faltantes */
+	private int offsetBonus;
 
-	private Vector<Integer> pos_reprovadas = new Vector<>();			//LISTA DE MATERIAS REPROVADAS
-	private ListaMateria faltantes = new ListaMateria();				//LISTA DE MATERIAS PRE-BARREIRA FALTANTES
-	private ListaPedidos possiveis_escolhas = new ListaPedidos();		//LISTA DE MATERIAS QUE PODEM SER PEDIDAS
-	private ListaPedidos pedidos = new ListaPedidos();					//PEDIDOS SELECIONADOS
-	private ListaMateria lista_materia = new ListaMateria();			//LISTA COM TODAS AS MATERIAS
-	private ListaMateriaAluno mat_aluno = new ListaMateriaAluno();		//LISTA COM AS MATERIAS FEITAS PELO ALUNO
-	private int offsetbonus;
-	// -----------------------------------
-	//
-	//	FUNCOES COM VETOR FALTANTES 
-	//
-	//-------------------------------------
-	public ListaMateria getFaltantes() {
-		return faltantes;
-	}
-
-	public void setFaltantes(ListaMateria faltantes) {
-		this.faltantes = faltantes;
-	}
-
-	// ------------------------------------ 
-	//
-	//	FUNCOES COM O POSSIVEIS PEDIDOS 
-	//
-	// ------------------------------------
-	public ListaPedidos getPedidos() {
-		return pedidos;
+	/**
+	 * Retorna índice em que começam as matérias faltantes.
+	 *
+	 * @return índice em que começam as matérias faltantes
+	 */
+	public int getOffsetBonus() {
+		return this.offsetBonus;
 	}
 
-	public void setpedidos(ListaPedidos pedidos) {
-		this.pedidos = pedidos;
-	}
-	
-	public Materia getPossiveisPedidosAt (int i) {
-		return this.pedidos.listaGetAt(i);
-	}
-	
-	public void setPossiveisPedidosAt(Materia nova_materia, int i) {
-		this.pedidos.inserirEm(nova_materia, i);
-	}
-	
-	public void setPossiveisPedidos(Materia nova_materia) {
-		this.pedidos.inserir(nova_materia);
-	}
-	
-	public void removePossiveisPedidosAt (int i) {
-		this.pedidos.removerEm(i);
-	}
-	
-	// ---------------------------------
-	//
-	//	FUNCOES POSSIVEIS ESCOLHAS
-	//
-	// ---------------------------------
-	public ListaPedidos getPossiveis_escolhas() {
-		return possiveis_escolhas;
+	/** 
+	 * Retorna lista de matérias faltantes.
+	 *
+	 * @return lista de matérias faltantes
+	 */
+	public ListaMateria getListaFaltantes() {
+		return listaFaltantes;
 	}
 
-	public void setPossiveis_escolhas(ListaPedidos pedidos) {
-		this.possiveis_escolhas = pedidos;
+	/**
+	 * Retorna lista de possíveis pedidos.
+	 *
+	 * @return lista de possíveis pedidos
+	 */
+	public ListaPedidos getListaPedidos() {
+		return listaPedidos;
 	}
 	
-	public Materia getPossiveisEscolhasAt (int i) {
-		return this.possiveis_escolhas.listaGetAt(i);
+	/**
+	 * Define listaPedidos como a lista inserida.
+	 *
+	 * 
+	 */
+	public void setListaPedidos(ListaPedidos novo) {
+		this.listaPedidos = novo;
 	}
 	
-	public void setPossiveisEscolhasAt(Materia nova_materia, int i) {
-		this.possiveis_escolhas.inserirEm(nova_materia, i);
+	/**
+	 * Retorna lista de matérias.
+	 *
+	 * @return lista de matérias
+	 */
+	public ListaMateria getListaMateria() {
+		return listaMateria;
 	}
 	
-	public void setPossiveisEscolhas(Materia nova_materia) {
-		this.possiveis_escolhas.inserir(nova_materia);
-	}
-	
-	public void removePossiveisEscolhasAt (int i) {
-		this.possiveis_escolhas.removerEm(i);
-	}	
-	
-	// --------------------------------------
-	//
-	//	FUNCOES LISTA MATERIAS
-	//
-	// --------------------------------------
-	public ListaMateria getLista_materia() {
-		return lista_materia;
+	/**
+	 * Retorna lista de matérias do aluno.
+	 *
+	 * @return lista de matérias do aluno
+	 */
+	public ListaMateriaAluno getListaMateriaAluno() {
+		return listaMateriaAluno;
 	}
 
-	public void setLista_materia(ListaMateria lista_materia) {
-		this.lista_materia = lista_materia;
-	}
-	
-	// ---------------------------------
-	//
-	//	FUNCOES DE MAT ALUNO
-	//
-	// ----------------------------------
-	public ListaMateriaAluno getMat_aluno() {
-		return mat_aluno;
-	}
-	
-	public void setMat_aluno(ListaMateriaAluno mat_aluno) {
-		this.mat_aluno = mat_aluno;
-	}
-
-	// -------------------------------------
-	//
-	// FUNCOES POS REPROVADAS
-	//
-	// --------------------------------------
-	public int getPos_reprovadasAt(int pos){
-		return this.pos_reprovadas.get(pos);
-	}
-
-	public Vector<Integer> getPos_reprovadas() {
-		return pos_reprovadas;
-	}
-
-	public void setPos_reprovadas(Vector<Integer> pos_reprovadas) {
-		this.pos_reprovadas = pos_reprovadas;
-	}
-
-	public void inserirAt (int pos){
-		this.pos_reprovadas.add(pos);
-	} 
-	
-	// --------------------------------
-	//
-	// FUNCOES MAIORES 
-	//
-	// --------------------------------
 	/**
 	 * Procura quais matérias o aluno já fez. Caso não encontre, coloca matéria
 	 * 		em uma lista de matérias que serão ofertadas ao aluno.
 	 */
 	public void procuraMateriaAluno () {
-		for (int i = 0; i < this.lista_materia.getLista().size(); i++) {
-			Materia mat = this.lista_materia.getLista().elementAt(i);
-			if (! this.mat_aluno.procurarMateriaBool(mat.getCodigoMateria()));
-				this.setPossiveisPedidos(mat);
+		for (int i = 0; i < this.listaMateria.getLista().size(); i++) {
+			Materia materia = this.listaMateria.getLista().elementAt(i);
+			if (!this.listaMateriaAluno.procurarMateriaBool(materia.getCodigoMateria()));
+				this.listaPedidos.inserir(materia);
 		}
 	}
 
 	/** Imprime matérias que podem ser cursadas pelo aluno. */		
 	public void imprimirPossiveisMateria() {
-		for (int i = 0; i < this.pedidos.tamanhoLista(); i++) {
-			System.out.println(this.getPossiveisPedidosAt(i).getNome());
-			System.out.println(this.getPossiveisPedidosAt(i).getCodigoMateria());
-			System.out.println(this.getPossiveisPedidosAt(i).getCodigoCurso());
-			System.out.println(this.getPossiveisPedidosAt(i).getHoras());
-			System.out.println(this.getPossiveisPedidosAt(i).getPeriodo());
-			System.out.println(this.getPossiveisPedidosAt(i).getTipo());
-			System.out.println(this.getPossiveisPedidosAt(i).getVersao());
+		for (int i = 0; i < this.listaPedidos.tamanhoLista(); i++) {
+			System.out.println(this.listaPedidos.listaGetAt(i).getNome());
+			System.out.println(this.listaPedidos.listaGetAt(i).getCodigoMateria());
+			System.out.println(this.listaPedidos.listaGetAt(i).getCodigoCurso());
+			System.out.println(this.listaPedidos.listaGetAt(i).getHoras());
+			System.out.println(this.listaPedidos.listaGetAt(i).getPeriodo());
+			System.out.println(this.listaPedidos.listaGetAt(i).getTipo());
+			System.out.println(this.listaPedidos.listaGetAt(i).getVersao());
 		}
 	}
 
@@ -167,16 +105,15 @@ public class Controle {
 	public float ira() {
 		float indice = 0, total = 0, nota = 0, horas = 0;
 
-		for (int i = 0; i < mat_aluno.tamanhoLista(); i++) {
-			if (!mat_aluno.listaGetAt(i).getSituacao().equals("Matricula")){
-				if (mat_aluno.listaGetAt(i).getFrequencia() < 75){
-					
-					horas = mat_aluno.listaGetAt(i).getHoras();
+		for (int i = 0; i < listaMateriaAluno.tamanhoLista(); i++) {
+			if (!listaMateriaAluno.listaGetAt(i).getSituacao().equals("Matricula")) {
+				if (listaMateriaAluno.listaGetAt(i).getFrequencia() < 75) {
+					horas = listaMateriaAluno.listaGetAt(i).getHoras();
 					total += 100 * horas;
 				}
 				else {
-					horas = mat_aluno.listaGetAt(i).getHoras();
-					nota = mat_aluno.listaGetAt(i).getNota();
+					horas = listaMateriaAluno.listaGetAt(i).getHoras();
+					nota = listaMateriaAluno.listaGetAt(i).getNota();
 					indice += horas * nota;
 					total += 100 * horas;
 				}
@@ -194,35 +131,43 @@ public class Controle {
 	public float materiaReprovadas() {
 		float contador = 0;
 		
-		for (int i = 0; i < this.mat_aluno.tamanhoLista(); i++){
-			if (this.mat_aluno.listaGetAt(i).getPeriodo() == 3) {
-				if (this.mat_aluno.listaGetAt(i).getCodSituacao() > 1 && this.mat_aluno.listaGetAt(i).getCodSituacao() != 10) {
+		for (int i = 0; i < this.listaMateriaAluno.tamanhoLista(); i++){
+			if (this.listaMateriaAluno.listaGetAt(i).getPeriodo() == 3
+				&& this.listaMateriaAluno.listaGetAt(i).getCodSituacao() > 1
+				&& this.listaMateriaAluno.listaGetAt(i).getCodSituacao() != 10)
+			{
 					contador++;
-				}
-			}	
+			}
 		}
 		return contador;
 	} 
 
-	/** Remove os pedidos que o aluno fez */
-	public void removePedidos (){
-		while (this.pedidos.tamanhoLista() > 3){
-			this.mat_aluno.removeUltimo();
+	/** Remove os pedidos efetuados pelo aluno. */
+	public void removePedidos() {
+		while (this.listaPedidos.tamanhoLista() > 3){
+			this.listaMateriaAluno.removeUltimo();
 		}
 	}
 
-
-	/**
-	 * Insere no vetor de posições as matérias que o aluno reprovou
-	*/
-	public void posicoesMateriasReprovadas (){
-		for (int i = 0; i < this.mat_aluno.tamanhoLista(); i++){
-			
-			//Caso o aluno tenha reprovado ou por falta ou por nota
-			if (this.mat_aluno.listaGetAt(i).getCodSituacao() == 2 || this.mat_aluno.listaGetAt(i).getCodSituacao() == 3) {
-				this.inserirAt(i);
+	/** Insere no vetor de posições as matérias que o aluno reprovou. */
+	public void posicoesMateriasReprovadas() {
+		for (int i = 0; i < this.listaMateriaAluno.tamanhoLista(); i++){
+			// Caso o aluno tenha reprovado ou por falta ou por nota
+			if (this.listaMateriaAluno.listaGetAt(i).getCodSituacao() == 2
+				|| this.listaMateriaAluno.listaGetAt(i).getCodSituacao() == 3)
+			{
+				this.posReprovadas.add(i);
 			}
 		}
+	}
+
+	/**
+	 * Retorna desempenho do aluno.
+	 *
+	 * @return desempenho do aluno
+	 */
+	public float getDesempenho() {
+		return this.materiaReprovadas() / 5;
 	}
 
 	/**
@@ -232,139 +177,159 @@ public class Controle {
 	 * - Caso B: reprovado entre 1/3 a 2/3 e efetua mais de 4 pedidos
 	 * - Caso C: reprovado em menos que 1/3 e efetua mais de 3 pedidos
 	 */
-	
-	public float getDesempenho() {
-		float  reprovadas = this.materiaReprovadas();
-		System.out.println("reprovadas:" + reprovadas);
-		float desempenho = reprovadas / 5;
-		return desempenho;
-	}
-
-	public void analizarPedido () {
-		
+	public int analizarPedido() {		
 		float desempenho = getDesempenho();
 
-		if (pedidos.listaGetAt(pedidos.tamanhoLista()-1).getPeriodo() > 3 && faltantes.tamanhoLista() > 0) {
-			this.pedidos.removeUltimo();
+		if (listaPedidos.listaGetAt(listaPedidos.tamanhoLista()-1).getPeriodo() > 3 && listaFaltantes.tamanhoLista() > 0) {
+			int i = 0;
+			while(i < this.listaPedidos.tamanhoLista()){
+				if(listaPedidos.listaGetAt(i).getPeriodo() >= 4 ) {
+					 listaPedidos.removerEm(i);
+
+				}	 
+				else {
+					i++;
+				}
+			}
+			return 4;
 		}	
-		else if (faltantes.tamanhoLista() == 0) {
+		else if (listaFaltantes.tamanhoLista() == 0) {
 			if (this.ira() < 0.8) {
-				// Caso C
-				if ( desempenho < 0.33 ) {
-					if (this.pedidos.tamanhoLista() > (3 + offsetbonus)) {
-						this.pedidos.removeUltimo();
+				if (desempenho < 0.33) { // Caso C
+					if (this.listaPedidos.tamanhoLista() > (3 + offsetBonus)) {
+						this.listaPedidos.removeUltimo();
+						return 3;
 					}
+					return 0;
 				}
-				// Caso B
-				if ( desempenho >= 0.33 && desempenho < 0.66){
-					if (this.pedidos.tamanhoLista() > (4 + offsetbonus)) {
-						this.pedidos.removeUltimo();
+				else if (desempenho >= 0.33 && desempenho < 0.66) { // Caso B
+					if (this.listaPedidos.tamanhoLista() > (4 + offsetBonus)) {
+						this.listaPedidos.removeUltimo();
+						return 2;
 					}
+					return 0;
 				}
-				else // Caso A
-					if (this.pedidos.tamanhoLista() > (5 + offsetbonus))
-						this.pedidos.removeUltimo();
+				else { // Caso A
+					if (this.listaPedidos.tamanhoLista() > (5 + offsetBonus)) {
+						this.listaPedidos.removeUltimo();
+						return 1;
+					}
+					return 0;
+				}
 			}
 		}
+		return 0;
 	}
-
-	/**
-	 * Transforma a lista de matéria num Vector<Vector<Materia>>.
-	 *
-	 * @return um Vector<Vector<Materia>>. Basicamente uma tabela com todas as matérias.
-	 */
 	
+	/**
+	 * Transforma a lista de matéria num String[][].
+	 *
+	 * @return um String[][]. Basicamente uma tabela com todas as matérias.
+	 */
 	public String[][] tabelaMateria() {
-		String tabela_materia[][] = new String[7][9];
-		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1}; 
+		String tabelaMateria[][] = new String[7][9];
+		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1};
+
 		for(int i = 0; i < 8; i++)
-			tabela_materia[0][i] = (i+1) + "º PERIODO";
-		// AQUI ESTÁ GUILHERME
-		for (int i = 0; i < this.possiveis_escolhas.tamanhoLista(); i++) {
-			int j = this.possiveis_escolhas.listaGetAt(i).getPeriodo();
-			tabela_materia[colunas[j]][j - 1] = this.possiveis_escolhas.listaGetAt(i).getNome() ;
+			tabelaMateria[0][i] = (i+1) + "º PERIODO";
+
+		for (int i = 0; i < this.listaPossiveisPedidos.tamanhoLista(); i++) {
+			int j = this.listaPossiveisPedidos.listaGetAt(i).getPeriodo();
+			tabelaMateria[colunas[j]][j - 1] = this.listaPossiveisPedidos.listaGetAt(i).getNome() ;
 			colunas[j]++;
-		}	
-		return tabela_materia;
+		}
+
+		return tabelaMateria;
 	}
 	
 	public String[][] tabelaMateriaFeitas() {
-		String tabela_materia[][] = new String[7][9];
-		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1}; 
+		String tabelaMateria[][] = new String[7][9];
+		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1};
+
 		for(int i = 0; i < 8; i++)
-			tabela_materia[0][i] = (i+1) + "º PERIODO";
-		for (int i = 0; i < this.mat_aluno.tamanhoLista(); i++) {
-			int j = this.mat_aluno.listaGetAt(i).getPeriodo();
-			if(this.mat_aluno.listaGetAt(i).getCodSituacao() != 10) {
-				tabela_materia[colunas[j]][j-1] = this.mat_aluno.listaGetAt(i).getNome() ;
+			tabelaMateria[0][i] = (i+1) + "º PERIODO";
+
+		for (int i = 0; i < this.listaMateriaAluno.tamanhoLista(); i++) {
+			int j = this.listaMateriaAluno.listaGetAt(i).getPeriodo();
+			if(this.listaMateriaAluno.listaGetAt(i).getCodSituacao() != 10) {
+				tabelaMateria[colunas[j]][j-1] = this.listaMateriaAluno.listaGetAt(i).getNome() ;
 				colunas[j]++;
 			}	
-		}	
-		return tabela_materia;
-	}
-	
-	public String[][] tabelaMateriapedidas() {
-		String tabela_materia[][] = new String[7][9];
-		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1}; 
-		for(int i = 0; i < 8; i++)
-			tabela_materia[0][i] = (i+1) + "º PERIODO";
-		for (int i = 0; i < this.pedidos.tamanhoLista(); i++) {
-			int j = this.pedidos.listaGetAt(i).getPeriodo();
-			tabela_materia[colunas[j]][j-1] = this.pedidos.listaGetAt(i).getNome() ;
-			colunas[j]++;
-		}	
-		return tabela_materia;
-	}
-	
+		}
 
+		return tabelaMateria;
+	}
+	
+	/** 
+	 * Gera tabela das matérias pedidas.
+	 *
+	 * @return tokens de tabelas pedidas
+	 */
+	public String[][] tabelaMateriaPedidas() {
+		String tabelaMateria[][] = new String[7][9];
+		int colunas[] = {1, 1, 1, 1, 1, 1, 1, 1, 1};
+
+		for(int i = 0; i < 8; i++)
+			tabelaMateria[0][i] = (i+1) + "º PERIODO";
+
+		for (int i = 0; i < this.listaPedidos.tamanhoLista(); i++) {
+			int j = this.listaPedidos.listaGetAt(i).getPeriodo();
+			tabelaMateria[colunas[j]][j-1] = this.listaPedidos.listaGetAt(i).getNome() ;
+			colunas[j]++;
+		}
+
+		return tabelaMateria;
+	}
+	
 	/**
 	 * Preenche lista de possíveis escolhas de matérias com base em matérias
 	 * 		ainda não cursadas.
 	 */
 	public void possiveisPedidos() {
-		for (int i = 0; i < this.lista_materia.tamanhoLista(); i++) {
-			String code_materia = this.lista_materia.listaGetAt(i).getCodigoMateria();
-			boolean fez = false;
-			int pos_materia = 0;
+		for (int i = 0; i < this.listaMateria.tamanhoLista(); i++) {
+			String codMateria = this.listaMateria.listaGetAt(i).getCodigoMateria();
+			boolean fezMateria = false;
+			int posMateria = 0;
 
-			for (int j = 0; j < this.mat_aluno.tamanhoLista(); j++){
-				String materias_cursadas = this.mat_aluno.listaGetAt(j).getCodigoMateria();
-				if (code_materia.equals(materias_cursadas)) {
-					fez = true;
-					pos_materia = j;
+			for (int j = 0; j < this.listaMateriaAluno.tamanhoLista(); j++){
+				String materias_cursadas = this.listaMateriaAluno.listaGetAt(j).getCodigoMateria();
+				if (codMateria.equals(materias_cursadas)) {
+					fezMateria = true;
+					posMateria = j;
 				}
 			}
 
-			if (!fez) {
-				if (this.lista_materia.listaGetAt(i).getPeriodo() != 0 && this.lista_materia.listaGetAt(i).getHoras() != 150)
-					this.possiveis_escolhas.inserir(this.lista_materia.listaGetAt(i));
+			if (fezMateria == false) {
+				if (this.listaMateria.listaGetAt(i).getPeriodo() != 0 && this.listaMateria.listaGetAt(i).getHoras() != 150)
+					this.listaPossiveisPedidos.inserir(this.listaMateria.listaGetAt(i));
 			}	
-			else {
-				if (this.mat_aluno.listaGetAt(pos_materia).getCodSituacao() == 2 || this.mat_aluno.listaGetAt(pos_materia).getCodSituacao() == 3)
-					this.possiveis_escolhas.inserir(this.lista_materia.listaGetAt(i));				
+			else if (this.listaMateriaAluno.listaGetAt(posMateria).getCodSituacao() == 2 || this.listaMateriaAluno.listaGetAt(posMateria).getCodSituacao() == 3) {
+				this.listaPossiveisPedidos.inserir(this.listaMateria.listaGetAt(i));				
 			}
 		}
 	}
 	
 	public void preencheFaltantes() {
-		for (int i = 0; i < this.lista_materia.tamanhoLista(); i++) {
-			if((this.lista_materia.listaGetAt(i).getPeriodo() < 4) && (this.lista_materia.listaGetAt(i).getPeriodo() != 0 )) {
-				this.faltantes.inserir(lista_materia.listaGetAt(i));
+		for (int i = 0; i < this.listaMateria.tamanhoLista(); i++) {
+			if((this.listaMateria.listaGetAt(i).getPeriodo() < 4) && (this.listaMateria.listaGetAt(i).getPeriodo() != 0 )) {
+				this.listaFaltantes.inserir(listaMateria.listaGetAt(i));
 			}	
 		}
-		for (int i = 0; i < this.faltantes.tamanhoLista(); i++) {
-			String code_materia = this.faltantes.listaGetAt(i).getCodigoMateria();
-			for (int j = 0; j < this.mat_aluno.tamanhoLista(); j++){
-				String materias_cursadas = this.mat_aluno.listaGetAt(j).getCodigoMateria();
-				if (code_materia.equals(materias_cursadas)) {
-					if (this.mat_aluno.listaGetAt(j).getCodSituacao() == 1 ) {
-						this.faltantes.removerEm(i);
+
+		for (int i = 0; i < this.listaFaltantes.tamanhoLista(); i++) {
+			String codMateria = this.listaFaltantes.listaGetAt(i).getCodigoMateria();
+			
+			for (int j = 0; j < this.listaMateriaAluno.tamanhoLista(); j++){
+				String materias_cursadas = this.listaMateriaAluno.listaGetAt(j).getCodigoMateria();
+				if (codMateria.equals(materias_cursadas)) {
+					if (this.listaMateriaAluno.listaGetAt(j).getCodSituacao() == 1 ) {
+						this.listaFaltantes.removerEm(i);
 						i--;
 					}
 				}
 			}
 		}
-		offsetbonus = faltantes.tamanhoLista();
+		offsetBonus = listaFaltantes.tamanhoLista();
 	}
 	
 }

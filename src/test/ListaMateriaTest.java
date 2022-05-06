@@ -14,10 +14,10 @@ class ListaMateriaTest {
 		ListaMateria lista = new ListaMateria();
 
 		lista.inserir(new Materia("foo", 1, "foo", "foo", 1, "foo", 1));
-		assertEquals(1, lista.procurarMateria("foo").size());
+		assertEquals(1, lista.procurarMateriaNome("foo").size());
 		lista.inserir(new Materia("bar", 2, "bar", "bar", 2, "bar", 2));
-		assertEquals(1, lista.procurarMateria("bar").size());
+		assertEquals(1, lista.procurarMateriaNome("bar").size());
 		lista.inserir(new Materia("bar", 3, "bar", "bar", 3, "bar", 3));
-		assertEquals(2, lista.procurarMateria("bar").size());
+		assertEquals(2, lista.procurarMateriaNome("bar").size());
 	}
 }
