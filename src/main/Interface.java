@@ -169,6 +169,8 @@ public class Interface extends JFrame {
         lblmaxsel.setFont(new Font("Dialog", Font.PLAIN, 20));
         JLabel lblTamFalt = new JLabel("Para pegar materias após o 3º periodo, é necessario pegar todas as materias pré-barreira", SwingConstants.CENTER);
         lblTamFalt.setFont(new Font("Dialog",Font.PLAIN, 20));
+        JLabel lblopt  = new JLabel("O estagio obrigatório e materias optativas por padrão são negadas, por isso não estão sendo mostradas", SwingConstants.CENTER);
+        lblopt.setFont(new Font("Dialog",Font.PLAIN, 15));
         
         //monta meioca
         tablePanel1.add(btnAdd, BorderLayout.SOUTH);
@@ -183,7 +185,7 @@ public class Interface extends JFrame {
         minisub.add(lblmaxsel,BorderLayout.CENTER);
 		tablePanel4.add(minisub, BorderLayout.CENTER);
 		tablePanel4.setBackground(Color.getHSBColor((float) 0.50, (float) 0.35, (float) 0.5));
-        //tablePanel4.add(cansasso2, BorderLayout.SOUTH);
+		tablePanel4.add(lblopt,BorderLayout.SOUTH);
         
     }
     
@@ -243,7 +245,7 @@ public class Interface extends JFrame {
 		int c = requestTable.getSelectedColumn();
 		if (r > 0) {
 			String str = (String) requestTable.getValueAt(r, c);
-			try {
+			//try {
 				if (!str.equals("")) {
 					int materia = controle.getListaPedidos().procurarMateriaNome(str);
 					int falt = controle.getListaFaltantes().procurarMateriaNome(str);
@@ -261,7 +263,7 @@ public class Interface extends JFrame {
 					requestTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
 					requestTable.setForeground(Color.BLACK);
 				}
-			} catch (Exception erro) {}	
+			//} catch (Exception erro) {}	
 		}
 		refresh();
     }
@@ -271,7 +273,7 @@ public class Interface extends JFrame {
 		int c = classTable.getSelectedColumn();
 		if (r > 0) {
 			String str = (String) classTable.getValueAt(r, c);
-			try {
+			//try {
 				if (!str.equals("")) {
 					int materia = controle.getListaMateria().procurarMateriaNome(str);
 					controle.getListaPedidos().inserir(controle.getListaMateria().listaGetAt(materia));
@@ -283,6 +285,7 @@ public class Interface extends JFrame {
 					analisePopup(analise);
 					lblFaltantes.setText("materias pré barreira faltantes " +controle.getListaFaltantes().tamanhoLista());
 					tablePanel3.remove(requestTable);
+					refresh();
 					requestTable = new JTable(controle.tabelaMateriaPedidas(), cabeca);
 					tablePanel3.add(requestTable,BorderLayout.NORTH);
 					requestTable.setDefaultEditor(Object.class, null);
@@ -291,10 +294,20 @@ public class Interface extends JFrame {
 					requestTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
 					requestTable.setForeground(Color.BLACK);
 				}
-			} catch (Exception erro) {}	
+			//} catch (Exception erro) {}	
 		}
 		refresh();
 	}
+    
+    private void reanalizapedidos() {
+    	for (int i = 0 ; i < controle.getListaPedidos().tamanhoLista() ; i++) {
+    		for (int j = 0 ; j < controle.getListaFaltantes().tamanhoLista() ; j++) {
+    			if (controle.getListaFaltantes().listaGetAt(j).getNome().equals(controle.getListaPedidos().listaGetAt(i).getNome())){
+    				controle.getListaFaltantes().removerEm(j);
+    			}
+    		}
+    	}
+    }
     
     private void analisePopup(int motivo) {
 		switch (motivo) {
@@ -373,6 +386,7 @@ public class Interface extends JFrame {
 		this.repaint();
 	}
     
+    
     private void geraJtable(){
     	controle.possiveisPedidos();
 		String [][] tabela = controle.tabelaMateria();
@@ -415,8 +429,7 @@ public class Interface extends JFrame {
 		fTable.setGridColor(Color.BLACK);
 		fTable.setBackground(Color.getHSBColor((float) 0.0, (float) 0, (float) 0.8));
 		fTable.setForeground(Color.BLACK);
-		repaint();
-		revalidate();
+		refresh();
 	}
 		
     //Abre e le o arquivo CSV selecionado pelo usuario
@@ -481,6 +494,7 @@ public class Interface extends JFrame {
 			lblIRA.setText("IRA: " + this.ira);
 			lblDes.setText("Desempenho no ultimo semestre:" + controle.getDesempenho());
 			controle.preencheFaltantes();
+			reanalizapedidos();
 			lblFaltantes.setText("materias pré barreira faltantes " + controle.getListaFaltantes().tamanhoLista());
 			geraJtable();
 			if (controle.ira() > 0.8)
